@@ -9,10 +9,10 @@
 
     <title>TeamUP api</title>
 
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -26,21 +26,22 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                         <h1 class="page-header">OAUTH2</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
 
               <div class="row">
-              <div class="col-lg-4">
+              <div class="col-lg-10">
                   <div class="panel panel-info">
                       <div class="panel-heading">
                           Password Credentials Grant
                       </div>
                       <div class="panel-body">
-                            <h4>1. token 요청</h4>
-                              <div class="col-lg-6">
+
+                              <div class="col-lg-10">
+                                <h4>1. token 요청</h4>
                                 <div class="panel panel-default">
                                   <div class="panel-heading">
                                       /oauth2/token
@@ -117,15 +118,15 @@ client_id=:id&client_secret=:secret&username=:email&password=:password&grant_typ
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-    <script src="../dist/js/sb-admin-2.js"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/dist/js/sb-admin-2.js"></script>
+    <script src="/v1/js/run_prettify.js"></script>
 
     <script>
     $(function(){
-      $("#nav").load("./module/nav.html");
+      $("#nav").load("/v1/module/nav.html");
     });
     </script>
 
