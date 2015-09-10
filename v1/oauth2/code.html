@@ -44,7 +44,7 @@
                                   <h4>1. code 요청</h4>
                                 <div class="panel panel-default">
                                   <div class="panel-heading">
-                                      /oauth2/authorize
+                                      GET /oauth2/authorize
                                   </div>
                                   <!-- /.panel-heading -->
                                   <div class="panel-body">
@@ -63,9 +63,7 @@
                                           </table>
                                       </div>
                                   </div>
-                                  <div class="panel-heading">
-                                      GET
-                                  </div>
+                                  <div class="panel-heading">요청예</div>
                                   <div class="panel-body">
                                       https://auth.tmup.com/oauth2/authorize?response_type=code&client_id=:id&amp;redirect_uri=:url
                                   </div>
@@ -95,7 +93,7 @@
                                 <h4>2. token 요청</h4>
                                 <div class="panel panel-default">
                                   <div class="panel-heading">
-                                      /oauth2/token
+                                      GET, POST /oauth2/token
                                   </div>
                                   <!-- /.panel-heading -->
                                   <div class="panel-body">
@@ -114,9 +112,7 @@
                                           </table>
                                       </div>
                                   </div>
-                                  <div class="panel-heading">
-                                      GET,POST
-                                  </div>
+                                  <div class="panel-heading">요청예</div>
                                   <div class="panel-body">
                                       https://auth.tmup.com/oauth2/token?
                                       grant_type=authorization_code&amp;code=:code&amp;client_id=:id&amp;redirect_uri=:url&amp;client_secret=:secret

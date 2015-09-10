@@ -27,52 +27,61 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-10">
-                        <h1 class="page-header">OAUTH2</h1>
+                        <h1 class="page-header">회원</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
 
               <div class="row">
-              <div class="col-lg-8">
+              <div class="col-lg-10">
                   <div class="panel panel-info">
                       <div class="panel-heading">
-                          Implicit Grant
+                          회원 api
                       </div>
                       <div class="panel-body">
 
                               <div class="col-lg-10">
-                                <h4>1. token 요청</h4>
+                                <h4>1. 회원 정보 조회</h4>
                                 <div class="panel panel-default">
-                                  <div class="panel-heading">
-                                      GET /oauth2/authorize
+                                  <div class="panel-heading">GET /v1</div>
+                                  <div class="panel-body">token 으로 회원 index 조회</div>
+
+                                  <div class="panel-heading">GET /v1/user</div>
+                                  <div class="panel-body">로그인된 사용자 정보 조회</div>
+
+                                  <div class="panel-heading">POST /v1/user</div>
+                                  <div class="panel-body">사용자 정보 업데이트
+                                    <pre class="prettyprint">
+{
+  "birthday": "1999-01-01",
+  "is_lunar": false,
+  "message": "하하하하",
+  "mobile": "010-1111-1111"
+}
+                                    </pre>
                                   </div>
-                                  <!-- /.panel-heading -->
-                                  <div class="panel-body">
-                                      <div class="table-responsive">
-                                          <table class="table">
-                                              <thead>
-                                                  <tr><th>파라미터</th><th>타입</th><th>필수</th><th>설명</th></tr>
-                                              </thead>
-                                              <tbody>
-                                                  <tr><td>response_type</td><td>String</td><td>Y</td><td>token</td></tr>
-                                                  <tr><td>client_id</td><td>String</td><td>Y</td><td>어플리케이션 등록 후 발급받은 id</td></tr>
-                                                  <tr><td>redirect_uri</td><td>String</td><td>N</td><td>call back url <br> 어플리케이션 등록할때 등록한 url </td></tr>
-                                                  <tr><td>scope</td><td>String</td><td>N</td><td>권한 관리용 scope , 로 구분합니다. ex) read,post </td></tr>
-                                                  <tr><td>state</td><td>String</td><td>N</td><td>csrf 방지용</td></tr>
-                                              </tbody>
-                                          </table>
-                                      </div>
+
+                                  <div class="panel-heading">GET /v1/user/:index</div>
+                                  <div class="panel-body">내가 속한 팀의 다른 회원 정보</div>
+
+                                  <div class="panel-heading">GET /v1/user/teams</div>
+                                  <div class="panel-body">내가 속한 팀정보</div>
+
+                                  <div class="panel-heading">GET /v1/user/team/:team index</div>
+                                  <div class="panel-body">내가 속한 팀별정보</div>
+
+                                  <div class="panel-heading">POST /v1/user/team/:team index</div>
+                                  <div class="panel-body">팀별 내 정보 수정
+                                    <pre class="prettyprint">
+{
+  "message": "하하하하",
+  "mobile": "010-1111-1111",
+  "phone": "02-2222-2222"
+}
+                                    </pre>
+
                                   </div>
-                                  <div class="panel-heading">요청예</div>
-                                  <div class="panel-body">
-                                      https://auth.tmup.com/oauth2/authorize?
-                                      response_type=token&amp;client_id=:id&amp;redirect_uri=:url
-                                  </div>
-                                  <div class="panel-heading">
-                                      결과
-                                  </div>
-                                  <div class="panel-body">
-                                  </div>
+
                                 </div>
                               <!-- /.panel -->
                               </div>

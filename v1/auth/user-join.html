@@ -27,7 +27,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-10">
-                        <h1 class="page-header">OAUTH2</h1>
+                        <h1 class="page-header">회원</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -36,41 +36,75 @@
               <div class="col-lg-10">
                   <div class="panel panel-info">
                       <div class="panel-heading">
-                          Password Credentials Grant
+                          회원 가입 api
                       </div>
                       <div class="panel-body">
 
                               <div class="col-lg-10">
-                                <h4>1. token 요청</h4>
+                                <h4>1. 회원 가입</h4>
                                 <div class="panel panel-default">
-                                  <div class="panel-heading">
-                                      POST /oauth2/token
-                                  </div>
-                                  <!-- /.panel-heading -->
+                                  <div class="panel-heading">GET /v1/join/email</div>
                                   <div class="panel-body">
-                                      <div class="table-responsive">
-                                          <table class="table">
-                                              <thead>
-                                                  <tr><th>파라미터</th><th>타입</th><th>필수</th><th>설명</th></tr>
-                                              </thead>
-                                              <tbody>
-                                                  <tr><td>grant_type</td><td>String</td><td>Y</td><td>password</td></tr>
-                                                  <tr><td>client_id</td><td>String</td><td>Y</td><td>어플리케이션 등록 후 발급받은 id</td></tr>
-                                                  <tr><td>client_secret</td><td>String</td><td>Y</td><td>어플리케이션 등록 후 발급받은 secret</td></tr>
-                                                  <tr><td>username</td><td>String</td><td>Y</td><td>TeamUP email</td></tr>
-                                                  <tr><td>password</td><td>String</td><td>Y</td><td>TeamUP password</td></tr>
-                                                  <tr><td>scope</td><td>String</td><td>Y</td><td>scope , 로구분 ex) read,post </td></tr>
-                                              </tbody>
-                                          </table>
-                                      </div>
+                                    회원 가입 email 전송
+                                    <table class="table">
+                                        <thead>
+                                            <tr><th>파라미터</th><th>타입</th><th>필수</th><th>설명</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>email</td><td>String</td><td>Y</td><td></td></tr>
+                                            <tr><td>send</td><td>Bool</td><td>N</td><td>email 발송 여부</td></tr>
+                                        </tbody>
+                                    </table>
+                                  </div>
+                                  <div class="panel-heading">
+                                      결과
                                   </div>
                                   <div class="panel-body">
                                     <pre class="prettyprint">
-POST /oauth2/token HTTP/1.1
-Host: auth.tmup.com
-Content-Type: application/x-www-form-urlencoded
+{
+    "result": true,
+    "data": "https://tmup.com/join?p=a22b465416e1308c5c11021ccf8474a4451363fe48294763"
+}
+                                    </pre>
+                                    data : 회원 가입 링크
+                                  </div>
+                                </div>
+                                <div class="panel panel-default">
+                                  <div class="panel-heading">GET /v1/join/email/check</div>
+                                  <div class="panel-body">회원 가입 링크가 올바른 링크인지 검사
+                                    <table class="table">
+                                        <thead>
+                                            <tr><th>파라미터</th><th>타입</th><th>필수</th><th>설명</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>p</td><td>String</td><td>Y</td><td>회원 가입 링크 파라미터</td></tr>
+                                        </tbody>
+                                    </table>
+                                  </div>
 
-client_id=:id&amp;client_secret=:secret&amp;username=:email&amp;password=:password&amp;grant_type=password
+                                  <div class="panel-heading">
+                                      결과
+                                  </div>
+                                  <div class="panel-body">
+                                    <pre class="prettyprint">
+{
+    "result": true,
+    "data": "test@estsoft.com"
+}
+                                    </pre>
+                                    data : email
+                                  </div>
+                                </div>
+                                <div class="panel panel-default">
+
+                                  <div class="panel-heading">POST /v1/join/email</div>
+                                  <div class="panel-body">회원 가입
+                                    <pre class="prettyprint">
+{
+  "name": "홍길동",
+  "password": "1234567890",
+  "p": "a22b465416e1308c5c11021ccf8474a4451363fe48294763"
+}
                                     </pre>
                                   </div>
                                   <div class="panel-heading">
@@ -79,25 +113,13 @@ client_id=:id&amp;client_secret=:secret&amp;username=:email&amp;password=:passwo
                                   <div class="panel-body">
                                     <pre class="prettyprint">
 {
-    "access_token": "1a6d2aed3f7ecbdd05fc75e5afbcad721342d7168f2042dc52aa22da9e2d827f",
-    "expires_in": 86399,
-    "token_type": "bearer",
-    "refresh_token": "05ec67055cd9c9a22b465416e1308c5c11021ccf8474a4451363fe482947633d"
+    "result": true,
+    "data": 100
 }
                                     </pre>
-                                      <table class="table">
-                                          <thead>
-                                              <tr><th>파라미터</th><th>타입</th><th>필수</th><th>설명</th></tr>
-                                          </thead>
-                                          <tbody>
-                                              <tr><td>access_token</td><td>String</td><td>Y</td><td></td></tr>
-                                              <tr><td>expires_in</td><td>String</td><td>Y</td><td>만료 단위:초</td></tr>
-                                              <tr><td>token_type</td><td>String</td><td>Y</td><td></td></tr>
-                                              <tr><td>refresh_token</td><td>String</td><td>Y</td><td></td></tr>
-                                          </tbody>
-                                      </table>
+                                    data : 회원 index
                                   </div>
-                                </div>
+
                               <!-- /.panel -->
                               </div>
                               <!-- /end h4 -->
