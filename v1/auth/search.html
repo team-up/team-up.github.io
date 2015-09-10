@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TeamUP api</title>
+
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav id="nav" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0"></nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h1 class="page-header">검색</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+              <div class="row">
+              <div class="col-lg-10">
+                  <div class="panel panel-info">
+                      <div class="panel-heading">
+                          검색
+                      </div>
+                      <div class="panel-body">
+                              <div class="col-lg-10">
+                                <h4>1. 검색</h4>
+                                <div class="panel panel-default">
+                                  <div class="panel-heading">GET /v1/search?query=:query</div>
+                                  <div class="panel-body">검색 ( 이메일, 이름, 부서 like 검색)</div>
+
+                                  <div class="panel-heading">GET /v1/search/:team_index?query=:query</div>
+                                  <div class="panel-body"> 팀별로 검색</div>
+                                </div>
+                              </div>
+                              <!-- /.panel -->
+                      </div>
+                      <div class="panel-footer"></div>
+                  </div>
+              </div>
+              <!-- /.col-lg-4 -->
+          </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/dist/js/sb-admin-2.js"></script>
+    <script src="/v1/js/run_prettify.js"></script>
+
+    <script>
+    $(function(){
+      $("#nav").load("/v1/module/nav.html");
+    });
+    </script>
+
+</body>
+
+</html>
