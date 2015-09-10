@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TeamUP api</title>
+
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav id="nav" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0"></nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">OAUTH2</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+              <div class="row">
+              <div class="col-lg-4">
+                  <div class="panel panel-info">
+                      <div class="panel-heading">
+                          Implicit Grant
+                      </div>
+                      <div class="panel-body">
+                            <h4>1. token 요청</h4>
+                              <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      /oauth2/authorize
+                                  </div>
+                                  <!-- /.panel-heading -->
+                                  <div class="panel-body">
+                                      <div class="table-responsive">
+                                          <table class="table">
+                                              <thead>
+                                                  <tr><th>파라미터</th><th>타입</th><th>필수</th><th>설명</th></tr>
+                                              </thead>
+                                              <tbody>
+                                                  <tr><td>response_type</td><td>String</td><td>Y</td><td>token</td></tr>
+                                                  <tr><td>client_id</td><td>String</td><td>Y</td><td>어플리케이션 등록 후 발급받은 id</td></tr>
+                                                  <tr><td>redirect_uri</td><td>String</td><td>N</td><td>call back url <br> 어플리케이션 등록할때 등록한 url </td></tr>
+                                                  <tr><td>scope</td><td>String</td><td>N</td><td>권한 관리용 scope , 로 구분합니다. ex) read,post </td></tr>
+                                                  <tr><td>state</td><td>String</td><td>N</td><td>csrf 방지용</td></tr>
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                                  <div class="panel-heading">
+                                      GET
+                                  </div>
+                                  <div class="panel-body">
+                                      https://auth.tmup.com/oauth2/authorize?
+                                      response_type=token&amp;client_id=:id&amp;redirect_uri=:url
+                                  </div>
+                                  <div class="panel-heading">
+                                      결과
+                                  </div>
+                                  <div class="panel-body">
+                                  </div>
+                                </div>
+                              <!-- /.panel -->
+                              </div>
+                              <!-- /end h4 -->
+                      </div>
+                      <div class="panel-footer"></div>
+                  </div>
+              </div>
+              <!-- /.col-lg-4 -->
+          </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/dist/js/sb-admin-2.js"></script>
+    <script src="/v1/js/run_prettify.js"></script>
+
+    <script>
+    $(function(){
+      $("#nav").load("/v1/module/nav.html");
+    });
+    </script>
+
+</body>
+
+</html>
