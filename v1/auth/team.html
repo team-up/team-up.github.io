@@ -27,7 +27,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-10">
-                        <h1 class="page-header">회원</h1>
+                        <h1 class="page-header">팀</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -36,50 +36,43 @@
               <div class="col-lg-10">
                   <div class="panel panel-info">
                       <div class="panel-heading">
-                          회원 api
+                          팀
                       </div>
                       <div class="panel-body">
 
                               <div class="col-lg-10">
-                                <h4>1. 회원 정보 조회</h4>
+                                <h4>1. 팀</h4>
                                 <div class="panel panel-default">
-                                  <div class="panel-heading">GET /v1</div>
-                                  <div class="panel-body">token 으로 회원 index 조회</div>
+                                  <div class="panel-heading">GET /v1/teams</div>
+                                  <div class="panel-body">팀 정보 조회</div>
 
-                                  <div class="panel-heading">GET /v1/user</div>
-                                  <div class="panel-body">로그인된 사용자 정보 조회</div>
+                                  <div class="panel-heading">GET /v1/team/:index</div>
+                                  <div class="panel-body"> 팀별 조직도 조회</div>
 
-                                  <div class="panel-heading">POST /v1/user</div>
-                                  <div class="panel-body">사용자 정보 업데이트
+                                  <div class="panel-heading">GET /v1/team/:index/all</div>
+                                  <div class="panel-body"> 팀별 조직도 조회(ALL)</div>
+
+                                  <div class="panel-heading">GET /v1/team/:index/:parent </div>
+                                  <div class="panel-body"> 팀별 조직도 조회(하위조직)</div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                  <div class="panel-heading">POST /v1/team/new </div>
+                                  <div class="panel-body"> 팀만들기
                                     <pre class="prettyprint">
 {
-  "birthday": "1999-01-01",
-  "is_lunar": false,
-  "message": "하하하하",
-  "mobile": "010-1111-1111"
+  "name": "율도국",
+  "invite": "all",
+  "domain": "domain",
+  "domainList": ["a.com", "b.com"],
+  "department": false,
+  "position": false,
+  "jobTitle": false,
+  "phone": false,
+  "mobile": false,
+  "birthday": false
 }
                                     </pre>
-                                  </div>
-
-                                  <div class="panel-heading">GET /v1/user/:index</div>
-                                  <div class="panel-body">내가 속한 팀의 다른 회원 정보</div>
-
-                                  <div class="panel-heading">GET /v1/user/teams</div>
-                                  <div class="panel-body">내가 속한 팀정보</div>
-
-                                  <div class="panel-heading">GET /v1/user/team/:team index</div>
-                                  <div class="panel-body">내가 속한 팀별정보</div>
-
-                                  <div class="panel-heading">POST /v1/user/team/:team index</div>
-                                  <div class="panel-body">팀별 내 정보 수정
-                                    <pre class="prettyprint">
-{
-  "message": "하하하하",
-  "mobile": "010-1111-1111",
-  "phone": "02-2222-2222"
-}
-                                    </pre>
-
                                   </div>
 
                                 </div>

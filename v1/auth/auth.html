@@ -27,7 +27,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-10">
-                        <h1 class="page-header">회원</h1>
+                        <h1 class="page-header">인증</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -36,57 +36,29 @@
               <div class="col-lg-10">
                   <div class="panel panel-info">
                       <div class="panel-heading">
-                          회원 api
+                          인증 방법
                       </div>
                       <div class="panel-body">
 
                               <div class="col-lg-10">
-                                <h4>1. 회원 정보 조회</h4>
+                                <h4>1. Api 사용하기</h4>
                                 <div class="panel panel-default">
-                                  <div class="panel-heading">GET /v1</div>
-                                  <div class="panel-body">token 으로 회원 index 조회</div>
-
-                                  <div class="panel-heading">GET /v1/user</div>
-                                  <div class="panel-body">로그인된 사용자 정보 조회</div>
-
-                                  <div class="panel-heading">POST /v1/user</div>
-                                  <div class="panel-body">사용자 정보 업데이트
+                                  <div class="panel-heading">
+                                      발급 받은 token은 http header 에 넣어주거나 api 호출할때 parameter 로 넣어줍니다.<br/>
+                                  </div>
+                                  <div class="panel-body">
+                                    https://auth.tmup.com/v1?token=eeea79faac90473bdbaf9c807b3a1816fa115b20738f92ea6aaa93acce4d76aa
+                                  </div>
+                                  <div class="panel-body">
+                                    HTTP Header 에 아래와 같이 넣어줍니다. <br/>
                                     <pre class="prettyprint">
-{
-  "birthday": "1999-01-01",
-  "is_lunar": false,
-  "message": "하하하하",
-  "mobile": "010-1111-1111"
-}
+GET /v1 HTTP/1.1
+Host: auth.tmup.com
+Authorization : bearer eeea79faac90473bdbaf9c807b3a1816fa115b20738f92ea6aaa93acce4d76aa
                                     </pre>
                                   </div>
-
-                                  <div class="panel-heading">GET /v1/user/:index</div>
-                                  <div class="panel-body">내가 속한 팀의 다른 회원 정보</div>
-
-                                  <div class="panel-heading">GET /v1/user/teams</div>
-                                  <div class="panel-body">내가 속한 팀정보</div>
-
-                                  <div class="panel-heading">GET /v1/user/team/:team index</div>
-                                  <div class="panel-body">내가 속한 팀별정보</div>
-
-                                  <div class="panel-heading">POST /v1/user/team/:team index</div>
-                                  <div class="panel-body">팀별 내 정보 수정
-                                    <pre class="prettyprint">
-{
-  "message": "하하하하",
-  "mobile": "010-1111-1111",
-  "phone": "02-2222-2222"
-}
-                                    </pre>
-
-                                  </div>
-
                                 </div>
-                              <!-- /.panel -->
                               </div>
-                              <!-- /end h4 -->
-                      </div>
                       <div class="panel-footer"></div>
                   </div>
               </div>
