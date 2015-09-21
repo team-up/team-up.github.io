@@ -902,7 +902,7 @@
   },
   {
     "type": "post",
-    "url": "v1/profile",
+    "url": "v1/user/profile",
     "title": "profile image",
     "version": "1.0.0",
     "name": "profile",
@@ -913,7 +913,7 @@
   },
   {
     "type": "post",
-    "url": "v1/profile/team/:index",
+    "url": "v1/user/profile/team/:index",
     "title": "팀별 profile image",
     "version": "1.0.0",
     "name": "profileTeam",
