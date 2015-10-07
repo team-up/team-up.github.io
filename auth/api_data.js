@@ -563,7 +563,7 @@ define({ "api": [
     "url": "v1/team",
     "title": "팀 만들기",
     "version": "1.0.0",
-    "name": "newTeam",
+    "name": "createTeam",
     "group": "team",
     "parameter": {
       "fields": {
@@ -578,16 +578,18 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "<p>String</p> ",
-            "optional": false,
+            "optional": true,
             "field": "invite",
-            "description": "<p>all, admin</p> "
+            "defaultValue": "all",
+            "description": "<p>all or admin</p> "
           },
           {
             "group": "Parameter",
             "type": "<p>String</p> ",
-            "optional": false,
+            "optional": true,
             "field": "domain",
-            "description": "<p>domain, any</p> "
+            "defaultValue": "any",
+            "description": "<p>domain or any</p> "
           },
           {
             "group": "Parameter",
@@ -599,51 +601,78 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "<p>Boolean</p> ",
-            "optional": false,
+            "optional": true,
             "field": "department",
+            "defaultValue": "false",
             "description": ""
           },
           {
             "group": "Parameter",
             "type": "<p>Boolean</p> ",
-            "optional": false,
+            "optional": true,
             "field": "position",
+            "defaultValue": "false",
             "description": ""
           },
           {
             "group": "Parameter",
             "type": "<p>Boolean</p> ",
-            "optional": false,
+            "optional": true,
             "field": "jobTitle",
+            "defaultValue": "false",
             "description": ""
           },
           {
             "group": "Parameter",
             "type": "<p>Boolean</p> ",
-            "optional": false,
+            "optional": true,
             "field": "phone",
+            "defaultValue": "false",
             "description": ""
           },
           {
             "group": "Parameter",
             "type": "<p>Boolean</p> ",
-            "optional": false,
+            "optional": true,
             "field": "mobile",
+            "defaultValue": "false",
             "description": ""
           },
           {
             "group": "Parameter",
             "type": "<p>Boolean</p> ",
-            "optional": false,
+            "optional": true,
             "field": "birthday",
+            "defaultValue": "false",
             "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "direct_url",
+            "description": "<p>바로가기 url</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "direct_width",
+            "description": "<p>바로가기 width</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "direct_heigth",
+            "description": "<p>바로가기 height</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"name\": \"팀업개발팀\",\n\t\t\"invite\": \"all\",\n\t\t\"domain\": \"domain\",\n\t\t\"domainList\": [ \"@estsoft.com\", \"@zuminternet.com\" ],\n\t\t\"department\": true,\n\t\t\"position\": true,\n\t\t\"jobTitle\": true,\n\t\t\"phone\": true,\n\t\t\"mobile\": true,\n\t\t\"birthday\": true\n}",
+          "content": "{\n\t\t\"name\": \"팀업개발팀\",\n\t\t\"invite\": \"all\",\n\t\t\"domain\": \"domain\",\n\t\t\"domainList\": [ \"@estsoft.com\", \"@zuminternet.com\" ],\n\t\t\"department\": true,\n\t\t\"position\": true,\n\t\t\"jobTitle\": true,\n\t\t\"phone\": true,\n\t\t\"mobile\": true,\n\t\t\"birthday\": true,\n\t\t\"direct_url\": \"https://direct.tmup.com/index.html\",\n\t\t\"direct_width\": 500,\n\t\t\"direct_height\": 500\n}",
           "type": "json"
         }
       ]
@@ -679,10 +708,246 @@ define({ "api": [
     "name": "teams",
     "group": "team",
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>팀 번호</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>팀 이름</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "invite_user",
+            "description": "<p>초대 가능 (all, admin)</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_invite_domain",
+            "description": "<p>도메인 초대 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Set</p> ",
+            "optional": false,
+            "field": "invite_domain",
+            "description": "<p>초대 가능 도메인 set</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_department",
+            "description": "<p>부서명 필수입력 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_position",
+            "description": "<p>직책 필수입력 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_job_title",
+            "description": "<p>직급 필수입력 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_phone",
+            "description": "<p>직통전화 필수입력 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_mobile",
+            "description": "<p>휴대폰 필수입력 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_birthday",
+            "description": "<p>생일 필수입력 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "direct_url",
+            "description": "<p>바로가기 url</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "direct_width",
+            "description": "<p>바로가기 url width</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "direct_height",
+            "description": "<p>바로가기 url height</p> "
+          }
+        ]
+      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[\n\t{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"department\": null,\n\t\t\"users\": null\n\t}\n]",
+          "content": "[\n\t{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"invite_user\": \"admin\",\n\t\t\"is_invite_domain\": true,\n\t\t\"invite_domain\": [\n\t\t\t\"a.com\",\n\t\t\t\"estsoft.com\"\n\t\t\t],\n\t\t\"is_department\": true,\n\t\t\"is_position\": true,\n\t\t\"is_job_title\": true,\n\t\t\"is_phone\": true,\n\t\t\"is_mobile\": true,\n\t\t\"is_birthday\": true,\n\t\t\"direct_url\": null,\n\t\t\"direct_width\": null,\n\t\t\"direct_height\": null\n\t}\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamController.java",
+    "groupTitle": "team"
+  },
+  {
+    "type": "post",
+    "url": "v1/team",
+    "title": "팀 수정",
+    "version": "1.0.0",
+    "name": "updateTeam",
+    "group": "team",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "invite",
+            "description": "<p>all or admin</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "domain",
+            "description": "<p>domain or any</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String[]</p> ",
+            "optional": true,
+            "field": "domainList",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "department",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "position",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "jobTitle",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "phone",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "mobile",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "birthday",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "direct_url",
+            "description": "<p>바로가기 url</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "direct_width",
+            "description": "<p>바로가기 width</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "direct_heigth",
+            "description": "<p>바로가기 height</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"name\": \"팀업개발팀\",\n\t\t\"invite\": \"all\",\n\t\t\"domain\": \"domain\",\n\t\t\"domainList\": [ \"@estsoft.com\", \"@zuminternet.com\" ],\n\t\t\"department\": true,\n\t\t\"position\": true,\n\t\t\"jobTitle\": true,\n\t\t\"phone\": true,\n\t\t\"mobile\": true,\n\t\t\"birthday\": true,\n\t\t\"direct_url\": \"https://direct.tmup.com/index.html\",\n\t\t\"direct_width\": 500,\n\t\t\"direct_height\": 500\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>Team index</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "100",
           "type": "json"
         }
       ]
@@ -1191,29 +1456,6 @@ define({ "api": [
     "version": "1.0.0",
     "name": "getUser",
     "group": "user",
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "get",
-    "url": "v1/user/:index",
-    "title": "회원 정보 조회",
-    "version": "1.0.0",
-    "name": "getUserIndex",
-    "group": "user",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "index",
-            "description": "<p>회원</p> "
-          }
-        ]
-      }
-    },
     "success": {
       "examples": [
         {
@@ -1277,10 +1519,21 @@ define({ "api": [
       }
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "is_profile",
+            "description": "<p>true 이면 팀에 세팅한 프로필로, false이면 기본 프로필 정보 입니다.</p> "
+          }
+        ]
+      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"status\": \"approval\",\n\t\t\"role\": [\n\t\t\t\"user\",\n\t\t\t\"admin\"\n\t\t],\n\t\t\"profile_image\": null,\n\t\t\"message\": \"안녕하세요#ㅎ 안녕하세요#ㅎgd\",\n\t\t\"mobile\": null,\n\t\t\"phone\": null,\n\t\t\"position\": null,\n\t\t\"job_title\": \"사원\",\n\t\t\"department\": {\n\t\t\t\"index\": 3,\n\t\t\t\"name\": \"솔루션개발팀\",\n\t\t\t\"parent\": 2,\n\t\t\t\"is_delete\": false\n\t\t}\n}",
+          "content": "{\n\t\t\"index\": 1,\n\t\t\"email\": \"test@estsoft.com\",\n\t\t\"name\": \"홍길동\",\n\t\t\"birthday\": \"1999-10-12\",\n\t\t\"is_lunar\": false,\n\t\t\"is_profile\": false,\n\t\t\"profile_image\": \"https://profile.tmup.com/1153/2015/09/11/11/a6023f1af416484ea0ce930549b681fd.png\",\n\t\t\"message\": \"^^\",\n\t\t\"mobile\": null,\n\t\t\"phone\": null,\n\t\t\"position\": null,\n\t\t\"job_title\": \"사원\",\n\t\t\"department\": {\n\t\t\t\"index\": 3,\n\t\t\t\"name\": \"팀업개발팀\",\n\t\t\t\"parent\": 2,\n\t\t\t\"is_delete\": false\n\t\t\t}\n}",
           "type": "json"
         }
       ]
