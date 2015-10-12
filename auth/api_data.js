@@ -524,7 +524,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "v1/team/:index/invite/join",
+    "url": "v1/team/invite/join",
     "title": "초대 팀 가입",
     "version": "1.0.0",
     "name": "inviteJoin",
@@ -1230,7 +1230,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)6(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"sms\" : false,\n\t\t\"email\" : false\n}",
+          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)6(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"is_sms\" : false,\n\t\t\"is_email\" : false\n}",
           "type": "json"
         }
       ]
@@ -1321,7 +1321,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"sms\" : false,\n\t\t\"email\" : false\n}",
+          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"is_sms\" : false,\n\t\t\"is_email\" : false\n}",
           "type": "json"
         }
       ]
@@ -1351,7 +1351,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "v1/join/email",
+    "url": "v1/join/email/url",
     "title": "email 가입 url 발급",
     "version": "1.0.0",
     "name": "joinEmail",
