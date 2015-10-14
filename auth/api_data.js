@@ -477,21 +477,10 @@ define({ "api": [
       ]
     },
     "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "all",
-            "description": "<p>email 주소와 관계 없이 가입가능한 url , 링크만료는 30일, 가입시 email 입력</p> "
-          }
-        ]
-      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"all\": {\n\t\t\"result\": true,\n\t\t\"data\": \"https://tmup.com/team/invite?p=1a871633247c4b3762d98...\"\n\t\t},\n\t\"test2@estsoft.com\": {\n\t\t\"result\": false,\n\t\t\"data\": \"join user\"\n\t\t},\n\t\"test\": {\n\t\t\"result\": false,\n\t\t\"data\": \"email pattern\"\n\t\t},\n\t\"test1-1@estsoft.com\": {\n\t\t\"result\": true,\n\t\t\"data\": \"https://tmup.com/team/invite?p=0dc3cae0a4282eeaff23...\"\n\t\t}\n}",
+          "content": "{\n\t\"test2@estsoft.com\": {\n\t\t\"result\": false,\n\t\t\"data\": \"join user\"\n\t\t},\n\t\"test\": {\n\t\t\"result\": false,\n\t\t\"data\": \"email pattern\"\n\t\t},\n\t\"test1-1@estsoft.com\": {\n\t\t\"result\": true,\n\t\t\"data\": \"https://tmup.com/team/invite?p=0dc3cae0a4282eeaff23...\"\n\t\t}\n}",
           "type": "json"
         }
       ]
@@ -518,6 +507,26 @@ define({ "api": [
           }
         ]
       }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "user_index",
+            "description": "<p>email로 가입되어 있는 회원번호 , null 이면 가입되어 있지 않음</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\t\"user_index\": null,\n\t\t\"user_email\": \"test@estsoft.com\",\n\t\t\"invite_user_index\": 1153,\n\t\t\"invite_user_email\": \"hone@estsoft.com\",\n\t\t\"invite_user_name\": \"홍길동\",\n\t\t\"invite_team_index\": 395,\n\t\t\"invite_team_name\": \"길동이팀\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/TeamInviteController.java",
     "groupTitle": "team_invite"
@@ -1533,7 +1542,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"index\": 1,\n\t\t\"email\": \"test@estsoft.com\",\n\t\t\"name\": \"홍길동\",\n\t\t\"birthday\": \"1999-10-12\",\n\t\t\"is_lunar\": false,\n\t\t\"is_profile\": false,\n\t\t\"profile_image\": \"https://profile.tmup.com/1153/2015/09/11/11/a6023f1af416484ea0ce930549b681fd.png\",\n\t\t\"message\": \"^^\",\n\t\t\"mobile\": null,\n\t\t\"phone\": null,\n\t\t\"position\": null,\n\t\t\"job_title\": \"사원\",\n\t\t\"department\": {\n\t\t\t\"index\": 3,\n\t\t\t\"name\": \"팀업개발팀\",\n\t\t\t\"parent\": 2,\n\t\t\t\"is_delete\": false\n\t\t\t}\n}",
+          "content": "{\n\t\t\"index\": 1,\n\t\t\"email\": \"test@estsoft.com\",\n\t\t\"name\": \"홍길동\",\n\t\t\"birthday\": \"1999-10-12\",\n\t\t\"is_lunar\": false,\n\t\t\"status\":\"approval\",\n\t\t\"is_profile\": false,\n\t\t\"profile_image\": \"https://profile.tmup.com/1153/2015/09/11/11/a6023f1af416484ea0ce930549b681fd.png\",\n\t\t\"message\": \"^^\",\n\t\t\"mobile\": null,\n\t\t\"phone\": null,\n\t\t\"position\": null,\n\t\t\"job_title\": \"사원\",\n\t\t\"department\": {\n\t\t\t\"index\": 3,\n\t\t\t\"name\": \"팀업개발팀\",\n\t\t\t\"parent\": 2,\n\t\t\t\"is_delete\": false\n\t\t\t}\n}",
           "type": "json"
         }
       ]
