@@ -23,6 +23,210 @@
     "groupTitle": "Auth"
   },
   {
+    "type": "put",
+    "url": "v1/team/:teamindex/department/:departmentindex/uset/:userindex",
+    "title": "회원 이동",
+    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
+    "version": "1.0.0",
+    "name": "addUser",
+    "group": "Department",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>회원번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "groupTitle": "Department"
+  },
+  {
+    "type": "post",
+    "url": "v1/team/:teamindex/department",
+    "title": "부서 만들기",
+    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
+    "version": "1.0.0",
+    "name": "create",
+    "group": "Department",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>부서번호</p> "
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "parent",
+            "defaultValue": "0",
+            "description": "<p>상위 부서 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "groupTitle": "Department"
+  },
+  {
+    "type": "delete",
+    "url": "v1/team/:teamindex/department/:departmentindex",
+    "title": "부서 수정",
+    "description": "<p>팀에 admin 권한있어야 사용가능, 하위 부서와 유저는 최상위로 이동됨</p> ",
+    "version": "1.0.0",
+    "name": "delete",
+    "group": "Department",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>부서번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "groupTitle": "Department"
+  },
+  {
+    "type": "delete",
+    "url": "v1/team/:teamindex/department/:departmentindex/uset/:userindex",
+    "title": "회원 삭제",
+    "description": "<p>팀에 admin 권한있어야 사용가능, 회원 팀 최상위로 이동</p> ",
+    "version": "1.0.0",
+    "name": "deleteUser",
+    "group": "Department",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>회원번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "groupTitle": "Department"
+  },
+  {
+    "type": "get",
+    "url": "v1/team/:teamindex/department/:departmentindex",
+    "title": "부서 조회",
+    "version": "1.0.0",
+    "name": "get",
+    "group": "Department",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"index\": 3,\n\t\t\"name\": \"솔루션개발팀\",\n\t\t\"parent\": 2\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "groupTitle": "Department"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:teamindex/department/:departmentindex/parent/:parentindex",
+    "title": "부서 이동",
+    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
+    "version": "1.0.0",
+    "name": "move",
+    "group": "Department",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>부서번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "groupTitle": "Department"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:teamindex/department/:departmentindex",
+    "title": "부서 수정",
+    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
+    "version": "1.0.0",
+    "name": "update",
+    "group": "Department",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>부서번호</p> "
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "name",
+            "description": "<p>부서이름</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "parent",
+            "description": "<p>상위 부서 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "groupTitle": "Department"
+  },
+  {
     "type": "get",
     "url": "oauth2/authorize",
     "title": "Implicit Grant",
@@ -710,6 +914,49 @@
     "groupTitle": "team"
   },
   {
+    "type": "post",
+    "url": "v1/team/:index/goodbye",
+    "title": "팀 탈퇴",
+    "version": "1.0.0",
+    "name": "goodbyeTeam",
+    "group": "team",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "Team",
+            "description": "<p>index</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>Team index</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "1",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamController.java",
+    "groupTitle": "team"
+  },
+  {
     "type": "get",
     "url": "v1/teams",
     "title": "내 팀 정보",
@@ -831,8 +1078,8 @@
     "groupTitle": "team"
   },
   {
-    "type": "post",
-    "url": "v1/team",
+    "type": "put",
+    "url": "v1/team/:index",
     "title": "팀 수정",
     "version": "1.0.0",
     "name": "updateTeam",
@@ -1469,7 +1716,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\"index\": 99,\n\t\"email\": \"hong@estsoft.com\",\n\t\"name\": \"홍길동\",\n\t\"birthday\": \"1982-02-08\",\n\t\"is_lunar\": false,\n\t\"is_sms\": false,\n\t\"is_Email\": false,\n\t\"profile_image\": \"https://profile.tmup.com/1153/2015/09/11/11/a6023f1af416484ea0ce930549b681fd.png\",\n\t\"message\": \"홍익인간\",\n\t\"mobile\": \"010-9999-9999\",\n\t\"teams\": [\n\t\t{\n\t\t\t\"index\": 1,\n\t\t\t\"name\": \"ESTsoft\",\n\t\t\t\"status\": \"approval\",\n\t\t\t\"role\": [\n\t\t\t\t\"user\",\n\t\t\t\t\"admin\"\n\t\t\t],\n\t\t\t\"is_profile\": false,\n\t\t\t\"profile_image\": null,\n\t\t\t\"message\": \"\",\n\t\t\t\"mobile\": \"\",\n\t\t\t\"phone\": \"\",\n\t\t\t\"position\": null,\n\t\t\t\"job_title\": null,\n\t\t\t\"department\": {\n\t\t\t\t\"team_index\": 1,\n\t\t\t\t\"team_name\": \"ESTsoft\",\n\t\t\t\t\"index\": 2,\n\t\t\t\t\"name\": \"신사업개발실\",\n\t\t\t\"parent\": 1\n\t\t\t}\n\t\t}\n\t]\n}",
+          "content": "{\n\t\"index\": 99,\n\t\"email\": \"hong@estsoft.com\",\n\t\"name\": \"홍길동\",\n\t\"birthday\": \"1982-02-08\",\n\t\"is_lunar\": false,\n\t\"is_sms\": false,\n\t\"is_Email\": false,\n\t\"profile_image\": \"https://profile.tmup.com/1153/2015/09/11/11/a6023f1af416484ea0ce930549b681fd.png\",\n\t\"message\": \"홍익인간\",\n\t\"mobile\": \"010-9999-9999\",\n\t\"phone\": \"02-9999-9999\",\n\t\"teams\": [\n\t\t{\n\t\t\t\"index\": 1,\n\t\t\t\"name\": \"ESTsoft\",\n\t\t\t\"status\": \"approval\",\n\t\t\t\"role\": [\n\t\t\t\t\"user\",\n\t\t\t\t\"admin\"\n\t\t\t],\n\t\t\t\"is_profile\": false,\n\t\t\t\"profile_image\": null,\n\t\t\t\"message\": \"\",\n\t\t\t\"mobile\": \"\",\n\t\t\t\"phone\": \"\",\n\t\t\t\"position\": null,\n\t\t\t\"job_title\": null,\n\t\t\t\"department\": {\n\t\t\t\t\"team_index\": 1,\n\t\t\t\t\"team_name\": \"ESTsoft\",\n\t\t\t\t\"index\": 2,\n\t\t\t\t\"name\": \"신사업개발실\",\n\t\t\t\"parent\": 1\n\t\t\t}\n\t\t}\n\t]\n}",
           "type": "json"
         }
       ]
@@ -1700,7 +1947,7 @@
             "type": "<p>String</p> ",
             "optional": true,
             "field": "profile_image_base64",
-            "description": "<p>base64 image</p> "
+            "description": "<p>base64 image , 공백으로 넣으면 프로필이미지 삭제됨</p> "
           },
           {
             "group": "Parameter",
@@ -1788,7 +2035,7 @@
             "type": "<p>String</p> ",
             "optional": true,
             "field": "profile_image_base64",
-            "description": "<p>base64 image</p> "
+            "description": "<p>base64 image, 공백으로 넣으면 프로필이미지 삭제됨</p> "
           },
           {
             "group": "Parameter",
