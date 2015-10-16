@@ -94,7 +94,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "v1/team/:teamindex/department/:departmentindex",
-    "title": "부서 수정",
+    "title": "부서 삭제",
     "description": "<p>팀에 admin 권한있어야 사용가능, 하위 부서와 유저는 최상위로 이동됨</p> ",
     "version": "1.0.0",
     "name": "delete",
