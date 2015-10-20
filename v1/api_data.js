@@ -24,21 +24,48 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "v1/team/:teamindex/department/:departmentindex/uset/:userindex",
-    "title": "회원 이동",
+    "url": "v1/team/:teamindex/department/:departmentindex/child",
+    "title": "부서 & 부서원 추가",
     "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
     "version": "1.0.0",
-    "name": "addUser",
+    "name": "addChild",
     "group": "Department",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer[]</p> ",
+            "optional": true,
+            "field": "users",
+            "description": "<p>회원 번호 set</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer[]</p> ",
+            "optional": true,
+            "field": "department",
+            "description": "<p>부서 번호 set</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"users\": [1,2,3,4],\n\t\t\"department\": [1,2,3,4]\n}",
+          "type": "json"
+        }
+      ]
+    },
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "<p>Boolean</p> ",
             "optional": false,
-            "field": "index",
-            "description": "<p>회원번호</p> "
+            "field": "return",
+            "description": "<p>성공 실패 여부</p> "
           }
         ]
       }
@@ -117,21 +144,41 @@ define({ "api": [
   },
   {
     "type": "delete",
-    "url": "v1/team/:teamindex/department/:departmentindex/uset/:userindex",
-    "title": "회원 삭제",
-    "description": "<p>팀에 admin 권한있어야 사용가능, 회원 팀 최상위로 이동</p> ",
+    "url": "v1/team/:teamindex/department/user",
+    "title": "부서원 초기화",
+    "description": "<p>팀에 admin 권한있어야 사용가능, 부서 없는 상태로 초기화</p> ",
     "version": "1.0.0",
-    "name": "deleteUser",
+    "name": "deleteChildUser",
     "group": "Department",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer[]</p> ",
+            "optional": false,
+            "field": "users",
+            "description": "<p>회원 번호 set</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"users\": [1,2,3,4]\n}",
+          "type": "json"
+        }
+      ]
+    },
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "<p>Boolean</p> ",
             "optional": false,
-            "field": "index",
-            "description": "<p>회원번호</p> "
+            "field": "return",
+            "description": "<p>성공 실패 여부</p> "
           }
         ]
       }
@@ -154,30 +201,6 @@ define({ "api": [
           "type": "json"
         }
       ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
-    "groupTitle": "Department"
-  },
-  {
-    "type": "put",
-    "url": "v1/team/:teamindex/department/:departmentindex/parent/:parentindex",
-    "title": "부서 이동",
-    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
-    "version": "1.0.0",
-    "name": "move",
-    "group": "Department",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "index",
-            "description": "<p>부서번호</p> "
-          }
-        ]
-      }
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
     "groupTitle": "Department"
@@ -225,267 +248,6 @@ define({ "api": [
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
     "groupTitle": "Department"
-  },
-  {
-    "type": "get",
-    "url": "oauth2/authorize",
-    "title": "Implicit Grant",
-    "version": "1.0.0",
-    "name": "oauth_authorize_implicit",
-    "group": "Oauth2",
-    "description": "<p>code 발급</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "response_type",
-            "description": "<p>token  고정</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_id",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "redirect_uri",
-            "description": "<p>call back url</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "scope",
-            "description": "<p>권한 관리용 scope , 로 구분 ex) read,post</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "state",
-            "description": "<p>csrf 방지용</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "https://auth.tmup.com/oauth2/authorize? response_type=token&client_id=:id&redirect_uri=:url",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
-  },
-  {
-    "type": "get",
-    "url": "oauth2/authorize",
-    "title": "Authorization Code#1",
-    "version": "1.0.0",
-    "name": "oauth_token_code1",
-    "group": "Oauth2",
-    "description": "<p>code 발급</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "response_type",
-            "description": "<p>code  고정</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_id",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "redirect_uri",
-            "description": "<p>call back url</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "scope",
-            "description": "<p>권한 관리용 scope , 로 구분 ex) read,post</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "state",
-            "description": "<p>csrf 방지용</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
-  },
-  {
-    "type": "get, post",
-    "url": "oauth2/token",
-    "title": "Authorization Code#2",
-    "version": "1.0.0",
-    "name": "oauth_token_code2",
-    "group": "Oauth2",
-    "description": "<p>발급 받은 code를 이용해 token을 발급 받습니다.</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "grant_type",
-            "description": "<p>authorization_code  고정</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_id",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_secret",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "code",
-            "description": "<p>발급 받은 code</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "redirect_uri",
-            "description": "<p>call back url</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
-  },
-  {
-    "type": "post",
-    "url": "oauth2/token",
-    "title": "Password Credentials",
-    "version": "1.0.0",
-    "name": "oauth_token_password",
-    "group": "Oauth2",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "grant_type",
-            "description": "<p>password 고정</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_id",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_secret",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "username",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "password",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "scope",
-            "description": "<p>scope , 로구분 ex) read,post</p> "
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n\t\t\"access_token\": \"47af604f7c6b642e3cd1020776539bcae0c83dd95e9796715dacb0ae3b87b53d\",\n\t\t\"expires_in\": 86399,\n\t\t\"token_type\": \"bearer\",\n\t\t\"refresh_token\": \"9a5cedc1e59909d43fc314dc96b163846df174a1712d342189cf8e444631caa3\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
-  },
-  {
-    "type": "get, post",
-    "url": "oauth2/token",
-    "title": "refresh token",
-    "version": "1.0.0",
-    "name": "oauth_token_refresh",
-    "group": "Oauth2",
-    "description": "<p>token 재발급</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "grant_type",
-            "description": "<p>refresh_token  고정</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "refresh_token",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
   },
   {
     "type": "get",
