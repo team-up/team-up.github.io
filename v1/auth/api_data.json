@@ -26,7 +26,11 @@
     "type": "put",
     "url": "v1/team/:teamindex/department/:departmentindex/child",
     "title": "부서 & 부서원 추가",
-    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
     "version": "1.0.0",
     "name": "addChild",
     "group": "Department",
@@ -70,14 +74,18 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/DepartmentController.java",
     "groupTitle": "Department"
   },
   {
     "type": "post",
     "url": "v1/team/:teamindex/department",
     "title": "부서 만들기",
-    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
     "version": "1.0.0",
     "name": "create",
     "group": "Department",
@@ -115,14 +123,19 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/DepartmentController.java",
     "groupTitle": "Department"
   },
   {
     "type": "delete",
     "url": "v1/team/:teamindex/department/:departmentindex",
     "title": "부서 삭제",
-    "description": "<p>팀에 admin 권한있어야 사용가능, 하위 부서와 유저는 최상위로 이동됨</p> ",
+    "description": "<p>하위 부서와 유저는 최상위로 이동됨</p> ",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
     "version": "1.0.0",
     "name": "delete",
     "group": "Department",
@@ -139,14 +152,19 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/DepartmentController.java",
     "groupTitle": "Department"
   },
   {
     "type": "delete",
     "url": "v1/team/:teamindex/department/user",
     "title": "부서원 초기화",
-    "description": "<p>팀에 admin 권한있어야 사용가능, 부서 없는 상태로 초기화</p> ",
+    "description": "<p>부서 없는 상태로 초기화</p> ",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
     "version": "1.0.0",
     "name": "deleteChildUser",
     "group": "Department",
@@ -183,7 +201,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/DepartmentController.java",
     "groupTitle": "Department"
   },
   {
@@ -202,14 +220,18 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/DepartmentController.java",
     "groupTitle": "Department"
   },
   {
     "type": "put",
     "url": "v1/team/:teamindex/department/:departmentindex",
     "title": "부서 수정",
-    "description": "<p>팀에 admin 권한있어야 사용가능</p> ",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
     "version": "1.0.0",
     "name": "update",
     "group": "Department",
@@ -246,7 +268,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/DepartmentController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/DepartmentController.java",
     "groupTitle": "Department"
   },
   {
@@ -451,7 +473,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamInviteController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamInviteController.java",
     "groupTitle": "team_invite"
   },
   {
@@ -494,7 +516,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamInviteController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamInviteController.java",
     "groupTitle": "team_invite"
   },
   {
@@ -530,7 +552,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamInviteController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamInviteController.java",
     "groupTitle": "team_invite"
   },
   {
@@ -672,16 +694,17 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamController.java",
     "groupTitle": "team"
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "v1/team/:index/goodbye",
     "title": "팀 탈퇴",
     "version": "1.0.0",
     "name": "goodbyeTeam",
     "group": "team",
+    "description": "<p>super admin은 강제 탈퇴 해야 됨</p> ",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -691,6 +714,13 @@
             "optional": false,
             "field": "Team",
             "description": "<p>index</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "force",
+            "description": "<p>마지막 팀원 탈퇴 사용, super admin, count = 1 일때 true로 주면 탈퇴됨</p> "
           }
         ]
       }
@@ -700,22 +730,36 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "<p>Boolean</p> ",
             "optional": false,
-            "field": "index",
-            "description": "<p>Team index</p> "
+            "field": "result",
+            "description": "<p>성공 실패 여부</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String[]</p> ",
+            "optional": false,
+            "field": "roles",
+            "description": "<p>권한, super_admin 일때는 탈퇴 안됨</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "count",
+            "description": "<p>팀원 숫자</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "1",
+          "content": "{\n\t\"result\": false,\n\t\"roles\": [\n \t\"super_admin\",\n \t\"user\"\n\t],\n\t\"count\": 2\n}",
           "type": "json"
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamController.java",
     "groupTitle": "team"
   },
   {
@@ -836,7 +880,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamController.java",
     "groupTitle": "team"
   },
   {
@@ -846,6 +890,11 @@
     "version": "1.0.0",
     "name": "updateTeam",
     "group": "team",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -970,7 +1019,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/TeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamController.java",
     "groupTitle": "team"
   },
   {
@@ -980,11 +1029,6 @@
     "version": "1.0.0",
     "group": "userPassword",
     "description": "<p>비밀번호 재발급</p> ",
-    "permission": [
-      {
-        "name": "admin"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1024,11 +1068,6 @@
     "name": "password",
     "group": "userPassword",
     "description": "<p>비밀번호 재발급 url 생성</p> ",
-    "permission": [
-      {
-        "name": "admin"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1094,11 +1133,6 @@
     "name": "passwordCheck",
     "group": "userPassword",
     "description": "<p>비밀번호 재발급 url 체크</p> ",
-    "permission": [
-      {
-        "name": "admin"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1130,11 +1164,6 @@
     "name": "check",
     "group": "user_join",
     "description": "<p>생성된 url이 올바른지 체크</p> ",
-    "permission": [
-      {
-        "name": "admin"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1193,11 +1222,6 @@
     "name": "invite",
     "group": "user_join",
     "description": "<p>초대 링크로 회원 가입</p> ",
-    "permission": [
-      {
-        "name": "admin"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1284,11 +1308,6 @@
     "name": "join",
     "group": "user_join",
     "description": "<p>생성된 url이 올바른지 체크</p> ",
-    "permission": [
-      {
-        "name": "admin"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1375,11 +1394,6 @@
     "name": "joinEmail",
     "group": "user_join",
     "description": "<p>회원 가입을 위하여 회원 가입 url 생성</p> ",
-    "permission": [
-      {
-        "name": "admin"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
