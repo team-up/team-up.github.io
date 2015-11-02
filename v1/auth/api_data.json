@@ -340,7 +340,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/OrganogramController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -350,7 +350,29 @@
     "version": "1.0.0",
     "name": "teamIndex",
     "group": "Organogram",
-    "filename": "src/main/java/com/tmup/auth/controller/v1/OrganogramController.java",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "user",
+            "defaultValue": "true",
+            "description": "<p>회원 조회 여부</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "department",
+            "defaultValue": "true",
+            "description": "<p>부서 조회 여부</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -360,7 +382,21 @@
     "version": "1.0.0",
     "name": "teamIndexAll",
     "group": "Organogram",
-    "filename": "src/main/java/com/tmup/auth/controller/v1/OrganogramController.java",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "user",
+            "defaultValue": "true",
+            "description": "<p>회원 조회 여부</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -370,7 +406,29 @@
     "version": "1.0.0",
     "name": "teamIndexParent",
     "group": "Organogram",
-    "filename": "src/main/java/com/tmup/auth/controller/v1/OrganogramController.java",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "user",
+            "defaultValue": "true",
+            "description": "<p>회원 조회 여부</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "department",
+            "defaultValue": "true",
+            "description": "<p>부서 조회 여부</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -395,7 +453,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/SearchController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/search/SearchController.java",
     "groupTitle": "search"
   },
   {
@@ -420,8 +478,483 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/SearchController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/search/SearchController.java",
     "groupTitle": "search"
+  },
+  {
+    "type": "post",
+    "url": "v1/team/:index/jobtitle/:index",
+    "title": "직책 생성",
+    "version": "1.0.0",
+    "name": "createJobtitle",
+    "group": "team_admin",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"name\": \"팀장\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>직책 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "post",
+    "url": "v1/team/:index/position",
+    "title": "직급 생성",
+    "version": "1.0.0",
+    "name": "createPosition",
+    "group": "team_admin",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"name\": \"과장\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>직급 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 수정",
+    "version": "1.0.0",
+    "name": "createPosition",
+    "group": "team_admin",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"name\": \"과장\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>직급 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "delete",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 삭제",
+    "version": "1.0.0",
+    "name": "createPosition",
+    "group": "team_admin",
+    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "delete",
+    "url": "v1/team/:index/user/role/admin",
+    "title": "관리자 권한 삭제",
+    "version": "1.0.0",
+    "name": "deleteAdmin",
+    "group": "team_admin",
+    "description": "<p>팀 관리자 권한을 삭제</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "Team",
+            "description": "<p>index</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"users\" : [1,2,3,4,5]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>업데이트된 숫자</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "delete",
+    "url": "v1/team/:index/jobtitle/:index",
+    "title": "직책 삭제",
+    "version": "1.0.0",
+    "name": "deleteJobtiele",
+    "group": "team_admin",
+    "description": "<p>직책을 사용중인 회원은 없는 직책으로 변경 됩니다</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "get",
+    "url": "v1/team/:index/jobtitle",
+    "title": "직책 조회",
+    "version": "1.0.0",
+    "name": "getJobtitle",
+    "group": "team_admin",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \t\"1\": \"팀장\",\n \t\"4\": \"부팀장\",\n \t\"5\": \"실장\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "get",
+    "url": "v1/team/:index/position",
+    "title": "직급 조회",
+    "version": "1.0.0",
+    "name": "getPosition",
+    "group": "team_admin",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \t\"1\": \"대리\",\n \t\"4\": \"과장\",\n \t\"5\": \"부장\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/user/role/super",
+    "title": "슈퍼 관리자 전환",
+    "version": "1.0.0",
+    "name": "moveSuper",
+    "group": "team_admin",
+    "description": "<p>슈퍼 관리자 전환 (슈퍼 관리자는 팀에 1명만 가능, 기존 슈퍼 관리자는 admin으로 변경됨)</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "Team",
+            "description": "<p>index</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"user\" : 1\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공여부</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/user/role/admin",
+    "title": "관리자 권한 추가",
+    "version": "1.0.0",
+    "name": "updateAdmin",
+    "group": "team_admin",
+    "description": "<p>사용자에게 팀 관리자 권한을 준다</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "Team",
+            "description": "<p>index</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"users\" : [1,2,3,4,5]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>업데이트된 숫자</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/jobtitle/:index",
+    "title": "직책 수정",
+    "version": "1.0.0",
+    "name": "updateJobtitle",
+    "group": "team_admin",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"name\": \"팀장\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>직책 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/user/status/:status",
+    "title": "사용자 상태 변경",
+    "version": "1.0.0",
+    "name": "updateStatus",
+    "group": "team_admin",
+    "description": "<p>사용자별 상태 변경</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "Team",
+            "description": "<p>index</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "status",
+            "description": "<p>approval,block,exit(탈퇴)</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"users\" : [1,2,3,4,5]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>업데이트된 숫자</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/user/:index",
+    "title": "사용자 정보 수정",
+    "version": "1.0.0",
+    "name": "updateUser",
+    "group": "team_admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "mobile",
+            "description": "<p>휴대폰번호</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "phone",
+            "description": "<p>직통전화</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "position_index",
+            "description": "<p>직급 index, 0이하면 직급 없음으로 설정</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "job_title_index",
+            "description": "<p>직책 index, 0이하면 직책 없음으로 설정</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "department_index",
+            "description": "<p>부서 index, 0이하로 주면 부서 없는 사용자로 설정</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "status",
+            "description": "<p>사용자 상태, approval,block,exit(탈퇴)</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"mobile\": \"010-1111-2111\",\n\t\t\"phone\": \"02-0000-2000\",\n\t\t\"position_index\" : 1,\n\t\t\"job_title_index\" : 1,\n\t\t\"department_index\" : 1 ,\n\t\t\"status\" : \"approval\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>회원 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
+    "groupTitle": "team_admin"
   },
   {
     "type": "post",
@@ -477,6 +1010,94 @@
     "groupTitle": "team_invite"
   },
   {
+    "type": "post",
+    "url": "v1/team/:index/invite/admin",
+    "title": "관리자 초대",
+    "version": "1.0.0",
+    "name": "inviteAdmin",
+    "group": "team_invite",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "index",
+            "description": "<p>team index</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "department_index",
+            "description": "<p>부서번호</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "position_index",
+            "description": "<p>직급번호</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "job_title_index",
+            "description": "<p>직책번호</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "phone",
+            "description": "<p>직책번호</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "send",
+            "description": "<p>email로 발송여부, default=false</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"email\" : \"test1-1@estsoft.com\",\n\t\t\"department_index\" : 1,\n\t\t\"position_index\" : 1,\n\t\t\"job_title_index\" : 1,\n\t\t\"phone\" : \"010-1234-1234\",\n\t\t\"mobile\" : \"02-123401234\",\n\t\t\"birthday\" : \"1999-01-01\",\n\t\t\"is_lunar\" : true,\n\t\t\"send\" : false\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\t\"result\": true,\n\t\t\"data\": \"https://tmup.com/team/invite?p=0dc3cae0a4282eeaff23...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamInviteController.java",
+    "groupTitle": "team_invite"
+  },
+  {
     "type": "get",
     "url": "v1/team/invite/check",
     "title": "초대 url 검사",
@@ -511,7 +1132,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"user_index\": null,\n\t\t\"user_email\": \"test@estsoft.com\",\n\t\t\"invite_user_index\": 1153,\n\t\t\"invite_user_email\": \"hone@estsoft.com\",\n\t\t\"invite_user_name\": \"홍길동\",\n\t\t\"invite_team_index\": 395,\n\t\t\"invite_team_name\": \"길동이팀\"\n}",
+          "content": "{\n\t\"user_index\": null,\n\t\"user_email\": \"test1-1@estsoft.com\",\n\t\"invite_user_index\": 999,\n\t\"invite_user_email\": \"hong@estsoft.com\",\n\t\"invite_user_name\": \"홍길동\",\n\t\"invite_team_index\": 1,\n\t\"invite_team_name\": \"ESTsoft\",\n\t\"invite_data\": {\n\t\t\"department_index\": 1,\n\t\t\"department_name\": \"ESTsoft\",\n\t\t\"position_index\": 1,\n\t\t\"position_name\": \"부서장\",\n\t\t\"job_title_index\": 1,\n\t\t\"job_title_name\": \"사원\",\n\t\t\"phone\": \"010-1234-1234\",\n\t\t\"mobile\": \"02-123401234\",\n\t\t\"birthday\": \"1999-01-01\",\n\t\t\"is_lunar\": true\n\t}\n}",
           "type": "json"
         }
       ]
@@ -1056,7 +1677,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserPasswordController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
     "groupTitle": "userPassword",
     "name": "PutV1JoinPassword"
   },
@@ -1122,7 +1743,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserPasswordController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
     "groupTitle": "userPassword"
   },
   {
@@ -1153,7 +1774,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserPasswordController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
     "groupTitle": "userPassword"
   },
   {
@@ -1211,7 +1832,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserJoinController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
     "groupTitle": "user_join"
   },
   {
@@ -1297,7 +1918,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserJoinController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
     "groupTitle": "user_join"
   },
   {
@@ -1383,7 +2004,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserJoinController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
     "groupTitle": "user_join"
   },
   {
@@ -1448,7 +2069,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserJoinController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
     "groupTitle": "user_join"
   },
   {
@@ -1459,7 +2080,7 @@
     "version": "1.0.0",
     "name": "deleteUserTeam",
     "group": "user",
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserTeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
     "groupTitle": "user"
   },
   {
@@ -1478,7 +2099,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserTeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
     "groupTitle": "user"
   },
   {
@@ -1497,7 +2118,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
     "groupTitle": "user"
   },
   {
@@ -1520,7 +2141,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserTeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
     "groupTitle": "user"
   },
   {
@@ -1570,7 +2191,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserTeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/OtherUserController.java",
     "groupTitle": "user"
   },
   {
@@ -1594,7 +2215,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
     "groupTitle": "user"
   },
   {
@@ -1618,7 +2239,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/ProfileController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
     "groupTitle": "user"
   },
   {
@@ -1642,7 +2263,7 @@
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/ProfileController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
     "groupTitle": "user"
   },
   {
@@ -1662,19 +2283,16 @@
             "optional": false,
             "field": "MultipartFile",
             "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "update",
-            "defaultValue": "true",
-            "description": "<p>사용자 profile에 update 여부</p> "
           }
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/ProfileController.java",
+    "sampleRequest": [
+      {
+        "url": "off\t *"
+      }
+    ],
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
     "groupTitle": "user"
   },
   {
@@ -1694,18 +2312,11 @@
             "optional": false,
             "field": "file",
             "description": "<p>MultipartFile</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "update",
-            "description": "<p>사용자 profile에 update 여부, default=true</p> "
           }
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/ProfileController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
     "groupTitle": "user"
   },
   {
@@ -1762,6 +2373,13 @@
           },
           {
             "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "phone",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
             "type": "<p>Boolean</p> ",
             "optional": true,
             "field": "is_sms",
@@ -1793,7 +2411,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
     "groupTitle": "user"
   },
   {
@@ -1860,7 +2478,7 @@
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/UserTeamController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
     "groupTitle": "user"
   }
 ]
