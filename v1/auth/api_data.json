@@ -957,6 +957,90 @@
     "groupTitle": "team_admin"
   },
   {
+    "type": "get",
+    "url": "v1/team/:index/users",
+    "title": "회원 조회",
+    "version": "1.0.0",
+    "name": "users",
+    "group": "team_admin",
+    "description": "<p>회원 조회</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "Team",
+            "description": "<p>index</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status approval, exit</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "1",
+            "description": "<p>page</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "size",
+            "defaultValue": "10",
+            "description": "<p>page size</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "name",
+            "description": "<p>이름 (초성검색)</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "email",
+            "description": "<p>email</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "oder",
+            "description": "<p>name, email, update_date  ex) column:desc , 생략하면 asc로 됨</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "/v1/team/1/users?status=approval&page=2&size=2&name=테스&email=t5&order=name,email,update_date:desc",
+          "type": "url"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[\n\t  \t{\n\t    \t\"index\": 543,\n\t    \t\"email\": \"test503@estsoft.com\",\n\t    \t\"name\": \"테스트503\",\n\t    \t\"status\": \"approval\",\n\t    \t\"is_profile\": false,\n\t    \t\"profile_image\": \"0\",\n\t    \t\"position\": null,\n\t    \t\"job_title\": null,\n\t    \t\"department\": null,\n\t    \t\"update_date\": \"2014-12-02\"\n\t  \t},\n\t  \t{\n\t    \t\"index\": 544,\n\t    \t\"email\": \"test504@estsoft.com\",\n\t    \t\"name\": \"테스트504\",\n\t    \t\"status\": \"approval\",\n\t    \t\"is_profile\": false,\n\t    \t\"profile_image\": \"0\",\n\t    \t\"position\": null,\n\t    \t\"job_title\": null,\n\t    \t\"department\": null,\n\t    \t\"update_date\": \"2014-12-02\"\n\t  \t}\n\t   ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserListController.java",
+    "groupTitle": "team_admin"
+  },
+  {
     "type": "post",
     "url": "v1/team/:index/invite",
     "title": "초대 url 발급",
@@ -1496,7 +1580,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[\n\t{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"invite_user\": \"admin\",\n\t\t\"is_invite_domain\": true,\n\t\t\"invite_domain\": [\n\t\t\t\"a.com\",\n\t\t\t\"estsoft.com\"\n\t\t\t],\n\t\t\"is_department\": true,\n\t\t\"is_position\": true,\n\t\t\"is_job_title\": true,\n\t\t\"is_phone\": true,\n\t\t\"is_mobile\": true,\n\t\t\"is_birthday\": true,\n\t\t\"direct_url\": null,\n\t\t\"direct_width\": null,\n\t\t\"direct_height\": null\n\t}\n]",
+          "content": "[\n\t{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"status\" : \"approval\",\n\t\t\"invite_user\": \"admin\",\n\t\t\"is_invite_domain\": true,\n\t\t\"invite_domain\": [\n\t\t\t\"a.com\",\n\t\t\t\"estsoft.com\"\n\t\t\t],\n\t\t\"is_department\": true,\n\t\t\"is_position\": true,\n\t\t\"is_job_title\": true,\n\t\t\"is_phone\": true,\n\t\t\"is_mobile\": true,\n\t\t\"is_birthday\": true,\n\t\t\"direct_url\": null,\n\t\t\"direct_width\": null,\n\t\t\"direct_height\": null\n\t}\n]",
           "type": "json"
         }
       ]
@@ -2287,11 +2371,6 @@
         ]
       }
     },
-    "sampleRequest": [
-      {
-        "url": "off\t *"
-      }
-    ],
     "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
     "groupTitle": "user"
   },
