@@ -1082,6 +1082,38 @@ define({ "api": [
       ]
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>data</p> ",
+            "optional": false,
+            "field": "email_pattern",
+            "description": "<p>email 형식 오류</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>data</p> ",
+            "optional": false,
+            "field": "domain",
+            "description": "<p>허용된 domain 아님</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>data</p> ",
+            "optional": false,
+            "field": "join_user",
+            "description": "<p>이미 가입된 회원</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>data</p> ",
+            "optional": false,
+            "field": "url",
+            "description": "<p>초대 성공</p> "
+          }
+        ]
+      },
       "examples": [
         {
           "title": "Success-Response:",
@@ -1216,7 +1248,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\"user_index\": null,\n\t\"user_email\": \"test1-1@estsoft.com\",\n\t\"invite_user_index\": 999,\n\t\"invite_user_email\": \"hong@estsoft.com\",\n\t\"invite_user_name\": \"홍길동\",\n\t\"invite_team_index\": 1,\n\t\"invite_team_name\": \"ESTsoft\",\n\t\"invite_data\": {\n\t\t\"department_index\": 1,\n\t\t\"department_name\": \"ESTsoft\",\n\t\t\"position_index\": 1,\n\t\t\"position_name\": \"부서장\",\n\t\t\"job_title_index\": 1,\n\t\t\"job_title_name\": \"사원\",\n\t\t\"phone\": \"010-1234-1234\",\n\t\t\"mobile\": \"02-123401234\",\n\t\t\"birthday\": \"1999-01-01\",\n\t\t\"is_lunar\": true\n\t}\n}",
+          "content": "{\n\t\"user_index\": null,\n\t\"user_email\": \"test1-1@estsoft.com\",\n\t\"user_name\" : \"테스트\",\n\t\"invite_user_index\": 999,\n\t\"invite_user_email\": \"hong@estsoft.com\",\n\t\"invite_user_name\": \"홍길동\",\n\t\"invite_team_index\": 1,\n\t\"invite_team_name\": \"ESTsoft\",\n\t\"invite_data\": {\n\t\t\"department_index\": 1,\n\t\t\"department_name\": \"ESTsoft\",\n\t\t\"position_index\": 1,\n\t\t\"position_name\": \"부서장\",\n\t\t\"job_title_index\": 1,\n\t\t\"job_title_name\": \"사원\",\n\t\t\"phone\": \"010-1234-1234\",\n\t\t\"mobile\": \"02-123401234\",\n\t\t\"birthday\": \"1999-01-01\",\n\t\t\"is_lunar\": true\n\t}\n}",
           "type": "json"
         }
       ]
@@ -1608,7 +1640,7 @@ define({ "api": [
             "type": "<p>String</p> ",
             "optional": true,
             "field": "name",
-            "description": ""
+            "description": "<p>이름은 슈퍼관리자만 변경 가능</p> "
           },
           {
             "group": "Parameter",
@@ -1767,7 +1799,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "v1/join/password/url",
+    "url": "v1/user/password/url",
     "title": "비밀번호 재설정 url 발급",
     "version": "1.0.0",
     "name": "password",
@@ -1794,7 +1826,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "<p>Boolean</p> ",
             "optional": true,
-            "field": "send",
+            "field": "isSend",
             "description": "<p>email 발송 여부 default = false</p> "
           },
           {
@@ -1858,6 +1890,19 @@ define({ "api": [
         ]
       }
     },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "isExpire",
+            "description": "<p>만료 여부</p> "
+          }
+        ]
+      }
+    },
     "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
     "groupTitle": "userPassword"
   },
@@ -1901,20 +1946,13 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "<p>Boolean</p> ",
             "optional": false,
-            "field": "email",
-            "description": "<p>회원 가입 email</p> "
+            "field": "isExpire",
+            "description": "<p>url 만료 여부</p> "
           }
         ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "test@estsoft.com",
-          "type": "json"
-        }
-      ]
+      }
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
     "groupTitle": "user_join"
@@ -2012,7 +2050,7 @@ define({ "api": [
     "version": "1.0.0",
     "name": "join",
     "group": "user_join",
-    "description": "<p>생성된 url이 올바른지 체크</p> ",
+    "description": "<p>가입</p> ",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2371,6 +2409,11 @@ define({ "api": [
         ]
       }
     },
+    "sampleRequest": [
+      {
+        "url": "off\t *"
+      }
+    ],
     "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
     "groupTitle": "user"
   },
