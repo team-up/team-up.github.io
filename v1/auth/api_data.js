@@ -514,30 +514,22 @@ define({ "api": [
     "groupTitle": "team_admin"
   },
   {
-    "type": "post",
-    "url": "v1/team/:index/position",
-    "title": "직급 생성",
+    "type": "delete",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 삭제",
     "version": "1.0.0",
     "name": "createPosition",
     "group": "team_admin",
-    "parameter": {
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "\t{\n\t\t\"name\": \"과장\"\n }",
-          "type": "json"
-        }
-      ]
-    },
+    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "return",
-            "description": "<p>직급 번호</p> "
+            "description": "<p>성공</p> "
           }
         ]
       }
@@ -578,22 +570,30 @@ define({ "api": [
     "groupTitle": "team_admin"
   },
   {
-    "type": "delete",
-    "url": "v1/team/:index/position/:index",
-    "title": "직급 삭제",
+    "type": "post",
+    "url": "v1/team/:index/position",
+    "title": "직급 생성",
     "version": "1.0.0",
     "name": "createPosition",
     "group": "team_admin",
-    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"name\": \"과장\"\n }",
+          "type": "json"
+        }
+      ]
+    },
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "<p>Integer</p> ",
             "optional": false,
             "field": "return",
-            "description": "<p>성공</p> "
+            "description": "<p>직급 번호</p> "
           }
         ]
       }
@@ -709,7 +709,7 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "v1/team/:index/user/role/super",
+    "url": "v1/team/user/role/super",
     "title": "슈퍼 관리자 전환",
     "version": "1.0.0",
     "name": "moveSuper",
@@ -720,30 +720,23 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
-            "field": "Team",
-            "description": "<p>index</p> "
+            "field": "p",
+            "description": "<p>이메일 링크</p> "
           }
         ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n\t\t\"user\" : 1\n}",
-          "type": "json"
-        }
-      ]
+      }
     },
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
-            "field": "return",
-            "description": "<p>성공여부</p> "
+            "field": "email",
+            "description": "<p>변경된 슈퍼관리자 email</p> "
           }
         ]
       }
@@ -949,6 +942,49 @@ define({ "api": [
             "optional": false,
             "field": "return",
             "description": "<p>회원 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "get",
+    "url": "v1/team/:index/user/:user_index/role/super/url",
+    "title": "슈퍼 관리자 변경 url 메일 발송",
+    "version": "1.0.0",
+    "name": "urlSuper",
+    "group": "team_admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "Team",
+            "description": "<p>index</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": false,
+            "field": "User",
+            "description": "<p>변경할 회원 index</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공여부</p> "
           }
         ]
       }
@@ -1824,13 +1860,6 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "isSend",
-            "description": "<p>email 발송 여부 default = false</p> "
-          },
-          {
-            "group": "Parameter",
             "type": "<p>String</p> ",
             "optional": false,
             "field": "token",
@@ -1841,7 +1870,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n \"name\": \"홍길동\",\n \"email\": \"test@estsoft.com\",\n \"isSend\": false\n}",
+          "content": "{\n \"name\": \"홍길동\",\n \"email\": \"test@estsoft.com\"\n}",
           "type": "json"
         }
       ]
@@ -1851,10 +1880,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "<p>Boolean</p> ",
             "optional": false,
-            "field": "url",
-            "description": ""
+            "field": "result",
+            "description": "<p>발송 성공 여부</p> "
           }
         ]
       }
@@ -1946,13 +1975,22 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
-            "field": "isExpire",
-            "description": "<p>url 만료 여부</p> "
+            "field": "email",
+            "description": "<p>초대회원 email</p> "
           }
         ]
       }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "false",
+          "type": "String"
+        }
+      ]
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
     "groupTitle": "user_join"
