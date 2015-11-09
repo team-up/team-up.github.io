@@ -1,34 +1,11 @@
 define({ "api": [
   {
-    "type": "get",
-    "url": "v1",
-    "title": "token 조회",
-    "version": "1.0.0",
-    "name": "token",
-    "group": "Auth",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>token</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/AuthController.java",
-    "groupTitle": "Auth"
-  },
-  {
     "type": "put",
     "url": "v1/team/:teamindex/department/:departmentindex/child",
     "title": "부서 & 부서원 추가",
     "permission": [
       {
-        "name": "admin"
+        "name": "team admin"
       }
     ],
     "version": "1.0.0",
@@ -83,7 +60,7 @@ define({ "api": [
     "title": "부서 만들기",
     "permission": [
       {
-        "name": "admin"
+        "name": "team admin"
       }
     ],
     "version": "1.0.0",
@@ -133,7 +110,7 @@ define({ "api": [
     "description": "<p>하위 부서와 유저는 최상위로 이동됨</p> ",
     "permission": [
       {
-        "name": "admin"
+        "name": "team admin"
       }
     ],
     "version": "1.0.0",
@@ -162,7 +139,7 @@ define({ "api": [
     "description": "<p>부서 없는 상태로 초기화</p> ",
     "permission": [
       {
-        "name": "admin"
+        "name": "team admin"
       }
     ],
     "version": "1.0.0",
@@ -229,7 +206,7 @@ define({ "api": [
     "title": "부서 수정",
     "permission": [
       {
-        "name": "admin"
+        "name": "team admin"
       }
     ],
     "version": "1.0.0",
@@ -340,7 +317,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -372,7 +349,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -396,7 +373,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -428,7 +405,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/tree/OrganogramController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/OrganogramController.java",
     "groupTitle": "Organogram"
   },
   {
@@ -453,7 +430,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/search/SearchController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/SearchController.java",
     "groupTitle": "search"
   },
   {
@@ -478,7 +455,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/search/SearchController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/SearchController.java",
     "groupTitle": "search"
   },
   {
@@ -488,6 +465,11 @@ define({ "api": [
     "version": "1.0.0",
     "name": "createJobtitle",
     "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
     "parameter": {
       "examples": [
         {
@@ -514,34 +496,15 @@ define({ "api": [
     "groupTitle": "team_admin"
   },
   {
-    "type": "delete",
-    "url": "v1/team/:index/position/:index",
-    "title": "직급 삭제",
+    "type": "post",
+    "url": "v1/team/:index/position",
+    "title": "직급 생성",
     "version": "1.0.0",
-    "name": "createPosition",
-    "group": "team_admin",
-    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Boolean</p> ",
-            "optional": false,
-            "field": "return",
-            "description": "<p>성공</p> "
-          }
-        ]
+    "permission": [
+      {
+        "name": "team admin"
       }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
-    "groupTitle": "team_admin"
-  },
-  {
-    "type": "put",
-    "url": "v1/team/:index/position/:index",
-    "title": "직급 수정",
-    "version": "1.0.0",
+    ],
     "name": "createPosition",
     "group": "team_admin",
     "parameter": {
@@ -570,10 +533,44 @@ define({ "api": [
     "groupTitle": "team_admin"
   },
   {
-    "type": "post",
-    "url": "v1/team/:index/position",
-    "title": "직급 생성",
+    "type": "delete",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 삭제",
     "version": "1.0.0",
+    "name": "createPosition",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 수정",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
     "name": "createPosition",
     "group": "team_admin",
     "parameter": {
@@ -652,6 +649,11 @@ define({ "api": [
     "version": "1.0.0",
     "name": "deleteJobtiele",
     "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
     "description": "<p>직책을 사용중인 회원은 없는 직책으로 변경 됩니다</p> ",
     "success": {
       "fields": {
@@ -680,7 +682,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n \t\"1\": \"팀장\",\n \t\"4\": \"부팀장\",\n \t\"5\": \"실장\"\n}",
+          "content": "[\n  {\n    \"index\": 1,\n    \"name\": \"사원\",\n    \"seq\": 1\n  },\n  {\n    \"index\": 10,\n    \"name\": \"팀장\",\n    \"seq\": 2\n  },\n  {\n    \"index\": 9,\n    \"name\": \"파트장\",\n    \"seq\": 3\n  }\n]",
           "type": "json"
         }
       ]
@@ -699,7 +701,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n \t\"1\": \"대리\",\n \t\"4\": \"과장\",\n \t\"5\": \"부장\"\n}",
+          "content": "[\n  {\n    \"index\": 1,\n    \"name\": \"부서장\",\n    \"order\": 1\n  },\n  {\n    \"index\": 4,\n    \"name\": \"실장\",\n    \"order\": 2\n  },\n  {\n    \"index\": 5,\n    \"name\": \"부팀장\",\n    \"order\": 3\n  }\n]",
           "type": "json"
         }
       ]
@@ -724,6 +726,14 @@ define({ "api": [
             "optional": false,
             "field": "p",
             "description": "<p>이메일 링크</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "send",
+            "defaultValue": "true",
+            "description": "<p>기존관리자에게 알림 메일 발송 여부</p> "
           }
         ]
       }
@@ -735,13 +745,109 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "email",
-            "description": "<p>변경된 슈퍼관리자 email</p> "
+            "field": "teamname",
+            "description": "<p>변경된 팀 이름</p> "
           }
         ]
       }
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/jobtitle/seq",
+    "title": "직책 순서변경",
+    "version": "1.0.0",
+    "name": "seqJobtitle",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer[]</p> ",
+            "optional": false,
+            "field": "index_list",
+            "description": "<p>index order 순서대로 요청</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"index_list\": [1,3,2,4]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/position/seq",
+    "title": "직급 순서변경",
+    "version": "1.0.0",
+    "name": "seqPosition",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Integer[]</p> ",
+            "optional": false,
+            "field": "index_list",
+            "description": "<p>index order 순서대로 요청</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"index_list\": [1,3,2,4]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
     "groupTitle": "team_admin"
   },
   {
@@ -795,6 +901,11 @@ define({ "api": [
     "version": "1.0.0",
     "name": "updateJobtitle",
     "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
     "parameter": {
       "examples": [
         {
@@ -844,13 +955,21 @@ define({ "api": [
             "optional": false,
             "field": "status",
             "description": "<p>approval,block,exit(탈퇴)</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "send",
+            "defaultValue": "true",
+            "description": "<p>사용자에게 메일 발송 여부</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"users\" : [1,2,3,4,5]\n}",
+          "content": "{\n\t\t\"users\" : [1,2,3,4,5],\n\t\t\"send\" : true\n}",
           "type": "json"
         }
       ]
@@ -963,14 +1082,14 @@ define({ "api": [
             "group": "Parameter",
             "type": "<p>Integer</p> ",
             "optional": false,
-            "field": "Team",
-            "description": "<p>index</p> "
+            "field": "index",
+            "description": "<p>team index</p> "
           },
           {
             "group": "Parameter",
             "type": "<p>Integer</p> ",
             "optional": false,
-            "field": "User",
+            "field": "user_index",
             "description": "<p>변경할 회원 index</p> "
           }
         ]
@@ -1000,6 +1119,11 @@ define({ "api": [
     "name": "users",
     "group": "team_admin",
     "description": "<p>회원 조회</p> ",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1099,20 +1223,13 @@ define({ "api": [
             "optional": false,
             "field": "email",
             "description": "<p>email set</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "send",
-            "description": "<p>email로 발송여부, default=false</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"email\" : [ \"test1-1@estsoft.com\",\"test2@estsoft.com\",\"test\"],\n\t\t\"send\" : false\n}",
+          "content": "{\n\t\t\"email\" : [ \"test1-1@estsoft.com\",\"test2@estsoft.com\",\"test\"]\n}",
           "type": "json"
         }
       ]
@@ -1140,20 +1257,13 @@ define({ "api": [
             "optional": false,
             "field": "join_user",
             "description": "<p>이미 가입된 회원</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>data</p> ",
-            "optional": false,
-            "field": "url",
-            "description": "<p>초대 성공</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\"test2@estsoft.com\": {\n\t\t\"result\": false,\n\t\t\"data\": \"join user\"\n\t\t},\n\t\"test\": {\n\t\t\"result\": false,\n\t\t\"data\": \"email pattern\"\n\t\t},\n\t\"test1-1@estsoft.com\": {\n\t\t\"result\": true,\n\t\t\"data\": \"https://tmup.com/team/invite?p=0dc3cae0a4282eeaff23...\"\n\t\t}\n}",
+          "content": "{\n\t\"test2@estsoft.com\": {\n\t\t\"result\": false,\n\t\t\"data\": \"join user\"\n\t\t},\n\t\"test\": {\n\t\t\"result\": false,\n\t\t\"data\": \"email pattern\"\n\t\t},\n\t\"test1-1@estsoft.com\": {\n\t\t\"result\": true,\n\t\t\"data\": \"\"\n\t\t}\n}",
           "type": "json"
         }
       ]
@@ -1168,6 +1278,11 @@ define({ "api": [
     "version": "1.0.0",
     "name": "inviteAdmin",
     "group": "team_invite",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1219,29 +1334,54 @@ define({ "api": [
             "optional": true,
             "field": "phone",
             "description": "<p>직책번호</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "send",
-            "description": "<p>email로 발송여부, default=false</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"email\" : \"test1-1@estsoft.com\",\n\t\t\"department_index\" : 1,\n\t\t\"position_index\" : 1,\n\t\t\"job_title_index\" : 1,\n\t\t\"phone\" : \"010-1234-1234\",\n\t\t\"mobile\" : \"02-123401234\",\n\t\t\"birthday\" : \"1999-01-01\",\n\t\t\"is_lunar\" : true,\n\t\t\"send\" : false\n}",
+          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"email\" : \"test1-1@estsoft.com\",\n\t\t\"department_index\" : 1,\n\t\t\"position_index\" : 1,\n\t\t\"job_title_index\" : 1,\n\t\t\"phone\" : \"010-1234-1234\",\n\t\t\"mobile\" : \"02-1234-1234\",\n\t\t\"birthday\" : \"1999-01-01\",\n\t\t\"is_lunar\" : true\n\n}",
           "type": "json"
         }
       ]
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "result",
+            "description": "<p>false 일경우 data 확인</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>data</p> ",
+            "optional": false,
+            "field": "email_pattern",
+            "description": "<p>email 형식 오류</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>data</p> ",
+            "optional": false,
+            "field": "domain",
+            "description": "<p>허용된 domain 아님</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>data</p> ",
+            "optional": false,
+            "field": "join_user",
+            "description": "<p>이미 가입된 회원</p> "
+          }
+        ]
+      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"result\": true,\n\t\t\"data\": \"https://tmup.com/team/invite?p=0dc3cae0a4282eeaff23...\"\n}",
+          "content": "{\n\t\t\"result\": true,\n\t\t\"data\": \"\"\n}",
           "type": "json"
         }
       ]
@@ -1665,7 +1805,7 @@ define({ "api": [
     "group": "team",
     "permission": [
       {
-        "name": "admin"
+        "name": "team admin"
       }
     ],
     "parameter": {
@@ -1794,851 +1934,5 @@ define({ "api": [
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamController.java",
     "groupTitle": "team"
-  },
-  {
-    "type": "put",
-    "url": "v1/join/password",
-    "title": "비밀번호 재설정",
-    "version": "1.0.0",
-    "group": "userPassword",
-    "description": "<p>비밀번호 재발급</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "psswprd",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "p",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>admin 권한이 있는 token</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
-    "groupTitle": "userPassword",
-    "name": "PutV1JoinPassword"
-  },
-  {
-    "type": "post",
-    "url": "v1/user/password/url",
-    "title": "비밀번호 재설정 url 발급",
-    "version": "1.0.0",
-    "name": "password",
-    "group": "userPassword",
-    "description": "<p>비밀번호 재발급 url 생성</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "name",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "email",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>admin 권한이 있는 token</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n \"name\": \"홍길동\",\n \"email\": \"test@estsoft.com\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Boolean</p> ",
-            "optional": false,
-            "field": "result",
-            "description": "<p>발송 성공 여부</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
-    "groupTitle": "userPassword"
-  },
-  {
-    "type": "get",
-    "url": "v1/join/password/url/check",
-    "title": "비밀번호 재설정 url 검사",
-    "version": "1.0.0",
-    "name": "passwordCheck",
-    "group": "userPassword",
-    "description": "<p>비밀번호 재발급 url 체크</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "p",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>admin 권한이 있는 token</p> "
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Boolean</p> ",
-            "optional": false,
-            "field": "isExpire",
-            "description": "<p>만료 여부</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
-    "groupTitle": "userPassword"
-  },
-  {
-    "type": "get",
-    "url": "v1/join/email/url/check",
-    "title": "email 가입 url 검사",
-    "version": "1.0.0",
-    "name": "check",
-    "group": "user_join",
-    "description": "<p>생성된 url이 올바른지 체크</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "p",
-            "description": "<p>생성된 url에서 p</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>admin 권한이 있는 token</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "https://auth.tmup.com/v1/join/email/check?p=dsad3hdshsdsad",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "email",
-            "description": "<p>초대회원 email</p> "
-          }
-        ]
-      }
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "false",
-          "type": "String"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
-    "groupTitle": "user_join"
-  },
-  {
-    "type": "post",
-    "url": "v1/join/invite",
-    "title": "초대 가입",
-    "version": "1.0.0",
-    "name": "invite",
-    "group": "user_join",
-    "description": "<p>초대 링크로 회원 가입</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "name",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "password",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "p",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>admin 권한이 있는 token</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "sms",
-            "description": "<p>SMS 수신 동의</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "email",
-            "description": "<p>Email 수신 동의</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)6(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"is_sms\" : false,\n\t\t\"is_email\" : false\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "index",
-            "description": "<p>회원 가입후 회원 index</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "999",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
-    "groupTitle": "user_join"
-  },
-  {
-    "type": "post",
-    "url": "v1/join/email",
-    "title": "email 가입",
-    "version": "1.0.0",
-    "name": "join",
-    "group": "user_join",
-    "description": "<p>가입</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "name",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "password",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "p",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>admin 권한이 있는 token</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "sms",
-            "description": "<p>SMS 수신 동의</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "email",
-            "description": "<p>Email 수신 동의</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"is_sms\" : false,\n\t\t\"is_email\" : false\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "index",
-            "description": "<p>회원 가입후 회원 index</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "999",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
-    "groupTitle": "user_join"
-  },
-  {
-    "type": "get",
-    "url": "v1/join/email/url",
-    "title": "email 가입 url 발급",
-    "version": "1.0.0",
-    "name": "joinEmail",
-    "group": "user_join",
-    "description": "<p>회원 가입을 위하여 회원 가입 url 생성</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "email",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "send",
-            "description": "<p>email 발송 여부, default = false</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token",
-            "description": "<p>admin 권한이 있는 token</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "https://auth.tmup.com/v1/join/email?test@estsoft.com",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "url",
-            "description": "<p>회원가입 url</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "https://tmup.com/signup/account?p=b029215e290b0e0512956ff480f55942f1e815b939c715492453b1b4c6570587cf171c89f8bce9be199600199d88d5a9",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserJoinController.java",
-    "groupTitle": "user_join"
-  },
-  {
-    "type": "delete",
-    "url": "v1/user/team/:index",
-    "title": "내 팀별 정보 삭제",
-    "description": "<p>기본 프로필로 보여지게 됩니다.</p> ",
-    "version": "1.0.0",
-    "name": "deleteUserTeam",
-    "group": "user",
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "get",
-    "url": "v1/user/teams",
-    "title": "내 팀 정보 조회",
-    "version": "1.0.0",
-    "name": "getTeams",
-    "group": "user",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "[\n\t{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"department\": null,\n\t\t\"users\": null\n\t}\n]",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "get",
-    "url": "v1/user",
-    "title": "내 정보 조회",
-    "version": "1.0.0",
-    "name": "getUser",
-    "group": "user",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n\t\"index\": 99,\n\t\"email\": \"hong@estsoft.com\",\n\t\"name\": \"홍길동\",\n\t\"birthday\": \"1982-02-08\",\n\t\"is_lunar\": false,\n\t\"is_sms\": false,\n\t\"is_Email\": false,\n\t\"profile_image\": \"https://profile.tmup.com/1153/2015/09/11/11/a6023f1af416484ea0ce930549b681fd.png\",\n\t\"message\": \"홍익인간\",\n\t\"mobile\": \"010-9999-9999\",\n\t\"phone\": \"02-9999-9999\",\n\t\"teams\": [\n\t\t{\n\t\t\t\"index\": 1,\n\t\t\t\"name\": \"ESTsoft\",\n\t\t\t\"status\": \"approval\",\n\t\t\t\"role\": [\n\t\t\t\t\"user\",\n\t\t\t\t\"admin\"\n\t\t\t],\n\t\t\t\"is_profile\": false,\n\t\t\t\"profile_image\": null,\n\t\t\t\"message\": \"\",\n\t\t\t\"mobile\": \"\",\n\t\t\t\"phone\": \"\",\n\t\t\t\"position\": null,\n\t\t\t\"job_title\": null,\n\t\t\t\"department\": {\n\t\t\t\t\"team_index\": 1,\n\t\t\t\t\"team_name\": \"ESTsoft\",\n\t\t\t\t\"index\": 2,\n\t\t\t\t\"name\": \"신사업개발실\",\n\t\t\t\"parent\": 1\n\t\t\t}\n\t\t}\n\t]\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "get",
-    "url": "v1/user/team/:index",
-    "title": "내 팀별 정보 조회",
-    "version": "1.0.0",
-    "name": "getUserTeam",
-    "group": "user",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "index",
-            "description": "<p>팀번호</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "get",
-    "url": "v1/user/:index/team/:teamindex",
-    "title": "회원 팀별 정보 조회",
-    "version": "1.0.0",
-    "name": "getUserTeam_index",
-    "group": "user",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "index",
-            "description": "<p>회원 번호</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "teamindex",
-            "description": "<p>팀번호</p> "
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Boolean</p> ",
-            "optional": false,
-            "field": "is_profile",
-            "description": "<p>true 이면 팀에 세팅한 프로필로, false이면 기본 프로필 정보 입니다.</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n\t\t\"index\": 1,\n\t\t\"email\": \"test@estsoft.com\",\n\t\t\"name\": \"홍길동\",\n\t\t\"birthday\": \"1999-10-12\",\n\t\t\"is_lunar\": false,\n\t\t\"status\":\"approval\",\n\t\t\"is_profile\": false,\n\t\t\"profile_image\": \"https://profile.tmup.com/1153/2015/09/11/11/a6023f1af416484ea0ce930549b681fd.png\",\n\t\t\"message\": \"^^\",\n\t\t\"mobile\": null,\n\t\t\"phone\": null,\n\t\t\"position\": null,\n\t\t\"job_title\": \"사원\",\n\t\t\"department\": {\n\t\t\t\"index\": 3,\n\t\t\t\"name\": \"팀업개발팀\",\n\t\t\t\"parent\": 2,\n\t\t\t\"is_delete\": false\n\t\t\t}\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/OtherUserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "delete",
-    "url": "v1/user",
-    "title": "탈퇴",
-    "description": "<p>팀업 회원에서 탈퇴하게 됩니다</p> ",
-    "version": "1.0.0",
-    "name": "goodbye",
-    "group": "user",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "password",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "delete",
-    "url": "v1/user/profile",
-    "title": "내 프로필 이미지 삭제",
-    "version": "1.0.0",
-    "name": "profileDelete",
-    "group": "user",
-    "description": "<p>profile image 삭제</p> ",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "user",
-            "description": "<p>index</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "delete",
-    "url": "v1/user/profile/team/:index",
-    "title": "내 팀별 프로필 이미지 삭제",
-    "version": "1.0.0",
-    "name": "profileDeleteTeam",
-    "group": "user",
-    "description": "<p>profile image 삭제</p> ",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "team",
-            "description": "<p>index</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "post",
-    "url": "v1/user/profile",
-    "title": "내 프로필 이미지 업로드",
-    "version": "1.0.0",
-    "name": "profileUpload",
-    "group": "user",
-    "description": "<p>file MultipartFile로 업로드 <br/>url /test/upload</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>File</p> ",
-            "optional": false,
-            "field": "MultipartFile",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "sampleRequest": [
-      {
-        "url": "off\t *"
-      }
-    ],
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "post",
-    "url": "v1/user/profile/team/:index",
-    "title": "내 팀별 프로필 이미지 업로드",
-    "version": "1.0.0",
-    "name": "profileUpload_team",
-    "group": "user",
-    "description": "<p>profile image upload, file MultipartFile로 업로드 <br/>url: /test/upload</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>File</p> ",
-            "optional": false,
-            "field": "file",
-            "description": "<p>MultipartFile</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserProfileController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "put",
-    "url": "v1/user",
-    "title": "내 정보 수정",
-    "version": "1.0.0",
-    "name": "putUser",
-    "group": "user",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "profile_image_base64",
-            "description": "<p>base64 image , 공백으로 넣으면 프로필이미지 삭제됨</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "profile_image_name",
-            "description": "<p>파일명 업로드할 파일이 있을경우 같이 넣어줌</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "birthday",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "is_lunar",
-            "description": "<p>음력</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "message",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "mobile",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "phone",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "is_sms",
-            "description": "<p>sms 수신 동의</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Boolean</p> ",
-            "optional": true,
-            "field": "is_email",
-            "description": "<p>email 수신 동의</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n\t\"profile_image_base64\": \"44S044WH44S044WB44WH44WH44S044WB44WH44S044WB44WH44WB44S044WH44WB44S044WH44WB44S044WH44S044WB44WH44S044WB44WH\",\n\t\"profile_image_name\": \"1.jpg\"\n\t\"birthday\": \"1999-01-01\",\n\t\"is_lunar\": false,\n\t\"message\": \"불금~\",\n\t\"mobile\": \"010-1111-1111\",\n\t\"phone\" : \"02-0000-0000\",\n\t\"is_sms\": false,\n\t\"is_email\": false\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n\t\t\"profile_image\": \"https://profile.tmup.com/1153/2015/10/06/17/f11c6fe4a9be0.jpg\",\n\t\t\"birthday\": \"1999-01-01\",\n\t\t\"is_lunar\": false,\n\t\t\"message\": \"불금~\",\n\t\t\"mobile\": \"010-1111-1111\",\n\t\t\"phone\": \"02-0000-0000\",\n\t\t\"is_sms\": false,\n\t\t\"is_email\": false\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
-    "groupTitle": "user"
-  },
-  {
-    "type": "put",
-    "url": "v1/user/team/:index",
-    "title": "내 팀별 정보 수정",
-    "version": "1.0.0",
-    "name": "updateUserTeam",
-    "group": "user",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "profile_image_base64",
-            "description": "<p>base64 image, 공백으로 넣으면 프로필이미지 삭제됨</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "profile_image_name",
-            "description": "<p>파일명 업로드할 파일이 있을경우 같이 넣어줌</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "message",
-            "description": "<p>팀번호</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "mobile",
-            "description": "<p>팀번호</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "phone",
-            "description": "<p>팀번호</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n\t\"profile_image_base64\": \"44S044WH44S044WB44WH44WH44S044WB44WH44S044WB44WH44WB44S044WH44WB44S044WH44WB44S044WH44S044WB44WH44S044WB44WH\",\n\t\"profile_image_name\": \"1.jpg\"\n\t\"message\": \"ㅎㅎㅎㅎㅎㅎ\",\n\t\"mobile\": \"010-1111-2111\",\n\t\"phone\": \"02-0000-2000\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n\t\t\"profile_image\": \"https://profile.tmup.com/1153/2015/10/06/17/0c7e2195e0174b8d246782b76b.jpg\",\n\t\t\"message\": \"ㅎㅎㅎㅎㅎㅎ\",\n\t\t\"mobile\": \"010-1111-2111\",\n\t\t\"phone\": \"02-0000-2000\"\n\t}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserController.java",
-    "groupTitle": "user"
   }
 ] });
