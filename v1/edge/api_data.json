@@ -2791,56 +2791,6 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/likes/count/:feed",
-    "title": "좋아요 수",
-    "name": "GetFeedLikesCount",
-    "group": "Feed_Like__0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "feed",
-            "description": "<p>피드 번호</p> "
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "cnt",
-            "description": "<p>좋아요 갯수</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "liked",
-            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success Example",
-          "content": "{\"cnt\":1,\"liked\":0}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "c:/Users/vicious/workspace/logic/edge/v1/index.php",
-    "groupTitle": "Feed_Like__0"
-  },
-  {
-    "type": "get",
     "url": "/v1/feed/replies/:feed/:count(/:way(/:start))",
     "title": "댓글 목록",
     "name": "GetFeedReplies",
