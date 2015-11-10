@@ -1267,7 +1267,7 @@
     "name": "GetEvents",
     "group": "Event",
     "version": "2.0.0",
-    "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, read:읽음 상태 변경, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:팀 가입, exit:팀 탈퇴, block:중지)</p> </li> </ul> ",
+    "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, read:읽음 상태 변경, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:가입, exit:탈퇴, block:중지)</p> </li> </ul> ",
     "success": {
       "fields": {
         "Success 200": [
@@ -2641,41 +2641,6 @@
             "optional": false,
             "field": "413",
             "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p> "
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "delete",
-    "url": "/v1/feed/like/:feed",
-    "title": "좋아요 취소",
-    "name": "DeleteFeedLike",
-    "group": "Feed_Like",
-    "version": "2.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "feed",
-            "description": "<p>피드 번호</p> "
-          }
-        ]
-      }
-    },
-    "filename": "c:/Users/vicious/workspace/logic/edge/v1/index.php",
-    "groupTitle": "Feed_Like",
-    "success": {
-      "fields": {
-        "Success 2xx": [
-          {
-            "group": "Success 2xx",
-            "optional": false,
-            "field": "204",
-            "description": "<p>No Content (성공, 컨텐츠 없음)</p> "
           }
         ]
       }
