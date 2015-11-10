@@ -179,7 +179,7 @@ define({ "api": [
             "group": "Success 3xx",
             "optional": false,
             "field": "304",
-            "description": "<p>NotModified (성공, 변경 없음)</p> "
+            "description": "<p>Not Modified (성공, 변경 없음)</p> "
           }
         ]
       }
