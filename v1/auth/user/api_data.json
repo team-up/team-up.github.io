@@ -24,7 +24,7 @@
   },
   {
     "type": "put",
-    "url": "v1/join/password",
+    "url": "v1/user/password",
     "title": "비밀번호 재설정",
     "version": "1.0.0",
     "group": "userPassword",
@@ -51,7 +51,7 @@
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPasswordController.java",
     "groupTitle": "userPassword",
-    "name": "PutV1JoinPassword"
+    "name": "PutV1UserPassword"
   },
   {
     "type": "post",
@@ -106,7 +106,7 @@
   },
   {
     "type": "get",
-    "url": "v1/join/password/url/check",
+    "url": "v1/user/password/url/check",
     "title": "비밀번호 재설정 url 검사",
     "version": "1.0.0",
     "name": "passwordCheck",

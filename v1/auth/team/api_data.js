@@ -410,31 +410,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "v1/search",
-    "title": "검색",
-    "version": "1.0.0",
-    "name": "search",
-    "group": "search",
-    "description": "<p>이름(초성가능), 팀이름, email 검색</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "size": "2..",
-            "optional": false,
-            "field": "query",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/team/SearchController.java",
-    "groupTitle": "search"
-  },
-  {
-    "type": "get",
     "url": "v1/search/:teamindex",
     "title": "팀내 검색",
     "version": "1.0.0",
@@ -454,6 +429,15 @@ define({ "api": [
           }
         ]
       }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"index\": 1,\n  \"name\": \"ESTsoft\",\n  \"department\": [\n    {\n      \"index\": 39,\n      \"name\": \"팀\",\n      \"parent\": 5,\n      \"is_delete\": false\n    }\n  ],\n  \"users\": [\n    {\n      \"index\": 999,\n      \"name\": \"홍길동\",\n      \"email\": \"hong@estsoft.com\",\n      \"department\": {\n        \"index\": 1,\n        \"name\": \"서비스팀\",\n        \"parent\": 0,\n        \"is_delete\": false\n      }\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/team/SearchController.java",
     "groupTitle": "search"
@@ -533,35 +517,6 @@ define({ "api": [
     "groupTitle": "team_admin"
   },
   {
-    "type": "delete",
-    "url": "v1/team/:index/position/:index",
-    "title": "직급 삭제",
-    "version": "1.0.0",
-    "name": "createPosition",
-    "group": "team_admin",
-    "permission": [
-      {
-        "name": "team admin"
-      }
-    ],
-    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>Boolean</p> ",
-            "optional": false,
-            "field": "return",
-            "description": "<p>성공</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
-    "groupTitle": "team_admin"
-  },
-  {
     "type": "put",
     "url": "v1/team/:index/position/:index",
     "title": "직급 수정",
@@ -591,6 +546,35 @@ define({ "api": [
             "optional": false,
             "field": "return",
             "description": "<p>직급 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "delete",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 삭제",
+    "version": "1.0.0",
+    "name": "createPosition",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공</p> "
           }
         ]
       }
@@ -1109,95 +1093,6 @@ define({ "api": [
       }
     },
     "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserController.java",
-    "groupTitle": "team_admin"
-  },
-  {
-    "type": "get",
-    "url": "v1/team/:index/users",
-    "title": "회원 조회",
-    "version": "1.0.0",
-    "name": "users",
-    "group": "team_admin",
-    "description": "<p>회원 조회</p> ",
-    "permission": [
-      {
-        "name": "team admin"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "Team",
-            "description": "<p>index</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "Status",
-            "description": "<p>status approval, exit</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Integer</p> ",
-            "optional": true,
-            "field": "page",
-            "defaultValue": "1",
-            "description": "<p>page</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>Integer</p> ",
-            "optional": true,
-            "field": "size",
-            "defaultValue": "10",
-            "description": "<p>page size</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "name",
-            "description": "<p>이름 (초성검색)</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "email",
-            "description": "<p>email</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "oder",
-            "description": "<p>name, email, update_date  ex) column:desc , 생략하면 asc로 됨</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "/v1/team/1/users?status=approval&page=2&size=2&name=테스&email=t5&order=name,email,update_date:desc",
-          "type": "url"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "[\n\t  \t{\n\t    \t\"index\": 543,\n\t    \t\"email\": \"test503@estsoft.com\",\n\t    \t\"name\": \"테스트503\",\n\t    \t\"status\": \"approval\",\n\t    \t\"is_profile\": false,\n\t    \t\"profile_image\": \"0\",\n\t    \t\"position\": null,\n\t    \t\"job_title\": null,\n\t    \t\"department\": null,\n\t    \t\"update_date\": \"2014-12-02\"\n\t  \t},\n\t  \t{\n\t    \t\"index\": 544,\n\t    \t\"email\": \"test504@estsoft.com\",\n\t    \t\"name\": \"테스트504\",\n\t    \t\"status\": \"approval\",\n\t    \t\"is_profile\": false,\n\t    \t\"profile_image\": \"0\",\n\t    \t\"position\": null,\n\t    \t\"job_title\": null,\n\t    \t\"department\": null,\n\t    \t\"update_date\": \"2014-12-02\"\n\t  \t}\n\t   ]",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/team/TeamAdminUserListController.java",
     "groupTitle": "team_admin"
   },
   {
