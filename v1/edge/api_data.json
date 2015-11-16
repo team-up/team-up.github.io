@@ -31,7 +31,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/config",
+    "url": "https://edge.tmup.com/v1/config",
     "title": "기본 설정 정보",
     "name": "GetConfig",
     "group": "Base",
@@ -261,7 +261,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/room/:room",
+    "url": "https://edge.tmup.com/v1/room/:room",
     "title": "대화방 정보",
     "name": "GetRoom",
     "group": "Chat",
@@ -444,7 +444,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/rooms/:team",
+    "url": "https://edge.tmup.com/v1/rooms/:team",
     "title": "대화방 목록",
     "name": "GetRooms",
     "group": "Chat",
@@ -585,7 +585,7 @@
   },
   {
     "type": "post",
-    "url": "/v1/room/:team",
+    "url": "https://edge.tmup.com/v1/room/:team",
     "title": "대화방 생성",
     "name": "PostRoom",
     "group": "Chat",
@@ -649,7 +649,7 @@
   },
   {
     "type": "post",
-    "url": "/v1/room/join/:room",
+    "url": "https://edge.tmup.com/v1/room/join/:room",
     "title": "대화방 초대",
     "name": "PostRoomJoin",
     "group": "Chat",
@@ -713,7 +713,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/message/:room/:msg",
+    "url": "https://edge.tmup.com/v1/message/:room/:msg",
     "title": "메시지 내용 (장문)",
     "name": "GetMessage",
     "group": "Chat_Message",
@@ -756,7 +756,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/message/file/:room/:msg/:file",
+    "url": "https://edge.tmup.com/v1/message/file/:room/:msg/:file",
     "title": "메시지 파일 다운로드",
     "name": "GetMessageFile",
     "group": "Chat_Message",
@@ -806,7 +806,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/message/summary/:room/:msg",
+    "url": "https://edge.tmup.com/v1/message/summary/:room/:msg",
     "title": "메시지 요약 정보",
     "name": "GetMessageSummary",
     "group": "Chat_Message",
@@ -947,7 +947,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/messages/:room/:count(/:way(/:start))",
+    "url": "https://edge.tmup.com/v1/messages/:room/:count(/:way(/:start))",
     "title": "메시지 목록",
     "name": "GetMessages",
     "group": "Chat_Message",
@@ -1120,7 +1120,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/messages/status/:room",
+    "url": "https://edge.tmup.com/v1/messages/status/:room",
     "title": "메시지 읽음 상태",
     "name": "GetMessagesStatus",
     "group": "Chat_Message",
@@ -1193,7 +1193,7 @@
   },
   {
     "type": "post",
-    "url": "/v1/message/:room(/:type)",
+    "url": "https://edge.tmup.com/v1/message/:room(/:type)",
     "title": "메시지 등록",
     "name": "PostMessage",
     "group": "Chat_Message",
@@ -1503,7 +1503,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/:feed",
+    "url": "https://edge.tmup.com/v1/feed/:feed",
     "title": "피드 상세 정보",
     "name": "GetFeed",
     "group": "Feed",
@@ -1679,7 +1679,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/file/:feed/:file",
+    "url": "https://edge.tmup.com/v1/feed/file/:feed/:file",
     "title": "피드 파일 다운로드",
     "name": "GetFeedFile",
     "group": "Feed",
@@ -1722,7 +1722,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/files/:feed/:count(/:type(/:start))",
+    "url": "https://edge.tmup.com/v1/feed/files/:feed/:count(/:type(/:start))",
     "title": "피드 파일 목록",
     "name": "GetFeedFiles",
     "group": "Feed",
@@ -1818,7 +1818,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/markup/:feed",
+    "url": "https://edge.tmup.com/v1/feed/markup/:feed",
     "title": "피드 마크업",
     "name": "GetFeedMarkup",
     "group": "Feed",
@@ -1861,7 +1861,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/summary/:feed",
+    "url": "https://edge.tmup.com/v1/feed/summary/:feed",
     "title": "피드 요약 정보",
     "name": "GetFeedSummary",
     "group": "Feed",
@@ -1967,7 +1967,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feeds/:count(/:way(/:start))",
+    "url": "https://edge.tmup.com/v1/feeds/:count(/:way(/:start))",
     "title": "피드 목록",
     "name": "GetFeeds",
     "group": "Feed",
@@ -2206,7 +2206,7 @@
   },
   {
     "type": "post",
-    "url": "/v1/feed/:feedgroup",
+    "url": "https://edge.tmup.com/v1/feed/:feedgroup",
     "title": "피드 등록",
     "name": "PostFeed",
     "group": "Feed",
@@ -2288,7 +2288,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feedgroup/:feedgroup",
+    "url": "https://edge.tmup.com/v1/feedgroup/:feedgroup",
     "title": "그룹 정보",
     "name": "GetFeedGroup",
     "group": "Feed_Group",
@@ -2415,7 +2415,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feedgroup/users/:feedgroup",
+    "url": "https://edge.tmup.com/v1/feedgroup/users/:feedgroup",
     "title": "그룹 유저 목록",
     "name": "GetFeedGroupUsers",
     "group": "Feed_Group",
@@ -2472,7 +2472,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feedgroups/:team",
+    "url": "https://edge.tmup.com/v1/feedgroups/:team",
     "title": "그룹 목록",
     "name": "GetFeedGroups",
     "group": "Feed_Group",
@@ -2585,7 +2585,7 @@
   },
   {
     "type": "post",
-    "url": "/v1/feedgroup/join/:feedgroup",
+    "url": "https://edge.tmup.com/v1/feedgroup/join/:feedgroup",
     "title": "그룹 초대",
     "name": "PostFeedGroupJoin",
     "group": "Feed_Group",
@@ -2648,7 +2648,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/likes/:feed/:count(/:start)",
+    "url": "https://edge.tmup.com/v1/feed/likes/:feed/:count(/:start)",
     "title": "좋아요 목록",
     "name": "GetFeedLikes",
     "group": "Feed_Like",
@@ -2721,7 +2721,7 @@
   },
   {
     "type": "post",
-    "url": "/v1/feed/like/:feed",
+    "url": "https://edge.tmup.com/v1/feed/like/:feed",
     "title": "좋아요 등록",
     "name": "PostFeedLike",
     "group": "Feed_Like",
@@ -2756,7 +2756,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/replies/:feed/:count(/:way(/:start))",
+    "url": "https://edge.tmup.com/v1/feed/replies/:feed/:count(/:way(/:start))",
     "title": "댓글 목록",
     "name": "GetFeedReplies",
     "group": "Feed_Reply",
@@ -2880,7 +2880,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/feed/reply/summary/:feed/:reply",
+    "url": "https://edge.tmup.com/v1/feed/reply/summary/:feed/:reply",
     "title": "댓글 요약 정보",
     "name": "GetFeedReplySummary",
     "group": "Feed_Reply",
@@ -2986,7 +2986,7 @@
   },
   {
     "type": "post",
-    "url": "/v1/feed/reply/:feed",
+    "url": "https://edge.tmup.com/v1/feed/reply/:feed",
     "title": "댓글 등록",
     "name": "PostFeedReply",
     "group": "Feed_Reply",
@@ -3155,7 +3155,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/tag/feeds/:team/:count/:start/:feed",
+    "url": "https://edge.tmup.com/v1/tag/feeds/:team/:count/:start/:feed",
     "title": "#태그 (피드)",
     "name": "GetTagFeed",
     "group": "Tag",
@@ -3262,7 +3262,7 @@
   },
   {
     "type": "get",
-    "url": "/v1/tag/users/:feedgroup/:count/:start/:search",
+    "url": "https://edge.tmup.com/v1/tag/users/:feedgroup/:count/:start/:search",
     "title": "@태그 (유저)",
     "name": "GetTagUser",
     "group": "Tag",
