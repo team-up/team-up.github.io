@@ -554,6 +554,65 @@ define({ "api": [
     "groupTitle": "user"
   },
   {
+    "type": "put",
+    "url": "v1/user/online/pc",
+    "title": "PC 접속여부",
+    "version": "1.0.0",
+    "name": "on_pc",
+    "group": "user",
+    "description": "<p>pc 온라인 상태 변경</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "on",
+            "defaultValue": "true",
+            "description": "<p>true or false</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Integer</p> ",
+            "optional": true,
+            "field": "team",
+            "description": "<p>팀번호, 없으면 모든팀에 적용</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "https://auth.tmup.com/v1/user/online/pc?on=true&team=1",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "return",
+            "description": "<p>true/false</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "true",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserOnController.java",
+    "groupTitle": "user"
+  },
+  {
     "type": "delete",
     "url": "v1/user/profile",
     "title": "내 프로필 이미지 삭제",
