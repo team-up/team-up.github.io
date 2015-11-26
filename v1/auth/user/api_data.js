@@ -531,8 +531,8 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "v1/user/online/pc/team/:teamindex",
-    "title": "PC 온라인 조회",
+    "url": "v1/user/pcstatus/team/:teamindex",
+    "title": "PC 상태조회",
     "version": "1.0.0",
     "name": "getpc",
     "group": "user",
@@ -558,7 +558,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "https://auth.tmup.com/v1/user/online/pc/team/1?users=1,2,3",
+          "content": "https://auth.tmup.com/v1/user/pcstatus/team/1?users=1,2,3",
           "type": "json"
         }
       ]
@@ -567,7 +567,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"team_index\": 1,\n  \"users\": {\n    \"1\": false,\n    \"2\": false,\n    \"3\": false\n  },\n  \"time\": 1447826097268\n}",
+          "content": "{\n  \"team_index\": 1,\n  \"users\": {\n    \"1\": \"on_line\",\n    \"2\": \"on_line\",\n    \"3\": \"on_line\"\n  },\n  \"time\": 1447826097268\n}",
           "type": "json"
         }
       ],
@@ -585,7 +585,7 @@ define({ "api": [
             "type": "<p>map</p> ",
             "optional": false,
             "field": "users",
-            "description": "<p>회원번호, 온라인 여부</p> "
+            "description": "<p>회원번호, pc 상태(off_line, on_line, left_seat)</p> "
           },
           {
             "group": "Success 200",
@@ -597,12 +597,12 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserOnController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPcStatusController.java",
     "groupTitle": "user"
   },
   {
     "type": "get",
-    "url": "v1/user/online/pc/team/:teamindex/change",
+    "url": "v1/user/pcstatus/team/:teamindex/change",
     "title": "PC 온라인 조회(시간)",
     "version": "1.0.0",
     "name": "getpcTime",
@@ -623,13 +623,21 @@ define({ "api": [
             "optional": false,
             "field": "time",
             "description": "<p>time 이후 업데이트 내용 조회</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "pc",
+            "defaultValue": "on_line",
+            "description": "<p>off_line, on_line, left_seat</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "https://auth.tmup.com/v1/user/online/pc/team/1/change?time=1447814373561",
+          "content": "https://auth.tmup.com/v1/user/pcstatus/team/1/change?time=1447814373561",
           "type": "json"
         }
       ]
@@ -638,7 +646,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"team_index\": 1,\n  \"users\": {\n    \"1\": false,\n    \"2\": false,\n    \"3\": false\n  },\n  \"time\": 1447826097268\n}",
+          "content": "{\n  \"team_index\": 1,\n  \"users\": {\n    \"1\": \"on_line\",\n    \"2\": \"on_line\",\n    \"3\": \"on_line\"\n  },\n  \"time\": 1447826097268\n}",
           "type": "json"
         }
       ],
@@ -656,7 +664,7 @@ define({ "api": [
             "type": "<p>map</p> ",
             "optional": false,
             "field": "users",
-            "description": "<p>회원번호, 온라인 여부</p> "
+            "description": "<p>회원번호, pc 상태(off_line, on_line, left_seat)</p> "
           },
           {
             "group": "Success 200",
@@ -668,7 +676,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserOnController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPcStatusController.java",
     "groupTitle": "user"
   },
   {
@@ -888,22 +896,22 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "v1/user/online/pc",
-    "title": "PC 온라인 변경",
+    "url": "v1/user/pcstatus",
+    "title": "PC 상태 변경",
     "version": "1.0.0",
     "name": "putpc",
     "group": "user",
-    "description": "<p>pc 온라인 상태 변경</p> ",
+    "description": "<p>PC 상태 변경</p> ",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "<p>String</p> ",
             "optional": true,
-            "field": "on",
-            "defaultValue": "true",
-            "description": "<p>true or false</p> "
+            "field": "pc",
+            "defaultValue": "on_line",
+            "description": "<p>off_line, on_line, left_seat</p> "
           },
           {
             "group": "Parameter",
@@ -917,7 +925,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "https://auth.tmup.com/v1/user/online/pc?on=true&team=1",
+          "content": "https://auth.tmup.com/v1/user/pcstatus/pc=on_line&team=1",
           "type": "json"
         }
       ]
@@ -942,7 +950,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserOnController.java",
+    "filename": "src/main/java/com/tmup/auth/controller/v1/user/UserPcStatusController.java",
     "groupTitle": "user"
   },
   {
