@@ -532,7 +532,7 @@
   {
     "type": "get",
     "url": "v1/user/pcstatus/team/:teamindex",
-    "title": "PC 상태조회",
+    "title": "PC상태 조회",
     "version": "1.0.0",
     "name": "getpc",
     "group": "user",
@@ -603,7 +603,7 @@
   {
     "type": "get",
     "url": "v1/user/pcstatus/team/:teamindex/change",
-    "title": "PC 온라인 조회(시간)",
+    "title": "PC상태 조회(시간)",
     "version": "1.0.0",
     "name": "getpcTime",
     "group": "user",
@@ -897,7 +897,7 @@
   {
     "type": "put",
     "url": "v1/user/pcstatus",
-    "title": "PC 상태 변경",
+    "title": "PC상태 변경",
     "version": "1.0.0",
     "name": "putpc",
     "group": "user",
