@@ -629,7 +629,6 @@
             "type": "<p>String</p> ",
             "optional": true,
             "field": "pc",
-            "defaultValue": "on_line",
             "description": "<p>off_line, on_line, left_seat</p> "
           }
         ]
