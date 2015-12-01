@@ -924,7 +924,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "https://auth.tmup.com/v1/user/pcstatus/pc=on_line&team=1",
+          "content": "https://auth.tmup.com/v1/user/pcstatus?pc=on_line&team=1",
           "type": "json"
         }
       ]
