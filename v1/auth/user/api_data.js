@@ -241,13 +241,21 @@ define({ "api": [
             "field": "email",
             "defaultValue": "false",
             "description": "<p>Email 수신 동의</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "locale",
+            "defaultValue": "ko",
+            "description": "<p>ko, en 메일 발송 언어</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)6(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"is_sms\" : false,\n\t\t\"is_email\" : false\n}",
+          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"password\" : \"rlfehddk)6(!!Ahd\",\n\t\t\"p\" : \"dsad3hdshsdsad\",\n\t\t\"is_sms\" : false,\n\t\t\"is_email\" : false,\n\t\t\"locale\" : \"ko\"\n}",
           "type": "json"
         }
       ]
@@ -373,6 +381,14 @@ define({ "api": [
             "optional": false,
             "field": "email",
             "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "locale",
+            "defaultValue": "ko",
+            "description": "<p>ko, en 메일 발송 언어</p> "
           }
         ]
       },

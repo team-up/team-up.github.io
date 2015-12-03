@@ -1118,13 +1118,21 @@ define({ "api": [
             "optional": false,
             "field": "email",
             "description": "<p>email set</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "locale",
+            "defaultValue": "ko",
+            "description": "<p>ko, en 메일 발송 언어</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"email\" : [ \"test1-1@estsoft.com\",\"test2@estsoft.com\",\"test\"]\n}",
+          "content": "{\n\t\t\"email\" : [ \"test1-1@estsoft.com\",\"test2@estsoft.com\",\"test\"],\n\t\t\"locale\" : \"ko\"\n}",
           "type": "json"
         }
       ]
@@ -1229,13 +1237,21 @@ define({ "api": [
             "optional": true,
             "field": "phone",
             "description": "<p>직책번호</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "locale",
+            "defaultValue": "ko",
+            "description": "<p>ko, en 메일 발송 언어</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"email\" : \"test1-1@estsoft.com\",\n\t\t\"department_index\" : 1,\n\t\t\"position_index\" : 1,\n\t\t\"job_title_index\" : 1,\n\t\t\"phone\" : \"010-1234-1234\",\n\t\t\"mobile\" : \"02-1234-1234\",\n\t\t\"birthday\" : \"1999-01-01\",\n\t\t\"is_lunar\" : true\n\n}",
+          "content": "{\n\t\t\"name\" : \"홍길동\",\n\t\t\"email\" : \"test1-1@estsoft.com\",\n\t\t\"department_index\" : 1,\n\t\t\"position_index\" : 1,\n\t\t\"job_title_index\" : 1,\n\t\t\"phone\" : \"010-1234-1234\",\n\t\t\"mobile\" : \"02-1234-1234\",\n\t\t\"birthday\" : \"1999-01-01\",\n\t\t\"is_lunar\" : true,\n\t\t\"locale\" : \"ko\"\n\n}",
           "type": "json"
         }
       ]
@@ -1343,6 +1359,14 @@ define({ "api": [
             "optional": false,
             "field": "p",
             "description": "<p>초대 url p 파라미터</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "locale",
+            "defaultValue": "ko",
+            "description": "<p>ko, en 메일 발송 언어</p> "
           }
         ]
       }
