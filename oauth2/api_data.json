@@ -148,13 +148,6 @@
             "optional": false,
             "field": "code",
             "description": "<p>발급 받은 code</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "redirect_uri",
-            "description": "<p>call back url</p> "
           }
         ]
       }
