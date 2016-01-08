@@ -6,7 +6,7 @@
     "version": "2.0.0",
     "name": "Authorization",
     "group": "Base",
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/apidoc.js",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/_apidoc.js",
     "groupTitle": "Base",
     "header": {
       "fields": {
@@ -150,7 +150,7 @@
     "version": "2.0.0",
     "name": "StatusCode",
     "group": "Base",
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/apidoc.js",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/_apidoc.js",
     "groupTitle": "Base",
     "success": {
       "fields": {
@@ -439,7 +439,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
     "groupTitle": "Chat"
   },
   {
@@ -580,7 +580,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
     "groupTitle": "Chat"
   },
   {
@@ -2287,6 +2287,53 @@
     "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (서버에서 빠른 처리를 위해 사용, 비어있을 경우 태그 없는 것으로 간주)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 없는 것으로 간주)</p> "
   },
   {
+    "type": "delete",
+    "url": "https://edge.tmup.com/v1/feedgroup/user/:feedgroup/:targetuser",
+    "title": "그룹 탈퇴",
+    "name": "DeleteFeedGroupUser",
+    "group": "Feed_Group",
+    "version": "2.0.0",
+    "permission": [
+      {
+        "name": "feedgroup admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>number</p> ",
+            "optional": false,
+            "field": "feedgroup",
+            "description": "<p>피드 그룹 번호</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>number</p> ",
+            "optional": false,
+            "field": "targetuser",
+            "description": "<p>탈퇴 유저 번호</p> "
+          }
+        ]
+      }
+    },
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "groupTitle": "Feed_Group",
+    "success": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content (성공, 컨텐츠 없음)</p> "
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "get",
     "url": "https://edge.tmup.com/v1/feedgroup/:feedgroup",
     "title": "그룹 정보",
@@ -2322,13 +2369,6 @@
             "optional": false,
             "field": "groupname",
             "description": "<p>피드 그룹 이름</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "usercount",
-            "description": "<p>피드 그룹 유저 수</p> "
           },
           {
             "group": "Success 200",
@@ -2399,18 +2439,25 @@
             "optional": false,
             "field": "alertreply",
             "description": "<p>댓글 알림 (0:사용안함, 1:사용)</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>number</p> ",
+            "optional": false,
+            "field": "usercount",
+            "description": "<p>피드 그룹 유저 수</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"team\":1,\n\"groupname\":\"그룹1\",\n\"usercount\":3,\n\"groupfile\":0,\n\"membertype\":1,\n\"write\":1,\n\"remove\":1,\n\"replywrite\":1,\n\"replyremove\":1,\n\"alerttype\":1,\n\"alertfeed\":0,\n\"alertreply\":0\n}",
+          "content": "{\n\"team\":1,\n\"groupname\":\"그룹1\",\n\"groupfile\":0,\n\"membertype\":1,\n\"write\":1,\n\"remove\":1,\n\"replywrite\":1,\n\"replyremove\":1,\n\"alerttype\":1,\n\"alertfeed\":0,\n\"alertreply\":0,\n\"usercount\":3\n}",
           "type": "json"
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
     "groupTitle": "Feed_Group"
   },
   {
@@ -2580,7 +2627,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
     "groupTitle": "Feed_Group"
   },
   {
