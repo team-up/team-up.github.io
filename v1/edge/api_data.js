@@ -2710,7 +2710,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"name\":\"그룹이름\",\"file\":1234}",
+          "content": "{\"name\":\"그룹이름\"}",
           "type": "json"
         }
       ]
