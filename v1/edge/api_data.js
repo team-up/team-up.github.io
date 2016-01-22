@@ -2667,6 +2667,84 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "https://edge.tmup.com/v1/feedgroup/:team",
+    "title": "그룹 생성",
+    "name": "PostFeedGroup",
+    "group": "Feed_Group",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>피드 그룹 이름</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "number",
+            "optional": true,
+            "field": "file",
+            "description": "<p>이미지 파일 번호</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "number[]",
+            "optional": true,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"name\":\"그룹이름\",\"file\":1234}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "feedgroup",
+            "description": "<p>피드 그룹 번호</p>"
+          }
+        ]
+      }
+    },
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "groupTitle": "Feed_Group",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "409",
+            "description": "<p>Conflict (데이터 중복 오류)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
     "url": "https://edge.tmup.com/v1/feedgroup/join/:feedgroup",
     "title": "그룹 초대",
     "name": "PostFeedGroupJoin",
