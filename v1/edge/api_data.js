@@ -2319,7 +2319,7 @@ define({ "api": [
     },
     "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
     "groupTitle": "Feed",
-    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (서버에서 빠른 처리를 위해 사용, 비어있을 경우 태그 없는 것으로 간주)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 없는 것으로 간주)</p>"
+    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>"
   },
   {
     "type": "delete",
@@ -3230,7 +3230,7 @@ define({ "api": [
     },
     "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
     "groupTitle": "Feed_Reply",
-    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (서버에서 빠른 처리를 위해 사용, 비어있을 경우 태그 없는 것으로 간주)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 없는 것으로 간주)</p>"
+    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>"
   },
   {
     "type": "post",
