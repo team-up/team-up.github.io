@@ -1267,7 +1267,7 @@ define({ "api": [
     "name": "GetEvents",
     "group": "Event",
     "version": "2.0.0",
-    "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, read:읽음 상태 변경, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:팀 가입, exit:팀 탈퇴, block:팀 중지, drop: 계정 삭제)</p> </li> </ul>",
+    "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제, readfeed:읽음 상태 변경)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:팀 가입, exit:팀 탈퇴, block:팀 중지, drop: 계정 삭제)</p> </li> </ul>",
     "success": {
       "fields": {
         "Success 200": [
@@ -1451,14 +1451,14 @@ define({ "api": [
             "type": "number",
             "optional": true,
             "field": "events.inform.read",
-            "description": "<p>읽음 상태 (0:전체, 1:읽은 알림만, type: inform.*)</p>"
+            "description": "<p>읽음 상태 (0:전체, 1:읽은 알림만, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
             "type": "number",
             "optional": true,
             "field": "events.inform.watch",
-            "description": "<p>지켜보기 (0:일반, 1:지켜보기, type: inform.*)</p>"
+            "description": "<p>지켜보기 (0:일반, 1:지켜보기, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
