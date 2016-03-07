@@ -6,7 +6,7 @@
     "version": "2.0.0",
     "name": "Authorization",
     "group": "Base",
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/apidoc.js",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/_apidoc.js",
     "groupTitle": "Base",
     "header": {
       "fields": {
@@ -16,7 +16,7 @@
             "type": "string",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>OAuth2 token</p> "
+            "description": "<p>OAuth2 token</p>"
           }
         ]
       },
@@ -41,94 +41,94 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": false,
             "field": "event",
-            "description": "<p>이벤트</p> "
+            "description": "<p>이벤트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "event.lp_url",
-            "description": "<p>long-polling url (GET <a href=\"#api-Event-GetEvents\">/v1/events</a>)</p> "
+            "description": "<p>long-polling url (GET <a href=\"#api-Event-GetEvents\">/v1/events</a>)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "event.lp_idle_time",
-            "description": "<p>long-polling 요청 대기 시간 (이전 요청에 이벤트 없었을 경우 sleep) [단위: 초]</p> "
+            "description": "<p>long-polling 요청 대기 시간 (이전 요청에 이벤트 없었을 경우 sleep) [단위: 초]</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "event.lp_wait_timeout",
-            "description": "<p>long-polling 응답 대기 시간 (receive timeout 5초 정도 더 길게 설정) [단위: 초]</p> "
+            "description": "<p>long-polling 응답 대기 시간 (receive timeout 5초 정도 더 길게 설정) [단위: 초]</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": false,
             "field": "file",
-            "description": "<p>파일</p> "
+            "description": "<p>파일</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "file.upload_url",
-            "description": "<p>업로드 url (POST <a href=\"#api-File-PostFiles\">/v1/files</a>)</p> "
+            "description": "<p>업로드 url (POST <a href=\"#api-File-PostFiles\">/v1/files</a>)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "file.upload_max_size",
-            "description": "<p>업로드 제한 크기 (MB)</p> "
+            "description": "<p>업로드 제한 크기 (MB)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": false,
             "field": "thumb",
-            "description": "<p>썸네일</p> "
+            "description": "<p>썸네일</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "thumb.video_url",
-            "description": "<p>동영상 썸네일 url (GET <a href=\"#api-File-GetThumbVideo\">/v1/thumb/video</a>)</p> "
+            "description": "<p>동영상 썸네일 url (GET <a href=\"#api-File-GetThumbVideo\">/v1/thumb/video</a>)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "thumb.image_url",
-            "description": "<p>이미지 썸네일 url (GET <a href=\"#api-File-GetThumbImage\">/v1/thumb/image</a>)</p> "
+            "description": "<p>이미지 썸네일 url (GET <a href=\"#api-File-GetThumbImage\">/v1/thumb/image</a>)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": false,
             "field": "chat",
-            "description": "<p>채팅</p> "
+            "description": "<p>채팅</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "chat.room_max_usercount",
-            "description": "<p>대화방 최대 인원 수</p> "
+            "description": "<p>대화방 최대 인원 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "chat.room_name_usercount",
-            "description": "<p>대화방 이름 인원 수 (대화방 이름이 비어 있을 경우 유저 이름 오름차순 ,로 구분. 초과 시 ... 추가)</p> "
+            "description": "<p>대화방 이름 인원 수 (대화방 이름이 비어 있을 경우 유저 이름 오름차순 ,로 구분. 초과 시 ... 추가)</p>"
           }
         ]
       },
@@ -150,7 +150,7 @@
     "version": "2.0.0",
     "name": "StatusCode",
     "group": "Base",
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/apidoc.js",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/_apidoc.js",
     "groupTitle": "Base",
     "success": {
       "fields": {
@@ -159,19 +159,19 @@
             "group": "Success 2xx",
             "optional": false,
             "field": "200",
-            "description": "<p>OK (성공, 컨텐츠 있음)</p> "
+            "description": "<p>OK (성공, 컨텐츠 있음)</p>"
           },
           {
             "group": "Success 2xx",
             "optional": false,
             "field": "201",
-            "description": "<p>Created (성공, 컨텐츠 없음)</p> "
+            "description": "<p>Created (성공, 컨텐츠 없음)</p>"
           },
           {
             "group": "Success 2xx",
             "optional": false,
             "field": "204",
-            "description": "<p>No Content (성공, 컨텐츠 없음)</p> "
+            "description": "<p>No Content (성공, 컨텐츠 없음)</p>"
           }
         ],
         "Success 3xx": [
@@ -179,7 +179,7 @@
             "group": "Success 3xx",
             "optional": false,
             "field": "304",
-            "description": "<p>Not Modified (성공, 변경 없음)</p> "
+            "description": "<p>Not Modified (성공, 변경 없음)</p>"
           }
         ]
       }
@@ -191,43 +191,43 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "400",
-            "description": "<p>Bad Request (요청 데이터, 파라미터 오류)</p> "
+            "description": "<p>Bad Request (요청 데이터, 파라미터 오류)</p>"
           },
           {
             "group": "Error 4xx",
             "optional": false,
             "field": "401",
-            "description": "<p>Unauthorized (OAuth2 토큰 오류)</p> "
+            "description": "<p>Unauthorized (OAuth2 토큰 오류)</p>"
           },
           {
             "group": "Error 4xx",
             "optional": false,
             "field": "403",
-            "description": "<p>Forbidden (금지된 요청, 권한 오류)</p> "
+            "description": "<p>Forbidden (금지된 요청, 권한 오류)</p>"
           },
           {
             "group": "Error 4xx",
             "optional": false,
             "field": "404",
-            "description": "<p>Not Found (데이터 없음, 권한 오류)</p> "
+            "description": "<p>Not Found (데이터 없음, 권한 오류)</p>"
           },
           {
             "group": "Error 4xx",
             "optional": false,
             "field": "406",
-            "description": "<p>Not Acceptable (JSON 데이터 오류)</p> "
+            "description": "<p>Not Acceptable (JSON 데이터 오류)</p>"
           },
           {
             "group": "Error 4xx",
             "optional": false,
             "field": "409",
-            "description": "<p>Conflict (데이터 중복 오류)</p> "
+            "description": "<p>Conflict (데이터 중복 오류)</p>"
           },
           {
             "group": "Error 4xx",
             "optional": false,
             "field": "413",
-            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p> "
+            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
           }
         ],
         "Error 5xx": [
@@ -235,25 +235,25 @@
             "group": "Error 5xx",
             "optional": false,
             "field": "500",
-            "description": "<p>Internal Server Error (내부 오류)</p> "
+            "description": "<p>Internal Server Error (내부 오류)</p>"
           },
           {
             "group": "Error 5xx",
             "optional": false,
             "field": "501",
-            "description": "<p>Not Implemented (URL, method 오류)</p> "
+            "description": "<p>Not Implemented (URL, method 오류)</p>"
           },
           {
             "group": "Error 5xx",
             "optional": false,
             "field": "502",
-            "description": "<p>Bad Gateway (서버 내부 통신 오류)</p> "
+            "description": "<p>Bad Gateway (서버 내부 통신 오류)</p>"
           },
           {
             "group": "Error 5xx",
             "optional": false,
             "field": "520",
-            "description": "<p>Unknown Error (알 수 없는 오류)</p> "
+            "description": "<p>Unknown Error (알 수 없는 오류)</p>"
           }
         ]
       }
@@ -271,10 +271,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           }
         ]
       }
@@ -284,150 +284,150 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "roomtype",
-            "description": "<p>방 종류 (1:개인, 2:단체)</p> "
+            "description": "<p>방 종류 (1:개인, 2:단체)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "state",
-            "description": "<p>상태 (0:퇴장, 1:참여)</p> "
+            "description": "<p>상태 (0:퇴장, 1:참여)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "alert",
-            "description": "<p>방 알림 (0:사용안함, 1:사용)</p> "
+            "description": "<p>방 알림 (0:사용안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "name",
-            "description": "<p>방 이름</p> "
+            "description": "<p>방 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msg",
-            "description": "<p>메시지 번호</p> "
+            "description": "<p>메시지 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msgtype",
-            "description": "<p>메시지 종류 (1:일반, 2:파일)</p> "
+            "description": "<p>메시지 종류 (1:일반, 2:파일)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "newcount",
-            "description": "<p>안 읽은 메시지 수</p> "
+            "description": "<p>안 읽은 메시지 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "newmsg",
-            "description": "<p>안 읽은 메시지 번호 시작</p> "
+            "description": "<p>안 읽은 메시지 번호 시작</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "created",
-            "description": "<p>메시지 생성시간(unix)</p> "
+            "description": "<p>메시지 생성시간(unix)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "users",
-            "description": "<p>다른 유저 번호 리스트 (state:1 - 참여 대화방인 경우)</p> "
+            "description": "<p>다른 유저 번호 리스트 (state:1 - 참여 대화방인 경우)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": true,
             "field": "fileinfo",
-            "description": "<p>파일 정보 (msgtype:2 - 파일인 경우)</p> "
+            "description": "<p>파일 정보 (msgtype:2 - 파일인 경우)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.file",
-            "description": "<p>파일 번호</p> "
+            "description": "<p>파일 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": true,
             "field": "fileinfo.type",
-            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p> "
+            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": true,
             "field": "fileinfo.name",
-            "description": "<p>파일명</p> "
+            "description": "<p>파일명</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.w",
-            "description": "<p>가로 크기</p> "
+            "description": "<p>가로 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.h",
-            "description": "<p>세로 크기</p> "
+            "description": "<p>세로 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.size",
-            "description": "<p>파일 크기</p> "
+            "description": "<p>파일 크기</p>"
           }
         ]
       },
@@ -454,10 +454,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           }
         ]
       }
@@ -467,108 +467,108 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "rooms",
-            "description": "<p>대화방 리스트</p> "
+            "description": "<p>대화방 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.roomtype",
-            "description": "<p>방 종류 (1:개인, 2:단체)</p> "
+            "description": "<p>방 종류 (1:개인, 2:단체)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.state",
-            "description": "<p>상태 (0:퇴장, 1:참여)</p> "
+            "description": "<p>상태 (0:퇴장, 1:참여)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.alert",
-            "description": "<p>방 알림 (0:사용안함, 1:사용)</p> "
+            "description": "<p>방 알림 (0:사용안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "rooms.name",
-            "description": "<p>방 이름</p> "
+            "description": "<p>방 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.msg",
-            "description": "<p>메시지 번호</p> "
+            "description": "<p>메시지 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.msgtype",
-            "description": "<p>메시지 종류 (1:일반, 2:파일)</p> "
+            "description": "<p>메시지 종류 (1:일반, 2:파일)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "rooms.content",
-            "description": "<p>메시지 내용</p> "
+            "description": "<p>메시지 내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.newcount",
-            "description": "<p>안 읽은 메시지 수</p> "
+            "description": "<p>안 읽은 메시지 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.newmsg",
-            "description": "<p>안 읽은 메시지 번호 시작</p> "
+            "description": "<p>안 읽은 메시지 번호 시작</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "rooms.created",
-            "description": "<p>메시지 생성시간(unix)</p> "
+            "description": "<p>메시지 생성시간(unix)</p>"
           }
         ]
       },
@@ -595,19 +595,19 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           }
         ],
         "JSON": [
           {
             "group": "JSON",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": false,
             "field": "users",
-            "description": "<p>유저 번호 리스트</p> "
+            "description": "<p>유저 번호 리스트</p>"
           }
         ]
       },
@@ -624,10 +624,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           }
         ]
       }
@@ -641,7 +641,7 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "413",
-            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p> "
+            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
           }
         ]
       }
@@ -659,19 +659,19 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           }
         ],
         "JSON": [
           {
             "group": "JSON",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": false,
             "field": "users",
-            "description": "<p>유저 번호 리스트</p> "
+            "description": "<p>유저 번호 리스트</p>"
           }
         ]
       },
@@ -688,10 +688,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호 (단체방으로 전환된 경우 새 방 번호)</p> "
+            "description": "<p>방 번호 (단체방으로 전환된 경우 새 방 번호)</p>"
           }
         ]
       }
@@ -705,7 +705,7 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "413",
-            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p> "
+            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
           }
         ]
       }
@@ -723,17 +723,17 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msg",
-            "description": "<p>메시지 번호</p> "
+            "description": "<p>메시지 번호</p>"
           }
         ]
       }
@@ -743,10 +743,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>text/plain</p> ",
+            "type": "text/plain",
             "optional": false,
             "field": "Content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           }
         ]
       }
@@ -766,24 +766,24 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msg",
-            "description": "<p>메시지 번호</p> "
+            "description": "<p>메시지 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "file",
-            "description": "<p>파일 번호</p> "
+            "description": "<p>파일 번호</p>"
           }
         ]
       }
@@ -793,10 +793,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>binary</p> ",
+            "type": "binary",
             "optional": false,
             "field": "Content",
-            "description": "<p>파일 스트림 (application/octet-stream 등)</p> "
+            "description": "<p>파일 스트림 (application/octet-stream 등)</p>"
           }
         ]
       }
@@ -816,17 +816,17 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msg",
-            "description": "<p>메시지 번호</p> "
+            "description": "<p>메시지 번호</p>"
           }
         ]
       }
@@ -836,101 +836,101 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "type",
-            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p> "
+            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": true,
             "field": "fileinfo",
-            "description": "<p>파일 목록 (type:2 - 파일인 경우)</p> "
+            "description": "<p>파일 목록 (type:2 - 파일인 경우)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.file",
-            "description": "<p>파일 번호</p> "
+            "description": "<p>파일 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": true,
             "field": "fileinfo.type",
-            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p> "
+            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": true,
             "field": "fileinfo.name",
-            "description": "<p>파일명</p> "
+            "description": "<p>파일명</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.w",
-            "description": "<p>가로 크기</p> "
+            "description": "<p>가로 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.h",
-            "description": "<p>세로 크기</p> "
+            "description": "<p>세로 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "fileinfo.size",
-            "description": "<p>파일 크기</p> "
+            "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "users",
-            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p> "
+            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p>"
           }
         ]
       },
@@ -957,35 +957,35 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-20",
             "optional": false,
             "field": "count",
-            "description": "<p>가져올 메시지 수</p> "
+            "description": "<p>가져올 메시지 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "0-2",
             "optional": true,
             "field": "way",
             "defaultValue": "0",
-            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p> "
+            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
-            "description": "<p>메시지 번호 시작</p> "
+            "description": "<p>메시지 번호 시작</p>"
           }
         ]
       }
@@ -995,115 +995,115 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "msgs",
-            "description": "<p>메시지 리스트</p> "
+            "description": "<p>메시지 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msgs.msg",
-            "description": "<p>메시지 번호</p> "
+            "description": "<p>메시지 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msgs.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msgs.type",
-            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p> "
+            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msgs.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "msgs.content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "msgs.tagfeeds",
-            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p> "
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msgs.created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": true,
             "field": "msgs.fileinfo",
-            "description": "<p>파일 정보 (type:2 - 파일인 경우)</p> "
+            "description": "<p>파일 정보 (type:2 - 파일인 경우)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "msgs.fileinfo.file",
-            "description": "<p>파일 번호</p> "
+            "description": "<p>파일 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": true,
             "field": "msgs.fileinfo.type",
-            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p> "
+            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": true,
             "field": "msgs.fileinfo.name",
-            "description": "<p>파일명</p> "
+            "description": "<p>파일명</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "msgs.fileinfo.w",
-            "description": "<p>가로 크기</p> "
+            "description": "<p>가로 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "msgs.fileinfo.h",
-            "description": "<p>세로 크기</p> "
+            "description": "<p>세로 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "msgs.fileinfo.size",
-            "description": "<p>파일 크기</p> "
+            "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "msgs.users",
-            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p> "
+            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p>"
           }
         ]
       },
@@ -1130,45 +1130,45 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           }
         ]
       }
     },
-    "description": "<p>msgstart ~ msgend 범위 내 메시지들의 카운트</p> ",
+    "description": "<p>msgstart ~ msgend 범위 내 메시지들의 카운트</p>",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "counts",
-            "description": "<p>카운트 정보 리스트</p> "
+            "description": "<p>카운트 정보 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "counts.cnt",
-            "description": "<p>안 읽은 수</p> "
+            "description": "<p>안 읽은 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "counts.msgstart",
-            "description": "<p>메시지 번호 시작</p> "
+            "description": "<p>메시지 번호 시작</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "counts.msgend",
-            "description": "<p>메시지 번호 끝</p> "
+            "description": "<p>메시지 번호 끝</p>"
           }
         ],
         "Success 2xx": [
@@ -1176,7 +1176,7 @@
             "group": "Success 2xx",
             "optional": false,
             "field": "204",
-            "description": "<p>No Content (성공, 컨텐츠 없음)</p> "
+            "description": "<p>No Content (성공, 컨텐츠 없음)</p>"
           }
         ]
       },
@@ -1198,41 +1198,41 @@
     "name": "PostMessage",
     "group": "Chat_Message",
     "version": "2.0.0",
-    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 없는 것으로 처리)</p> ",
+    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 없는 것으로 처리)</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "room",
-            "description": "<p>방 번호</p> "
+            "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-2",
             "optional": true,
             "field": "type",
             "defaultValue": "1",
-            "description": "<p>종류 (1:일반, 2:파일)</p> "
+            "description": "<p>종류 (1:일반, 2:파일)</p>"
           }
         ],
         "JSON": [
           {
             "group": "JSON",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용 (type 2일 경우 파일 번호)</p> "
+            "description": "<p>내용 (type 2일 경우 파일 번호)</p>"
           },
           {
             "group": "JSON",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "tagfeeds",
-            "description": "<p>태그 피드 번호 리스트</p> "
+            "description": "<p>태그 피드 번호 리스트</p>"
           }
         ]
       },
@@ -1249,10 +1249,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "msg",
-            "description": "<p>메시지 번호</p> "
+            "description": "<p>메시지 번호</p>"
           }
         ]
       }
@@ -1267,226 +1267,226 @@
     "name": "GetEvents",
     "group": "Event",
     "version": "2.0.0",
-    "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, read:읽음 상태 변경, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:팀 가입, exit:팀 탈퇴, block:팀 중지, drop: 계정 삭제)</p> </li> </ul> ",
+    "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제, readfeed:읽음 상태 변경)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:팀 가입, exit:팀 탈퇴, block:팀 중지, drop: 계정 삭제)</p> </li> </ul>",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "events",
-            "description": "<p>이벤트 리스트</p> "
+            "description": "<p>이벤트 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "events.type",
-            "description": "<p>이벤트 종류</p> "
+            "description": "<p>이벤트 종류</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": true,
             "field": "events.chat",
-            "description": "<p>채팅 이벤트 정보</p> "
+            "description": "<p>채팅 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.chat.team",
-            "description": "<p>팀 번호 (type: chat.*)</p> "
+            "description": "<p>팀 번호 (type: chat.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.chat.room",
-            "description": "<p>방 번호 (type: chat.*)</p> "
+            "description": "<p>방 번호 (type: chat.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.chat.user",
-            "description": "<p>유저 번호 (type: chat.message|detach)</p> "
+            "description": "<p>유저 번호 (type: chat.message|detach)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.chat.msg",
-            "description": "<p>메시지 번호 (type: chat.message)</p> "
+            "description": "<p>메시지 번호 (type: chat.message)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.chat.alert",
-            "description": "<p>알림 (0:사용안함, 1:사용, type: chat.room)</p> "
+            "description": "<p>알림 (0:사용안함, 1:사용, type: chat.room)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": true,
             "field": "events.chat.name",
-            "description": "<p>방 이름 (type: chat.room)</p> "
+            "description": "<p>방 이름 (type: chat.room)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": true,
             "field": "events.feed",
-            "description": "<p>피드 이벤트 정보</p> "
+            "description": "<p>피드 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.team",
-            "description": "<p>팀 번호 (type: feed.*)</p> "
+            "description": "<p>팀 번호 (type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.feedgroup",
-            "description": "<p>피드 그룹 번호 (type: feed.*)</p> "
+            "description": "<p>피드 그룹 번호 (type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.feed",
-            "description": "<p>피드 번호 (0:그룹 전체, type: feed.*)</p> "
+            "description": "<p>피드 번호 (0:그룹 전체, type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.user",
-            "description": "<p>유저 번호 (type: feed.feed|reply|like|tagfeed|tagreply|removelike)</p> "
+            "description": "<p>유저 번호 (type: feed.feed|reply|like|tagfeed|tagreply|removelike)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.watch",
-            "description": "<p>지켜보기 (0:안함, 1:사용, type: feed.feed|tagfeed|reply|tagreply|watch)</p> "
+            "description": "<p>지켜보기 (0:안함, 1:사용, type: feed.feed|tagfeed|reply|tagreply|watch)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.push",
-            "description": "<p>강제 알림 (0:안함, 1:사용, type: feed.feed|tagfeed)</p> "
+            "description": "<p>강제 알림 (0:안함, 1:사용, type: feed.feed|tagfeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.reply",
-            "description": "<p>댓글 번호 (type: feed.reply|tagreply|removereply|changereply)</p> "
+            "description": "<p>댓글 번호 (type: feed.reply|tagreply|removereply|changereply)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feed.inform",
-            "description": "<p>알림탭 갱신 여부 (0:미참여, 1:최근 참여, 2:이전 참여, type: feed.reply|tagreply|like)</p> "
+            "description": "<p>알림탭 갱신 여부 (0:미참여, 1:최근 참여, 2:이전 참여, type: feed.reply|tagreply|like)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": true,
             "field": "events.feedgroup",
-            "description": "<p>피드 그룹 이벤트 정보</p> "
+            "description": "<p>피드 그룹 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feedgroup.team",
-            "description": "<p>팀 번호 (type: feedgroup.*)</p> "
+            "description": "<p>팀 번호 (type: feedgroup.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.feedgroup.feedgroup",
-            "description": "<p>피드 그룹 번호 (type: feedgroup.*)</p> "
+            "description": "<p>피드 그룹 번호 (type: feedgroup.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": true,
             "field": "events.inform",
-            "description": "<p>알림 이벤트 정보</p> "
+            "description": "<p>알림 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.inform.feedgroup",
-            "description": "<p>피드 그룹 번호 (0:알림 전체, type: inform.*)</p> "
+            "description": "<p>피드 그룹 번호 (0:알림 전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.inform.feed",
-            "description": "<p>피드 번호 (0:그룹 전체, type: inform.*)</p> "
+            "description": "<p>피드 번호 (0:그룹 전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.inform.noti",
-            "description": "<p>알림 번호 (0:전체, type: inform.*)</p> "
+            "description": "<p>알림 번호 (0:전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.inform.read",
-            "description": "<p>읽음 상태 (0:전체, 1:읽은 알림만, type: inform.*)</p> "
+            "description": "<p>읽음 상태 (0:전체, 1:읽은 알림만, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.inform.watch",
-            "description": "<p>지켜보기 (0:일반, 1:지켜보기, type: inform.*)</p> "
+            "description": "<p>지켜보기 (0:일반, 1:지켜보기, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>object</p> ",
+            "type": "object",
             "optional": true,
             "field": "events.user",
-            "description": "<p>유저 이벤트 정보</p> "
+            "description": "<p>유저 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.user.user",
-            "description": "<p>유저 번호 (type: user.password|drop)</p> "
+            "description": "<p>유저 번호 (type: user.password|drop)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "events.user.team",
-            "description": "<p>팀 번호 (type: user.approval|exit|block)</p> "
+            "description": "<p>팀 번호 (type: user.approval|exit|block)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "events.user.users",
-            "description": "<p>유저 번호 리스트 (type: user.approval|exit|block)</p> "
+            "description": "<p>유저 번호 리스트 (type: user.approval|exit|block)</p>"
           }
         ]
       },
@@ -1502,6 +1502,41 @@
     "groupTitle": "Event"
   },
   {
+    "type": "delete",
+    "url": "https://edge.tmup.com/v1/feed/:feed",
+    "title": "피드 삭제",
+    "name": "DeleteFeed",
+    "group": "Feed",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "feed",
+            "description": "<p>피드 번호</p>"
+          }
+        ]
+      }
+    },
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "groupTitle": "Feed",
+    "success": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content (성공, 컨텐츠 없음)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "get",
     "url": "https://edge.tmup.com/v1/feed/:feed",
     "title": "피드 상세 정보",
@@ -1513,10 +1548,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           }
         ]
       }
@@ -1526,143 +1561,143 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "groupname",
-            "description": "<p>피드 그룹 이름</p> "
+            "description": "<p>피드 그룹 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "type",
-            "description": "<p>종류 (1:일반, 2:마크업)</p> "
+            "description": "<p>종류 (1:일반, 2:마크업)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "push",
-            "description": "<p>강제 알림 (0:안함, 1:사용)</p> "
+            "description": "<p>강제 알림 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "watch",
-            "description": "<p>지켜보기 (0:안함, 1:사용)</p> "
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용 (마크업:null)</p> "
+            "description": "<p>내용 (마크업:null)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "removable",
-            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p> "
+            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.watch",
-            "description": "<p>지켜보기 (0:안함, 1:사용)</p> "
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "liked",
-            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p> "
+            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "tagfeeds",
-            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p> "
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "tagusers",
-            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p> "
+            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "readcount",
-            "description": "<p>읽음 수</p> "
+            "description": "<p>읽음 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replycount",
-            "description": "<p>댓글 수</p> "
+            "description": "<p>댓글 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "likecount",
-            "description": "<p>좋아요 수</p> "
+            "description": "<p>좋아요 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "filecount",
-            "description": "<p>전체 파일 수</p> "
+            "description": "<p>전체 파일 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "mediacount",
-            "description": "<p>미디어 파일 수</p> "
+            "description": "<p>미디어 파일 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           }
         ]
       },
@@ -1689,17 +1724,17 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "file",
-            "description": "<p>파일 번호</p> "
+            "description": "<p>파일 번호</p>"
           }
         ]
       }
@@ -1709,10 +1744,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>binary</p> ",
+            "type": "binary",
             "optional": false,
             "field": "Content",
-            "description": "<p>파일 스트림 (application/octet-stream 등)</p> "
+            "description": "<p>파일 스트림 (application/octet-stream 등)</p>"
           }
         ]
       }
@@ -1732,35 +1767,35 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-20",
             "optional": false,
             "field": "count",
-            "description": "<p>가져올 수</p> "
+            "description": "<p>가져올 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "0-2",
             "optional": true,
             "field": "type",
             "defaultValue": "0",
-            "description": "<p>파일 종류] (0:전체, 1:일반, 2:이미지/동영상)</p> "
+            "description": "<p>파일 종류] (0:전체, 1:일반, 2:이미지/동영상)</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
-            "description": "<p>시작 수</p> "
+            "description": "<p>시작 수</p>"
           }
         ]
       }
@@ -1770,38 +1805,38 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "files",
-            "description": "<p>파일 리스트</p> "
+            "description": "<p>파일 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "files.file",
-            "description": "<p>파일 번호</p> "
+            "description": "<p>파일 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "files.type",
-            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p> "
+            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "files.name",
-            "description": "<p>파일명</p> "
+            "description": "<p>파일명</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "files.size",
-            "description": "<p>파일 크기 성시간(unix)</p> "
+            "description": "<p>파일 크기 성시간(unix)</p>"
           }
         ]
       },
@@ -1828,10 +1863,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           }
         ]
       }
@@ -1841,10 +1876,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>text/html</p> ",
+            "type": "text/html",
             "optional": false,
             "field": "Content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           }
         ]
       },
@@ -1871,10 +1906,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           }
         ]
       }
@@ -1884,73 +1919,73 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "groupname",
-            "description": "<p>피드 그룹 이름</p> "
+            "description": "<p>피드 그룹 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "type",
-            "description": "<p>종류 (1:일반, 2:마크업)</p> "
+            "description": "<p>종류 (1:일반, 2:마크업)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "push",
-            "description": "<p>강제 알림 (0:안함, 1:사용)</p> "
+            "description": "<p>강제 알림 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "watch",
-            "description": "<p>지켜보기 (0:안함, 1:사용)</p> "
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           }
         ]
       },
@@ -1977,51 +2012,51 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-20",
             "optional": false,
             "field": "count",
-            "description": "<p>가져올 피드 수</p> "
+            "description": "<p>가져올 피드 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "0-2",
             "optional": true,
             "field": "way",
             "defaultValue": "0",
-            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p> "
+            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
-            "description": "<p>피드 번호 시작</p> "
+            "description": "<p>피드 번호 시작</p>"
           }
         ],
         "Query String": [
           {
             "group": "Query String",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Query String",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "group",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           },
           {
             "group": "Query String",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           }
         ]
       },
@@ -2053,143 +2088,143 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "feeds",
-            "description": "<p>피드 리스트</p> "
+            "description": "<p>피드 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "feeds.groupname",
-            "description": "<p>피드 그룹 이름</p> "
+            "description": "<p>피드 그룹 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.type",
-            "description": "<p>종류 (1:일반, 2:마크업)</p> "
+            "description": "<p>종류 (1:일반, 2:마크업)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.push",
-            "description": "<p>강제 알림 (0:안함, 1:사용)</p> "
+            "description": "<p>강제 알림 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "feeds.content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.removable",
-            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p> "
+            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.watch",
-            "description": "<p>지켜보기 (0:안함, 1:사용)</p> "
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.liked",
-            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p> "
+            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "feeds.tagfeeds",
-            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p> "
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "feeds.tagusers",
-            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p> "
+            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.replycount",
-            "description": "<p>댓글 수</p> "
+            "description": "<p>댓글 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.likecount",
-            "description": "<p>좋아요 수</p> "
+            "description": "<p>좋아요 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.filecount",
-            "description": "<p>전체 파일 수</p> "
+            "description": "<p>전체 파일 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.mediacount",
-            "description": "<p>미디어 파일 수</p> "
+            "description": "<p>미디어 파일 수</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           }
         ]
       },
@@ -2216,48 +2251,48 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           }
         ],
         "JSON": [
           {
             "group": "JSON",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "JSON",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "tagusers",
-            "description": "<p>태그 유저 번호 리스트</p> "
+            "description": "<p>태그 유저 번호 리스트</p>"
           },
           {
             "group": "JSON",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "tagfeeds",
-            "description": "<p>태그 피드 번호 리스트</p> "
+            "description": "<p>태그 피드 번호 리스트</p>"
           },
           {
             "group": "JSON",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": true,
             "field": "files",
-            "description": "<p>파일 번호 리스트</p> "
+            "description": "<p>파일 번호 리스트</p>"
           },
           {
             "group": "JSON",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "0-1",
             "optional": true,
             "field": "push",
-            "description": "<p>강제 알림 (0:사용안함, 1:사용)</p> "
+            "description": "<p>강제 알림 (0:사용안함, 1:사용)</p>"
           }
         ]
       },
@@ -2274,17 +2309,64 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           }
         ]
       }
     },
     "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
     "groupTitle": "Feed",
-    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (서버에서 빠른 처리를 위해 사용, 비어있을 경우 태그 없는 것으로 간주)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 없는 것으로 간주)</p> "
+    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>"
+  },
+  {
+    "type": "delete",
+    "url": "https://edge.tmup.com/v1/feedgroup/user/:feedgroup/:targetuser",
+    "title": "그룹 탈퇴",
+    "name": "DeleteFeedGroupUser",
+    "group": "Feed_Group",
+    "version": "2.0.0",
+    "permission": [
+      {
+        "name": "feedgroup admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "feedgroup",
+            "description": "<p>피드 그룹 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "targetuser",
+            "description": "<p>탈퇴 유저 번호</p>"
+          }
+        ]
+      }
+    },
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "groupTitle": "Feed_Group",
+    "success": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content (성공, 컨텐츠 없음)</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "get",
@@ -2298,10 +2380,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           }
         ]
       }
@@ -2311,106 +2393,106 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "groupname",
-            "description": "<p>피드 그룹 이름</p> "
+            "description": "<p>피드 그룹 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "usercount",
-            "description": "<p>피드 그룹 유저 수</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "groupfile",
-            "description": "<p>피드 그룹 이미지 파일 번호 (0이면 설정되어 있지 않음)</p> "
+            "description": "<p>피드 그룹 이미지 파일 번호 (0이면 설정되어 있지 않음)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "membertype",
-            "description": "<p>세션 유저의 종류 (1:일반, 2:관리자)</p> "
+            "description": "<p>세션 유저의 종류 (1:일반, 2:관리자)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "watchfeed",
-            "description": "<p>지켜보기 (0:안함, 1:사용)</p> "
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "write",
-            "description": "<p>쓰기 권한 여부 (0:없음, 1:가능)</p> "
+            "description": "<p>쓰기 권한 여부 (0:없음, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "remove",
-            "description": "<p>삭제 권한 여부 (0:없음, 1:가능)</p> "
+            "description": "<p>삭제 권한 여부 (0:없음, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replywrite",
-            "description": "<p>댓글 쓰기 권한 여부 (0:없음, 1:가능)</p> "
+            "description": "<p>댓글 쓰기 권한 여부 (0:없음, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replyremove",
-            "description": "<p>댓글 삭제 권한 여부 (0:없음, 1:가능)</p> "
+            "description": "<p>댓글 삭제 권한 여부 (0:없음, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "alerttype",
-            "description": "<p>알림 설정 종류 (1:멤버허용, 2:관리자만)</p> "
+            "description": "<p>알림 설정 종류 (1:멤버허용, 2:관리자만)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "alertfeed",
-            "description": "<p>새글 알림 (0:사용안함, 1:사용)</p> "
+            "description": "<p>새글 알림 (0:사용안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "alertreply",
-            "description": "<p>댓글 알림 (0:사용안함, 1:사용)</p> "
+            "description": "<p>댓글 알림 (0:사용안함, 1:사용)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "usercount",
+            "description": "<p>피드 그룹 유저 수</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"team\":1,\n\"groupname\":\"그룹1\",\n\"usercount\":3,\n\"groupfile\":0,\n\"membertype\":1,\n\"write\":1,\n\"remove\":1,\n\"replywrite\":1,\n\"replyremove\":1,\n\"alerttype\":1,\n\"alertfeed\":0,\n\"alertreply\":0\n}",
+          "content": "{\n\"team\":1,\n\"groupname\":\"그룹1\",\n\"groupfile\":0,\n\"membertype\":1,\n\"write\":1,\n\"remove\":1,\n\"replywrite\":1,\n\"replyremove\":1,\n\"alerttype\":1,\n\"alertfeed\":0,\n\"alertreply\":0,\n\"usercount\":3\n}",
           "type": "json"
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
     "groupTitle": "Feed_Group"
   },
   {
@@ -2425,10 +2507,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           }
         ]
       }
@@ -2438,24 +2520,24 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "users",
-            "description": "<p>유저 리스트</p> "
+            "description": "<p>유저 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "users.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "users.membertype",
-            "description": "<p>멤버 종류 (1:일반, 2:관리자)</p> "
+            "description": "<p>멤버 종류 (1:일반, 2:관리자)</p>"
           }
         ]
       },
@@ -2482,10 +2564,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           }
         ]
       }
@@ -2495,80 +2577,80 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "feedgroups",
-            "description": "<p>피드 그룹 리스트</p> "
+            "description": "<p>피드 그룹 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "feedgroups.groupname",
-            "description": "<p>피드 그룹 이름</p> "
+            "description": "<p>피드 그룹 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.groupfile",
-            "description": "<p>피드 그룹 이미지 파일 번호</p> "
+            "description": "<p>피드 그룹 이미지 파일 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.watchfeed",
-            "description": "<p>지켜보기 (0:안함, 1:사용)</p> "
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.writable",
-            "description": "<p>쓰기 권한 여부 (0:없음, 1:가능)</p> "
+            "description": "<p>쓰기 권한 여부 (0:없음, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.alerttype",
-            "description": "<p>알림 설정 종류 (1:멤버허용, 2:관리자만)</p> "
+            "description": "<p>알림 설정 종류 (1:멤버허용, 2:관리자만)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.alertfeed",
-            "description": "<p>새글 알림 (0:사용안함, 1:사용)</p> "
+            "description": "<p>새글 알림 (0:사용안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.alertreply",
-            "description": "<p>댓글 알림 (0:사용안함, 1:사용)</p> "
+            "description": "<p>댓글 알림 (0:사용안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroups.newcount",
-            "description": "<p>새 알림 수</p> "
+            "description": "<p>새 알림 수</p>"
           }
         ]
       },
@@ -2580,8 +2662,86 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
     "groupTitle": "Feed_Group"
+  },
+  {
+    "type": "post",
+    "url": "https://edge.tmup.com/v1/feedgroup/:team",
+    "title": "그룹 생성",
+    "name": "PostFeedGroup",
+    "group": "Feed_Group",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>피드 그룹 이름</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "number",
+            "optional": true,
+            "field": "file",
+            "description": "<p>이미지 파일 번호</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "number[]",
+            "optional": true,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"name\":\"그룹이름\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "feedgroup",
+            "description": "<p>피드 그룹 번호</p>"
+          }
+        ]
+      }
+    },
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "groupTitle": "Feed_Group",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "409",
+            "description": "<p>Conflict (데이터 중복 오류)</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "post",
@@ -2595,19 +2755,19 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           }
         ],
         "JSON": [
           {
             "group": "JSON",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": false,
             "field": "users",
-            "description": "<p>유저 번호 리스트</p> "
+            "description": "<p>유저 번호 리스트</p>"
           }
         ]
       },
@@ -2628,7 +2788,7 @@
             "group": "Success 2xx",
             "optional": false,
             "field": "201",
-            "description": "<p>Created (성공, 컨텐츠 없음)</p> "
+            "description": "<p>Created (성공, 컨텐츠 없음)</p>"
           }
         ]
       }
@@ -2640,7 +2800,7 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "413",
-            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p> "
+            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
           }
         ]
       }
@@ -2658,26 +2818,26 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-20",
             "optional": false,
             "field": "count",
-            "description": "<p>가져올 수</p> "
+            "description": "<p>가져올 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
-            "description": "<p>시작 수</p> "
+            "description": "<p>시작 수</p>"
           }
         ]
       }
@@ -2687,24 +2847,24 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number[]</p> ",
+            "type": "number[]",
             "optional": false,
             "field": "users",
-            "description": "<p>유저 리스트</p> "
+            "description": "<p>유저 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "users.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "users.created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           }
         ]
       },
@@ -2731,10 +2891,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           }
         ]
       }
@@ -2748,7 +2908,42 @@
             "group": "Success 2xx",
             "optional": false,
             "field": "201",
-            "description": "<p>Created (성공, 컨텐츠 없음)</p> "
+            "description": "<p>Created (성공, 컨텐츠 없음)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "delete",
+    "url": "https://edge.tmup.com/v1/feed/reply/:reply",
+    "title": "댓글 삭제",
+    "name": "DeleteFeedReply",
+    "group": "Feed_Reply",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "reply",
+            "description": "<p>댓글 번호</p>"
+          }
+        ]
+      }
+    },
+    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "groupTitle": "Feed_Reply",
+    "success": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content (성공, 컨텐츠 없음)</p>"
           }
         ]
       }
@@ -2766,35 +2961,35 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-20",
             "optional": false,
             "field": "count",
-            "description": "<p>가져올 댓글 수</p> "
+            "description": "<p>가져올 댓글 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "0-2",
             "optional": true,
             "field": "way",
             "defaultValue": "0",
-            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p> "
+            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
-            "description": "<p>댓글 번호 시작</p> "
+            "description": "<p>댓글 번호 시작</p>"
           }
         ]
       }
@@ -2804,66 +2999,66 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "replies",
-            "description": "<p>댓글 리스트</p> "
+            "description": "<p>댓글 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replies.reply",
-            "description": "<p>댓글 번호</p> "
+            "description": "<p>댓글 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replies.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replies.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "replies.content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replies.removable",
-            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p> "
+            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "replies.tagfeeds",
-            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p> "
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "replies.tagusers",
-            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p> "
+            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "replies.created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           }
         ]
       },
@@ -2890,17 +3085,17 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "reply",
-            "description": "<p>댓글 번호</p> "
+            "description": "<p>댓글 번호</p>"
           }
         ]
       }
@@ -2910,66 +3105,66 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "groupname",
-            "description": "<p>피드 그룹 이름</p> "
+            "description": "<p>피드 그룹 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "joined",
-            "description": "<p>참여 여부 (0:참여안함, 1:참여)</p> "
+            "description": "<p>참여 여부 (0:참여안함, 1:참여)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeduser",
-            "description": "<p>피드 유저 번호</p> "
+            "description": "<p>피드 유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "created",
-            "description": "<p>생성시간(unix)</p> "
+            "description": "<p>생성시간(unix)</p>"
           }
         ]
       },
@@ -2996,19 +3191,19 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           }
         ],
         "JSON": [
           {
             "group": "JSON",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           }
         ]
       },
@@ -3025,130 +3220,131 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "reply",
-            "description": "<p>댓글 번호</p> "
+            "description": "<p>댓글 번호</p>"
           }
         ]
       }
     },
     "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
     "groupTitle": "Feed_Reply",
-    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (서버에서 빠른 처리를 위해 사용, 비어있을 경우 태그 없는 것으로 간주)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 없는 것으로 간주)</p> "
+    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>"
   },
   {
-    "type": "get",
-    "url": "https://file.tmup.com/v1/thumb/image/:file:/:width:/:height",
-    "title": "이미지 썸네일",
-    "name": "GetThumbImage",
+    "type": "post",
+    "url": "https://file.tmup.com/v1/files/:team",
+    "title": "파일 업로드",
+    "name": "PostFiles",
     "group": "File",
     "version": "2.0.0",
+    "description": "<p>이미지/동영상 썸네일 추출을 위해 form-data에 Content-Type 이 명시되어 있어야함.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>multipart/form-data</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
-            "field": "file",
-            "description": "<p>파일 번호</p> "
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ],
+        "Content": [
+          {
+            "group": "Content",
+            "type": "multipart/form-data",
+            "optional": false,
+            "field": "files",
+            "description": "<p>파일 데이터 리스트</p>"
+          }
+        ],
+        "Content-Disposition": [
+          {
+            "group": "Content-Disposition",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>폼 이름: files[]</p>"
           },
           {
-            "group": "Parameter",
-            "type": "<p>number</p> ",
+            "group": "Content-Disposition",
+            "type": "string",
             "optional": false,
-            "field": "width",
-            "description": "<p>가로 pixel (0이면 세로 비율에 맞춤)</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "height",
-            "description": "<p>세로 pixel (0이면 가로 비율에 맞춤)</p> "
+            "field": "filename",
+            "description": "<p>파일 이름</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "POST /v1/files/1 HTTP/1.1\nAuthorization: bearer a0b1c2d3e4f6g7h8i9j0a0b1c2d3e4f6g7h8i9j0\nContent-Type: multipart/form-data; boundary=---------------------------173911477930303\n\n-----------------------------173911477930303\nContent-Disposition: form-data; name=\"files[]\"; filename=\"a.txt\"\nContent-Type: text/plain\n\naaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n-----------------------------173911477930303\nContent-Disposition: form-data; name=\"files[]\"; filename=\"b.png\"\nContent-Type: image/png\n\n{이미지 데이터}\n-----------------------------173911477930303--",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>binary</p> ",
+            "type": "object[]",
             "optional": false,
-            "field": "Content",
-            "description": "<p>썸네일 스트림 (application/octet-stream 등)</p> "
-          }
-        ],
-        "Success 3xx": [
-          {
-            "group": "Success 3xx",
-            "optional": false,
-            "field": "304",
-            "description": "<p>Not Modified - 성공, 변경 없음</p> "
-          }
-        ]
-      }
-    },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
-    "groupTitle": "File"
-  },
-  {
-    "type": "get",
-    "url": "https://file.tmup.com/v1/thumb/video/:file:/:width:/:height",
-    "title": "동영상 썸네일",
-    "name": "GetThumbVideo",
-    "group": "File",
-    "version": "2.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "file",
-            "description": "<p>파일 번호</p> "
+            "field": "files",
+            "description": "<p>파일 정보 리스트</p>"
           },
-          {
-            "group": "Parameter",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "width",
-            "description": "<p>가로 pixel (0이면 세로 비율에 맞춤)</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>number</p> ",
-            "optional": false,
-            "field": "height",
-            "description": "<p>세로 pixel (0이면 가로 비율에 맞춤)</p> "
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>binary</p> ",
+            "type": "number",
             "optional": false,
-            "field": "Content",
-            "description": "<p>썸네일 스트림 (application/octet-stream 등)</p> "
-          }
-        ],
-        "Success 3xx": [
+            "field": "files.file",
+            "description": "<p>파일 번호 (업로드 성공 시)</p>"
+          },
           {
-            "group": "Success 3xx",
+            "group": "Success 200",
+            "type": "number",
             "optional": false,
-            "field": "304",
-            "description": "<p>Not Modified - 성공, 변경 없음</p> "
+            "field": "files.type",
+            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "files.name",
+            "description": "<p>파일명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "files.size",
+            "description": "<p>파일크기</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"files\":[\n{\"file\":2,\"type\":1,\"name\":\"a.txt\",\"w\":0,\"h\":0,\"size\":29},\n{\"file\":3,\"type\":2,\"name\":\"b.png\",\"w\":200,\"h\":100,\"size\":1932741}\n]\n}",
+          "type": "json"
+        }
+      ]
     },
     "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
     "groupTitle": "File"
@@ -3165,32 +3361,32 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "team",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-20",
             "optional": false,
             "field": "count",
-            "description": "<p>가져올 수</p> "
+            "description": "<p>가져올 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "start",
-            "description": "<p>시작 수</p> "
+            "description": "<p>시작 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feed",
-            "description": "<p>검색 피드 번호</p> "
+            "description": "<p>검색 피드 번호</p>"
           }
         ]
       }
@@ -3200,52 +3396,52 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "feeds",
-            "description": "<p>피드 리스트</p> "
+            "description": "<p>피드 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.feedgroup",
-            "description": "<p>피드 그룹 번호</p> "
+            "description": "<p>피드 그룹 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "feeds.groupname",
-            "description": "<p>피드 그룹 이름</p> "
+            "description": "<p>피드 그룹 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.feed",
-            "description": "<p>피드 번호</p> "
+            "description": "<p>피드 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feeds.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p> "
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "feeds.content",
-            "description": "<p>내용</p> "
+            "description": "<p>내용</p>"
           }
         ]
       },
@@ -3272,32 +3468,32 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "feedgroup",
-            "description": "<p>그룹 번호</p> "
+            "description": "<p>그룹 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "size": "1-20",
             "optional": false,
             "field": "count",
-            "description": "<p>가져올 수</p> "
+            "description": "<p>가져올 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "start",
-            "description": "<p>시작 수</p> "
+            "description": "<p>시작 수</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "search",
-            "description": "<p>검색 (이름)</p> "
+            "description": "<p>검색 (이름)</p>"
           }
         ]
       }
@@ -3307,31 +3503,31 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>object[]</p> ",
+            "type": "object[]",
             "optional": false,
             "field": "users",
-            "description": "<p>유저 리스트</p> "
+            "description": "<p>유저 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "users.joined",
-            "description": "<p>멤버 여부 (0:멤버아님, 1:멤버)</p> "
+            "description": "<p>멤버 여부 (0:멤버아님, 1:멤버)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>number</p> ",
+            "type": "number",
             "optional": false,
             "field": "users.user",
-            "description": "<p>유저 번호</p> "
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>string</p> ",
+            "type": "string",
             "optional": false,
             "field": "users.name",
-            "description": "<p>유저 이름</p> "
+            "description": "<p>유저 이름</p>"
           }
         ]
       },
