@@ -11,10 +11,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "token",
-            "description": "<p>token</p> "
+            "description": "<p>token</p>"
           }
         ]
       }
@@ -28,20 +28,20 @@
     "title": "비밀번호 재설정",
     "version": "1.0.0",
     "group": "userPassword",
-    "description": "<p>비밀번호 재발급</p> ",
+    "description": "<p>비밀번호 재발급</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "password",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
             "description": ""
@@ -60,20 +60,20 @@
     "version": "1.0.0",
     "name": "password",
     "group": "userPassword",
-    "description": "<p>비밀번호 재발급 url 발송</p> ",
+    "description": "<p>비밀번호 재발급 url 발송</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "email",
             "description": ""
@@ -93,10 +93,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "result",
-            "description": "<p>발송 성공 여부</p> "
+            "description": "<p>발송 성공 여부</p>"
           }
         ]
       }
@@ -111,13 +111,13 @@
     "version": "1.0.0",
     "name": "passwordCheck",
     "group": "userPassword",
-    "description": "<p>비밀번호 재발급 url 체크</p> ",
+    "description": "<p>비밀번호 재발급 url 체크</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
             "description": ""
@@ -130,10 +130,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "isExpire",
-            "description": "<p>만료 여부</p> "
+            "description": "<p>만료 여부</p>"
           }
         ]
       }
@@ -148,16 +148,16 @@
     "version": "1.0.0",
     "name": "check",
     "group": "user_join",
-    "description": "<p>생성된 url이 올바른지 체크</p> ",
+    "description": "<p>생성된 url이 올바른지 체크</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
-            "description": "<p>생성된 url에서 p</p> "
+            "description": "<p>생성된 url에서 p</p>"
           }
         ]
       },
@@ -174,10 +174,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "email",
-            "description": "<p>초대회원 email</p> "
+            "description": "<p>초대회원 email</p>"
           }
         ]
       }
@@ -201,54 +201,54 @@
     "version": "1.0.0",
     "name": "invite",
     "group": "user_join",
-    "description": "<p>초대 링크로 회원 가입</p> ",
+    "description": "<p>초대 링크로 회원 가입</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "password",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "sms",
             "defaultValue": "false",
-            "description": "<p>SMS 수신 동의</p> "
+            "description": "<p>SMS 수신 동의</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "email",
             "defaultValue": "false",
-            "description": "<p>Email 수신 동의</p> "
+            "description": "<p>Email 수신 동의</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "locale",
             "defaultValue": "ko",
-            "description": "<p>ko, en 메일 발송 언어</p> "
+            "description": "<p>ko, en 메일 발송 언어</p>"
           }
         ]
       },
@@ -265,10 +265,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>회원 가입후 회원 index</p> "
+            "description": "<p>회원 가입후 회원 index</p>"
           }
         ]
       },
@@ -290,46 +290,46 @@
     "version": "1.0.0",
     "name": "join",
     "group": "user_join",
-    "description": "<p>가입</p> ",
+    "description": "<p>가입</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "password",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "sms",
             "defaultValue": "false",
-            "description": "<p>SMS 수신 동의</p> "
+            "description": "<p>SMS 수신 동의</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "email",
             "defaultValue": "false",
-            "description": "<p>Email 수신 동의</p> "
+            "description": "<p>Email 수신 동의</p>"
           }
         ]
       },
@@ -346,10 +346,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>회원 가입후 회원 index</p> "
+            "description": "<p>회원 가입후 회원 index</p>"
           }
         ]
       },
@@ -371,24 +371,24 @@
     "version": "1.0.0",
     "name": "joinEmail",
     "group": "user_join",
-    "description": "<p>회원 가입을 위하여 회원 가입 url 발송</p> ",
+    "description": "<p>회원 가입을 위하여 회원 가입 url 발송</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "email",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "locale",
             "defaultValue": "ko",
-            "description": "<p>ko, en 메일 발송 언어</p> "
+            "description": "<p>ko, en 메일 발송 언어</p>"
           }
         ]
       },
@@ -405,10 +405,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>true/false</p> "
+            "description": "<p>true/false</p>"
           }
         ]
       },
@@ -427,7 +427,7 @@
     "type": "delete",
     "url": "v1/user/team/:index",
     "title": "내 팀별 정보 삭제",
-    "description": "<p>기본 프로필로 보여지게 됩니다.</p> ",
+    "description": "<p>기본 프로필로 보여지게 됩니다.</p>",
     "version": "1.0.0",
     "name": "deleteUserTeam",
     "group": "user",
@@ -484,10 +484,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           }
         ]
       }
@@ -507,17 +507,17 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>회원 번호</p> "
+            "description": "<p>회원 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "teamindex",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           }
         ]
       }
@@ -527,10 +527,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_profile",
-            "description": "<p>true 이면 팀에 세팅한 프로필로, false이면 기본 프로필 정보 입니다.</p> "
+            "description": "<p>true 이면 팀에 세팅한 프로필로, false이면 기본 프로필 정보 입니다.</p>"
           }
         ]
       },
@@ -557,17 +557,17 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "teamindex",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer[]</p> ",
+            "type": "Integer[]",
             "optional": false,
             "field": "users",
-            "description": "<p>회원번호 리스트</p> "
+            "description": "<p>회원번호 리스트</p>"
           }
         ]
       },
@@ -591,24 +591,24 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "team_index",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>map</p> ",
+            "type": "map",
             "optional": false,
             "field": "users",
-            "description": "<p>회원번호, pc 상태(off_line, on_line, left_seat)</p> "
+            "description": "<p>회원번호, pc 상태(off_line, on_line, left_seat)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "time",
-            "description": "<p>조회시간</p> "
+            "description": "<p>조회시간</p>"
           }
         ]
       }
@@ -628,24 +628,24 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "teamindex",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Long</p> ",
+            "type": "Long",
             "optional": false,
             "field": "time",
-            "description": "<p>time 이후 업데이트 내용 조회</p> "
+            "description": "<p>time 이후 업데이트 내용 조회</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "pc",
-            "description": "<p>off_line, on_line, left_seat</p> "
+            "description": "<p>off_line, on_line, left_seat</p>"
           }
         ]
       },
@@ -669,24 +669,24 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "team_index",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>map</p> ",
+            "type": "map",
             "optional": false,
             "field": "users",
-            "description": "<p>회원번호, pc 상태(off_line, on_line, left_seat)</p> "
+            "description": "<p>회원번호, pc 상태(off_line, on_line, left_seat)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "time",
-            "description": "<p>조회시간</p> "
+            "description": "<p>조회시간</p>"
           }
         ]
       }
@@ -698,7 +698,7 @@
     "type": "delete",
     "url": "v1/user",
     "title": "탈퇴",
-    "description": "<p>팀업 회원에서 탈퇴하게 됩니다</p> ",
+    "description": "<p>팀업 회원에서 탈퇴하게 됩니다</p>",
     "version": "1.0.0",
     "name": "goodbye",
     "group": "user",
@@ -707,7 +707,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "password",
             "description": ""
@@ -725,16 +725,16 @@
     "version": "1.0.0",
     "name": "profileDelete",
     "group": "user",
-    "description": "<p>profile image 삭제</p> ",
+    "description": "<p>profile image 삭제</p>",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "user",
-            "description": "<p>index</p> "
+            "description": "<p>index</p>"
           }
         ]
       }
@@ -749,16 +749,16 @@
     "version": "1.0.0",
     "name": "profileDeleteTeam",
     "group": "user",
-    "description": "<p>profile image 삭제</p> ",
+    "description": "<p>profile image 삭제</p>",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "team",
-            "description": "<p>index</p> "
+            "description": "<p>index</p>"
           }
         ]
       }
@@ -773,13 +773,13 @@
     "version": "1.0.0",
     "name": "profileUpload",
     "group": "user",
-    "description": "<p>file MultipartFile로 업로드 <br/>url /test/upload</p> ",
+    "description": "<p>file MultipartFile로 업로드 <br/>url /test/upload</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>File</p> ",
+            "type": "File",
             "optional": false,
             "field": "MultipartFile",
             "description": ""
@@ -797,16 +797,16 @@
     "version": "1.0.0",
     "name": "profileUpload_team",
     "group": "user",
-    "description": "<p>profile image upload, file MultipartFile로 업로드 <br/>url: /test/upload</p> ",
+    "description": "<p>profile image upload, file MultipartFile로 업로드 <br/>url: /test/upload</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>File</p> ",
+            "type": "File",
             "optional": false,
             "field": "file",
-            "description": "<p>MultipartFile</p> "
+            "description": "<p>MultipartFile</p>"
           }
         ]
       }
@@ -826,66 +826,66 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "profile_image_base64",
-            "description": "<p>base64 image , 공백으로 넣으면 프로필이미지 삭제됨</p> "
+            "description": "<p>base64 image , 공백으로 넣으면 프로필이미지 삭제됨</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "profile_image_name",
-            "description": "<p>파일명 업로드할 파일이 있을경우 같이 넣어줌</p> "
+            "description": "<p>파일명 업로드할 파일이 있을경우 같이 넣어줌</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "birthday",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "is_lunar",
-            "description": "<p>음력</p> "
+            "description": "<p>음력</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "message",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "mobile",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "phone",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "is_sms",
-            "description": "<p>sms 수신 동의</p> "
+            "description": "<p>sms 수신 동의</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "is_email",
-            "description": "<p>email 수신 동의</p> "
+            "description": "<p>email 수신 동의</p>"
           }
         ]
       },
@@ -916,24 +916,24 @@
     "version": "1.0.0",
     "name": "putpc",
     "group": "user",
-    "description": "<p>PC 상태 변경</p> ",
+    "description": "<p>PC 상태 변경</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "pc",
             "defaultValue": "on_line",
-            "description": "<p>off_line, on_line, left_seat</p> "
+            "description": "<p>off_line, on_line, left_seat</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "team",
-            "description": "<p>팀번호, 없으면 모든팀에 적용</p> "
+            "description": "<p>팀번호, 없으면 모든팀에 적용</p>"
           }
         ]
       },
@@ -950,10 +950,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>true/false</p> "
+            "description": "<p>true/false</p>"
           }
         ]
       },
@@ -980,38 +980,38 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "profile_image_base64",
-            "description": "<p>base64 image, 공백으로 넣으면 프로필이미지 삭제됨</p> "
+            "description": "<p>base64 image, 공백으로 넣으면 프로필이미지 삭제됨</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "profile_image_name",
-            "description": "<p>파일명 업로드할 파일이 있을경우 같이 넣어줌</p> "
+            "description": "<p>파일명 업로드할 파일이 있을경우 같이 넣어줌</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "message",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "mobile",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "phone",
-            "description": "<p>팀번호</p> "
+            "description": "<p>팀번호</p>"
           }
         ]
       },

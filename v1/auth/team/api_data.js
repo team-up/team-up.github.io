@@ -16,17 +16,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer[]</p> ",
+            "type": "Integer[]",
             "optional": true,
             "field": "users",
-            "description": "<p>회원 번호 set</p> "
+            "description": "<p>회원 번호 set</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer[]</p> ",
+            "type": "Integer[]",
             "optional": true,
             "field": "department",
-            "description": "<p>부서 번호 set</p> "
+            "description": "<p>부서 번호 set</p>"
           }
         ]
       },
@@ -43,10 +43,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>성공 실패 여부</p> "
+            "description": "<p>성공 실패 여부</p>"
           }
         ]
       }
@@ -71,10 +71,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>부서번호</p> "
+            "description": "<p>부서번호</p>"
           }
         ]
       }
@@ -84,18 +84,18 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "parent",
             "defaultValue": "0",
-            "description": "<p>상위 부서 번호</p> "
+            "description": "<p>상위 부서 번호</p>"
           }
         ]
       }
@@ -107,7 +107,7 @@ define({ "api": [
     "type": "delete",
     "url": "v1/team/:teamindex/department/:departmentindex",
     "title": "부서 삭제",
-    "description": "<p>하위 부서와 유저는 최상위로 이동됨</p> ",
+    "description": "<p>하위 부서와 유저는 최상위로 이동됨</p>",
     "permission": [
       {
         "name": "team admin"
@@ -121,10 +121,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>부서번호</p> "
+            "description": "<p>부서번호</p>"
           }
         ]
       }
@@ -136,7 +136,7 @@ define({ "api": [
     "type": "delete",
     "url": "v1/team/:teamindex/department/user",
     "title": "부서원 초기화",
-    "description": "<p>부서 없는 상태로 초기화</p> ",
+    "description": "<p>부서 없는 상태로 초기화</p>",
     "permission": [
       {
         "name": "team admin"
@@ -150,10 +150,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer[]</p> ",
+            "type": "Integer[]",
             "optional": false,
             "field": "users",
-            "description": "<p>회원 번호 set</p> "
+            "description": "<p>회원 번호 set</p>"
           }
         ]
       },
@@ -170,10 +170,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>성공 실패 여부</p> "
+            "description": "<p>성공 실패 여부</p>"
           }
         ]
       }
@@ -217,10 +217,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>부서번호</p> "
+            "description": "<p>부서번호</p>"
           }
         ]
       }
@@ -230,17 +230,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "name",
-            "description": "<p>부서이름</p> "
+            "description": "<p>부서이름</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "parent",
-            "description": "<p>상위 부서 번호</p> "
+            "description": "<p>상위 부서 번호</p>"
           }
         ]
       }
@@ -255,16 +255,16 @@ define({ "api": [
     "version": "1.0.0",
     "name": "getChange",
     "group": "Organogram",
-    "description": "<p>time 이후 변경된 내역 조회</p> ",
+    "description": "<p>time 이후 변경된 내역 조회</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Long</p> ",
+            "type": "Long",
             "optional": false,
             "field": "time",
-            "description": "<p>timestamp</p> "
+            "description": "<p>timestamp</p>"
           }
         ]
       }
@@ -274,45 +274,45 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>팀 index</p> "
+            "description": "<p>팀 index</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>팀 이름</p> "
+            "description": "<p>팀 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Long</p> ",
+            "type": "Long",
             "optional": false,
             "field": "time",
-            "description": "<p>서버 시간 (unix timestamp)</p> "
+            "description": "<p>서버 시간 (unix timestamp)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>List</p> ",
+            "type": "List",
             "optional": false,
             "field": "department",
-            "description": "<p>부서 정보</p> "
+            "description": "<p>부서 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>List</p> ",
+            "type": "List",
             "optional": false,
             "field": "users",
-            "description": "<p>회원 정보</p> "
+            "description": "<p>회원 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Set</p> ",
+            "type": "Set",
             "optional": false,
             "field": "parents",
-            "description": "<p>변경된 조직도 상위 index</p> "
+            "description": "<p>변경된 조직도 상위 index</p>"
           }
         ]
       }
@@ -332,19 +332,19 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "user",
             "defaultValue": "true",
-            "description": "<p>회원 조회 여부</p> "
+            "description": "<p>회원 조회 여부</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "department",
             "defaultValue": "true",
-            "description": "<p>부서 조회 여부</p> "
+            "description": "<p>부서 조회 여부</p>"
           }
         ]
       }
@@ -364,11 +364,11 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "user",
             "defaultValue": "true",
-            "description": "<p>회원 조회 여부</p> "
+            "description": "<p>회원 조회 여부</p>"
           }
         ]
       }
@@ -388,19 +388,19 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "user",
             "defaultValue": "true",
-            "description": "<p>회원 조회 여부</p> "
+            "description": "<p>회원 조회 여부</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "department",
             "defaultValue": "true",
-            "description": "<p>부서 조회 여부</p> "
+            "description": "<p>부서 조회 여부</p>"
           }
         ]
       }
@@ -415,13 +415,13 @@ define({ "api": [
     "version": "1.0.0",
     "name": "searchTeam",
     "group": "search",
-    "description": "<p>이름(초성가능), 팀이름, email 검색</p> ",
+    "description": "<p>이름(초성가능), 팀이름, email 검색</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "size": "2..",
             "optional": false,
             "field": "query",
@@ -468,10 +468,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>직책 번호</p> "
+            "description": "<p>직책 번호</p>"
           }
         ]
       }
@@ -505,10 +505,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>직급 번호</p> "
+            "description": "<p>직급 번호</p>"
           }
         ]
       }
@@ -542,10 +542,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>직급 번호</p> "
+            "description": "<p>직급 번호</p>"
           }
         ]
       }
@@ -565,16 +565,16 @@ define({ "api": [
         "name": "team admin"
       }
     ],
-    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p> ",
+    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p>",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>성공</p> "
+            "description": "<p>성공</p>"
           }
         ]
       }
@@ -589,16 +589,16 @@ define({ "api": [
     "version": "1.0.0",
     "name": "deleteAdmin",
     "group": "team_admin",
-    "description": "<p>팀 관리자 권한을 삭제</p> ",
+    "description": "<p>팀 관리자 권한을 삭제</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "Team",
-            "description": "<p>index</p> "
+            "description": "<p>index</p>"
           }
         ]
       },
@@ -615,10 +615,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>업데이트된 숫자</p> "
+            "description": "<p>업데이트된 숫자</p>"
           }
         ]
       }
@@ -638,16 +638,16 @@ define({ "api": [
         "name": "team admin"
       }
     ],
-    "description": "<p>직책을 사용중인 회원은 없는 직책으로 변경 됩니다</p> ",
+    "description": "<p>직책을 사용중인 회원은 없는 직책으로 변경 됩니다</p>",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>성공</p> "
+            "description": "<p>성공</p>"
           }
         ]
       }
@@ -700,24 +700,24 @@ define({ "api": [
     "version": "1.0.0",
     "name": "moveSuper",
     "group": "team_admin",
-    "description": "<p>슈퍼 관리자 전환 (슈퍼 관리자는 팀에 1명만 가능, 기존 슈퍼 관리자는 admin으로 변경됨)</p> ",
+    "description": "<p>슈퍼 관리자 전환 (슈퍼 관리자는 팀에 1명만 가능, 기존 슈퍼 관리자는 admin으로 변경됨)</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
-            "description": "<p>이메일 링크</p> "
+            "description": "<p>이메일 링크</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "send",
             "defaultValue": "true",
-            "description": "<p>기존관리자에게 알림 메일 발송 여부</p> "
+            "description": "<p>기존관리자에게 알림 메일 발송 여부</p>"
           }
         ]
       }
@@ -727,10 +727,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "teamname",
-            "description": "<p>변경된 팀 이름</p> "
+            "description": "<p>변경된 팀 이름</p>"
           }
         ]
       }
@@ -755,10 +755,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer[]</p> ",
+            "type": "Integer[]",
             "optional": false,
             "field": "index_list",
-            "description": "<p>index order 순서대로 요청</p> "
+            "description": "<p>index order 순서대로 요청</p>"
           }
         ]
       },
@@ -775,10 +775,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>성공</p> "
+            "description": "<p>성공</p>"
           }
         ]
       }
@@ -803,10 +803,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer[]</p> ",
+            "type": "Integer[]",
             "optional": false,
             "field": "index_list",
-            "description": "<p>index order 순서대로 요청</p> "
+            "description": "<p>index order 순서대로 요청</p>"
           }
         ]
       },
@@ -823,10 +823,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>성공</p> "
+            "description": "<p>성공</p>"
           }
         ]
       }
@@ -841,16 +841,16 @@ define({ "api": [
     "version": "1.0.0",
     "name": "updateAdmin",
     "group": "team_admin",
-    "description": "<p>사용자에게 팀 관리자 권한을 준다</p> ",
+    "description": "<p>사용자에게 팀 관리자 권한을 준다</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "Team",
-            "description": "<p>index</p> "
+            "description": "<p>index</p>"
           }
         ]
       },
@@ -867,10 +867,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>업데이트된 숫자</p> "
+            "description": "<p>업데이트된 숫자</p>"
           }
         ]
       }
@@ -904,10 +904,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>직책 번호</p> "
+            "description": "<p>직책 번호</p>"
           }
         ]
       }
@@ -922,31 +922,31 @@ define({ "api": [
     "version": "1.0.0",
     "name": "updateStatus",
     "group": "team_admin",
-    "description": "<p>사용자별 상태 변경</p> ",
+    "description": "<p>사용자별 상태 변경</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "Team",
-            "description": "<p>index</p> "
+            "description": "<p>index</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "status",
-            "description": "<p>approval,block,exit(탈퇴)</p> "
+            "description": "<p>approval,block,exit(탈퇴)</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "send",
             "defaultValue": "true",
-            "description": "<p>사용자에게 메일 발송 여부</p> "
+            "description": "<p>사용자에게 메일 발송 여부</p>"
           }
         ]
       },
@@ -963,10 +963,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>업데이트된 숫자</p> "
+            "description": "<p>업데이트된 숫자</p>"
           }
         ]
       }
@@ -986,45 +986,45 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "mobile",
-            "description": "<p>휴대폰번호</p> "
+            "description": "<p>휴대폰번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "phone",
-            "description": "<p>직통전화</p> "
+            "description": "<p>직통전화</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "position_index",
-            "description": "<p>직급 index, 0이하면 직급 없음으로 설정</p> "
+            "description": "<p>직급 index, 0이하면 직급 없음으로 설정</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "job_title_index",
-            "description": "<p>직책 index, 0이하면 직책 없음으로 설정</p> "
+            "description": "<p>직책 index, 0이하면 직책 없음으로 설정</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "department_index",
-            "description": "<p>부서 index, 0이하로 주면 부서 없는 사용자로 설정</p> "
+            "description": "<p>부서 index, 0이하로 주면 부서 없는 사용자로 설정</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "status",
-            "description": "<p>사용자 상태, approval,block,exit(탈퇴)</p> "
+            "description": "<p>사용자 상태, approval,block,exit(탈퇴)</p>"
           }
         ]
       },
@@ -1041,10 +1041,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "return",
-            "description": "<p>회원 번호</p> "
+            "description": "<p>회원 번호</p>"
           }
         ]
       }
@@ -1064,17 +1064,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>team index</p> "
+            "description": "<p>team index</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "user_index",
-            "description": "<p>변경할 회원 index</p> "
+            "description": "<p>변경할 회원 index</p>"
           }
         ]
       }
@@ -1084,10 +1084,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "return",
-            "description": "<p>성공여부</p> "
+            "description": "<p>성공여부</p>"
           }
         ]
       }
@@ -1107,25 +1107,25 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>team index</p> "
+            "description": "<p>team index</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Set</p> ",
+            "type": "Set",
             "optional": false,
             "field": "email",
-            "description": "<p>email set</p> "
+            "description": "<p>email set</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "locale",
             "defaultValue": "ko",
-            "description": "<p>ko, en 메일 발송 언어</p> "
+            "description": "<p>ko, en 메일 발송 언어</p>"
           }
         ]
       },
@@ -1142,24 +1142,24 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>data</p> ",
+            "type": "data",
             "optional": false,
             "field": "email_pattern",
-            "description": "<p>email 형식 오류</p> "
+            "description": "<p>email 형식 오류</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>data</p> ",
+            "type": "data",
             "optional": false,
             "field": "domain",
-            "description": "<p>허용된 domain 아님</p> "
+            "description": "<p>허용된 domain 아님</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>data</p> ",
+            "type": "data",
             "optional": false,
             "field": "join_user",
-            "description": "<p>이미 가입된 회원</p> "
+            "description": "<p>이미 가입된 회원</p>"
           }
         ]
       },
@@ -1191,60 +1191,60 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>team index</p> "
+            "description": "<p>team index</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>이름</p> "
+            "description": "<p>이름</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "email",
-            "description": "<p>email</p> "
+            "description": "<p>email</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "department_index",
-            "description": "<p>부서번호</p> "
+            "description": "<p>부서번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "position_index",
-            "description": "<p>직급번호</p> "
+            "description": "<p>직급번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "job_title_index",
-            "description": "<p>직책번호</p> "
+            "description": "<p>직책번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "phone",
-            "description": "<p>직책번호</p> "
+            "description": "<p>직책번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "locale",
             "defaultValue": "ko",
-            "description": "<p>ko, en 메일 발송 언어</p> "
+            "description": "<p>ko, en 메일 발송 언어</p>"
           }
         ]
       },
@@ -1261,31 +1261,31 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "result",
-            "description": "<p>false 일경우 data 확인</p> "
+            "description": "<p>false 일경우 data 확인</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>data</p> ",
+            "type": "data",
             "optional": false,
             "field": "email_pattern",
-            "description": "<p>email 형식 오류</p> "
+            "description": "<p>email 형식 오류</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>data</p> ",
+            "type": "data",
             "optional": false,
             "field": "domain",
-            "description": "<p>허용된 domain 아님</p> "
+            "description": "<p>허용된 domain 아님</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>data</p> ",
+            "type": "data",
             "optional": false,
             "field": "join_user",
-            "description": "<p>이미 가입된 회원</p> "
+            "description": "<p>이미 가입된 회원</p>"
           }
         ]
       },
@@ -1312,10 +1312,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
-            "description": "<p>초대 url p 파라미터</p> "
+            "description": "<p>초대 url p 파라미터</p>"
           }
         ]
       }
@@ -1325,10 +1325,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "user_index",
-            "description": "<p>email로 가입되어 있는 회원번호 , null 이면 가입되어 있지 않음</p> "
+            "description": "<p>email로 가입되어 있는 회원번호 , null 이면 가입되어 있지 않음</p>"
           }
         ]
       },
@@ -1355,18 +1355,18 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "p",
-            "description": "<p>초대 url p 파라미터</p> "
+            "description": "<p>초대 url p 파라미터</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "locale",
             "defaultValue": "ko",
-            "description": "<p>ko, en 메일 발송 언어</p> "
+            "description": "<p>ko, en 메일 발송 언어</p>"
           }
         ]
       }
@@ -1376,10 +1376,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "team",
-            "description": "<p>index</p> "
+            "description": "<p>index</p>"
           }
         ]
       }
@@ -1399,37 +1399,37 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "invite",
             "defaultValue": "all",
-            "description": "<p>all or admin</p> "
+            "description": "<p>all or admin</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "domain",
             "defaultValue": "any",
-            "description": "<p>domain or any</p> "
+            "description": "<p>domain or any</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "String[]",
             "optional": true,
             "field": "domainList",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "department",
             "defaultValue": "false",
@@ -1437,7 +1437,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "position",
             "defaultValue": "false",
@@ -1445,7 +1445,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "jobTitle",
             "defaultValue": "false",
@@ -1453,7 +1453,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "phone",
             "defaultValue": "false",
@@ -1461,7 +1461,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "mobile",
             "defaultValue": "false",
@@ -1469,7 +1469,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "birthday",
             "defaultValue": "false",
@@ -1477,24 +1477,24 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "direct_url",
-            "description": "<p>바로가기 url</p> "
+            "description": "<p>바로가기 url</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "direct_width",
-            "description": "<p>바로가기 width</p> "
+            "description": "<p>바로가기 width</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "direct_heigth",
-            "description": "<p>바로가기 height</p> "
+            "description": "<p>바로가기 height</p>"
           }
         ]
       },
@@ -1511,10 +1511,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>Team index</p> "
+            "description": "<p>Team index</p>"
           }
         ]
       },
@@ -1536,23 +1536,23 @@ define({ "api": [
     "version": "1.0.0",
     "name": "goodbyeTeam",
     "group": "team",
-    "description": "<p>super admin은 강제 탈퇴 해야 됨</p> ",
+    "description": "<p>super admin은 강제 탈퇴 해야 됨</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "Team",
-            "description": "<p>index</p> "
+            "description": "<p>index</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "force",
-            "description": "<p>마지막 팀원 탈퇴 사용, super admin, count = 1 일때 true로 주면 탈퇴됨</p> "
+            "description": "<p>마지막 팀원 탈퇴 사용, super admin, count = 1 일때 true로 주면 탈퇴됨</p>"
           }
         ]
       }
@@ -1562,24 +1562,24 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "result",
-            "description": "<p>성공 실패 여부</p> "
+            "description": "<p>성공 실패 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "String[]",
             "optional": false,
             "field": "roles",
-            "description": "<p>권한, super_admin 일때는 탈퇴 안됨</p> "
+            "description": "<p>권한, super_admin 일때는 탈퇴 안됨</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>int</p> ",
+            "type": "int",
             "optional": false,
             "field": "count",
-            "description": "<p>팀원 숫자</p> "
+            "description": "<p>팀원 숫자</p>"
           }
         ]
       },
@@ -1598,7 +1598,7 @@ define({ "api": [
     "type": "get",
     "url": "v1/teams",
     "title": "내 팀 정보",
-    "version": "1.0.0",
+    "version": "2.1.0",
     "name": "teams",
     "group": "team",
     "success": {
@@ -1606,108 +1606,115 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>팀 번호</p> "
+            "description": "<p>팀 번호</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>팀 이름</p> "
+            "description": "<p>팀 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "invite_user",
-            "description": "<p>초대 가능 (all, admin)</p> "
+            "description": "<p>초대 가능 (all, admin)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_invite_domain",
-            "description": "<p>도메인 초대 여부</p> "
+            "description": "<p>도메인 초대 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Set</p> ",
+            "type": "Set",
             "optional": false,
             "field": "invite_domain",
-            "description": "<p>초대 가능 도메인 set</p> "
+            "description": "<p>초대 가능 도메인 set</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_department",
-            "description": "<p>부서명 필수입력 여부</p> "
+            "description": "<p>부서명 필수입력 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_position",
-            "description": "<p>직책 필수입력 여부</p> "
+            "description": "<p>직책 필수입력 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_job_title",
-            "description": "<p>직급 필수입력 여부</p> "
+            "description": "<p>직급 필수입력 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_phone",
-            "description": "<p>직통전화 필수입력 여부</p> "
+            "description": "<p>직통전화 필수입력 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_mobile",
-            "description": "<p>휴대폰 필수입력 여부</p> "
+            "description": "<p>휴대폰 필수입력 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "is_birthday",
-            "description": "<p>생일 필수입력 여부</p> "
+            "description": "<p>생일 필수입력 여부</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "direct_url",
-            "description": "<p>바로가기 url</p> "
+            "description": "<p>바로가기 url</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "direct_width",
-            "description": "<p>바로가기 url width</p> "
+            "description": "<p>바로가기 url width</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "direct_height",
-            "description": "<p>바로가기 url height</p> "
+            "description": "<p>바로가기 url height</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": false,
+            "field": "user_role",
+            "description": "<p>팀별 권한 (super_admin, admin, user)</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[\n\t{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"status\" : \"approval\",\n\t\t\"invite_user\": \"admin\",\n\t\t\"is_invite_domain\": true,\n\t\t\"invite_domain\": [\n\t\t\t\"a.com\",\n\t\t\t\"estsoft.com\"\n\t\t\t],\n\t\t\"is_department\": true,\n\t\t\"is_position\": true,\n\t\t\"is_job_title\": true,\n\t\t\"is_phone\": true,\n\t\t\"is_mobile\": true,\n\t\t\"is_birthday\": true,\n\t\t\"direct_url\": null,\n\t\t\"direct_width\": null,\n\t\t\"direct_height\": null\n\t}\n]",
+          "content": "[\n\t{\n\t\t\"index\": 1,\n\t\t\"name\": \"ESTsoft\",\n\t\t\"status\" : \"approval\",\n\t\t\"invite_user\": \"admin\",\n\t\t\"is_invite_domain\": true,\n\t\t\"invite_domain\": [\n\t\t\t\"a.com\",\n\t\t\t\"estsoft.com\"\n\t\t\t],\n\t\t\"is_department\": true,\n\t\t\"is_position\": true,\n\t\t\"is_job_title\": true,\n\t\t\"is_phone\": true,\n\t\t\"is_mobile\": true,\n\t\t\"is_birthday\": true,\n\t\t\"direct_url\": null,\n\t\t\"direct_width\": null,\n\t\t\"direct_height\": null,\n\t\t\"user_role\": [\n\t\t\t\t\"super_admin\",\n\t\t\t\t\"user\"\n\t\t\t\t]\n\t}\n]",
           "type": "json"
         }
       ]
@@ -1732,94 +1739,94 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "name",
-            "description": "<p>이름은 슈퍼관리자만 변경 가능</p> "
+            "description": "<p>이름은 슈퍼관리자만 변경 가능</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "invite",
-            "description": "<p>all or admin</p> "
+            "description": "<p>all or admin</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "domain",
-            "description": "<p>domain or any</p> "
+            "description": "<p>domain or any</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "String[]",
             "optional": true,
             "field": "domainList",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "department",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "position",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "jobTitle",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "phone",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "mobile",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "birthday",
             "description": ""
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "direct_url",
-            "description": "<p>바로가기 url</p> "
+            "description": "<p>바로가기 url</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "direct_width",
-            "description": "<p>바로가기 width</p> "
+            "description": "<p>바로가기 width</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": true,
             "field": "direct_heigth",
-            "description": "<p>바로가기 height</p> "
+            "description": "<p>바로가기 height</p>"
           }
         ]
       },
@@ -1836,10 +1843,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Integer",
             "optional": false,
             "field": "index",
-            "description": "<p>Team index</p> "
+            "description": "<p>Team index</p>"
           }
         ]
       },

@@ -1,4 +1,4 @@
-{
+define({
   "name": "TeamUP auth api",
   "version": "1.0.0",
   "description": "TeamUP auth api",
@@ -8,8 +8,8 @@
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-03-07T02:11:49.443Z",
+    "time": "2016-03-09T08:20:19.415Z",
     "url": "http://apidocjs.com",
     "version": "0.15.1"
   }
-}
+});
