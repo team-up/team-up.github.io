@@ -1304,7 +1304,7 @@
     "type": "get",
     "url": "v1/team/invite/check",
     "title": "초대 url 검사",
-    "version": "1.0.0",
+    "version": "2.1.0",
     "name": "inviteCheck",
     "group": "team_invite",
     "parameter": {
@@ -1336,6 +1336,15 @@
         {
           "title": "Success-Response:",
           "content": "{\n\t\"user_index\": null,\n\t\"user_email\": \"test1-1@estsoft.com\",\n\t\"user_name\" : \"테스트\",\n\t\"invite_user_index\": 999,\n\t\"invite_user_email\": \"hong@estsoft.com\",\n\t\"invite_user_name\": \"홍길동\",\n\t\"invite_team_index\": 1,\n\t\"invite_team_name\": \"ESTsoft\",\n\t\"invite_data\": {\n\t\t\"department_index\": 1,\n\t\t\"department_name\": \"ESTsoft\",\n\t\t\"position_index\": 1,\n\t\t\"position_name\": \"부서장\",\n\t\t\"job_title_index\": 1,\n\t\t\"job_title_name\": \"사원\",\n\t\t\"phone\": \"010-1234-1234\",\n\t\t\"mobile\": \"02-123401234\",\n\t\t\"birthday\": \"1999-01-01\",\n\t\t\"is_lunar\": true\n\t}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 403 Forbidden\n    {\n\t\t\t\"exception\": \"invite\",\n\t\t\t\"error\": \"user limit\",\n\t\t\t\"team_idx\": 100,\n\t\t\t\"team_name\": \"이스트소프트\",\n\t\t\t\"super_name\": \"홍길동\",\n\t\t\t\"super_email\": \"hong@estsoft.com\"\n\t}",
           "type": "json"
         }
       ]
