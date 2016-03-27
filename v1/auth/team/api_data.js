@@ -1344,7 +1344,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": " HTTP/1.1 403 Forbidden\n    {\n\t\t\t\"exception\": \"invite\",\n\t\t\t\"error\": \"user limit\",\n\t\t\t\"team_idx\": 100,\n\t\t\t\"team_name\": \"이스트소프트\",\n\t\t\t\"super_name\": \"홍길동\",\n\t\t\t\"super_email\": \"hong@estsoft.com\"\n\t}",
+          "content": " HTTP/1.1 403 Forbidden\n    {\n\t\t\t\"exception\": \"UserInviteException\",\n\t\t\t\"error\": \"user_limit\",\n\t\t\t\"error_description\": {\n\t\t\t\t\"team_idx\": 100,\n\t\t\t\t\"team_name\": \"이스트소프트\",\n\t\t\t\t\"super_name\": \"홍길동\",\n\t\t\t\t\"super_email\": \"hong@estsoft.com\"\n\t\t\t}\n\t}",
           "type": "json"
         }
       ]
