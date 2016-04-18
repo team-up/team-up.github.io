@@ -714,56 +714,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "https://edge.tmup.com/v1/message/file/:room/:msg/:file",
-    "title": "메시지 파일 다운로드",
-    "name": "GetMessageFile",
-    "group": "Chat_Message",
-    "version": "2.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "room",
-            "description": "<p>방 번호</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "msg",
-            "description": "<p>메시지 번호</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "file",
-            "description": "<p>파일 번호</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "binary",
-            "optional": false,
-            "field": "Content",
-            "description": "<p>파일 스트림 (application/octet-stream 등)</p>"
-          }
-        ]
-      }
-    },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
-    "groupTitle": "Chat_Message"
-  },
-  {
-    "type": "get",
     "url": "https://edge.tmup.com/v1/message/summary/:room/:msg",
     "title": "메시지 요약 정보",
     "name": "GetMessageSummary",
@@ -1666,49 +1616,6 @@ define({ "api": [
           "type": "json"
         }
       ]
-    },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
-    "groupTitle": "Feed"
-  },
-  {
-    "type": "get",
-    "url": "https://edge.tmup.com/v1/feed/file/:feed/:file",
-    "title": "피드 파일 다운로드",
-    "name": "GetFeedFile",
-    "group": "Feed",
-    "version": "2.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "feed",
-            "description": "<p>피드 번호</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "file",
-            "description": "<p>파일 번호</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "binary",
-            "optional": false,
-            "field": "Content",
-            "description": "<p>파일 스트림 (application/octet-stream 등)</p>"
-          }
-        ]
-      }
     },
     "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
     "groupTitle": "Feed"
