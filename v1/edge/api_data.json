@@ -301,7 +301,7 @@
             "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -498,7 +498,7 @@
             "type": "number",
             "optional": false,
             "field": "rooms.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -827,7 +827,7 @@
             "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -993,7 +993,7 @@
             "type": "number",
             "optional": false,
             "field": "msgs.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -1580,7 +1580,7 @@
             "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -1595,13 +1595,6 @@
             "optional": false,
             "field": "removable",
             "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "number",
-            "optional": false,
-            "field": "feeds.watch",
-            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
           },
           {
             "group": "Success 200",
@@ -1895,7 +1888,7 @@
             "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -2071,7 +2064,7 @@
             "type": "number",
             "optional": false,
             "field": "feeds.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -2947,7 +2940,7 @@
             "type": "number",
             "optional": false,
             "field": "replies.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -3060,7 +3053,7 @@
             "type": "number",
             "optional": false,
             "field": "len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
@@ -3241,7 +3234,7 @@
             "type": "number",
             "optional": false,
             "field": "feeds.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문)</p>"
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
