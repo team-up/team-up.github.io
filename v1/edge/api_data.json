@@ -6,7 +6,7 @@
     "version": "2.0.0",
     "name": "Authorization",
     "group": "Base",
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/_apidoc.js",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/_apidoc.js",
     "groupTitle": "Base",
     "header": {
       "fields": {
@@ -98,7 +98,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Base"
   },
   {
@@ -108,7 +108,7 @@
     "version": "2.0.0",
     "name": "StatusCode",
     "group": "Base",
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/_apidoc.js",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/_apidoc.js",
     "groupTitle": "Base",
     "success": {
       "fields": {
@@ -397,7 +397,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat"
   },
   {
@@ -538,7 +538,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat"
   },
   {
@@ -590,7 +590,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat",
     "error": {
       "fields": {
@@ -654,7 +654,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat",
     "error": {
       "fields": {
@@ -664,6 +664,65 @@
             "optional": false,
             "field": "413",
             "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v1/room/:room",
+    "title": "대화방 설정",
+    "name": "PutRoom",
+    "group": "Chat",
+    "version": "2.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>이름 (빈문자열이면 기본 이름 사용, ascii 특수문자까지만 허용)</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "number",
+            "size": "0-1",
+            "optional": true,
+            "field": "alert",
+            "description": "<p>알림 (0:사용안함, 1:사용)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"name\":\"방이름\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
+    "groupTitle": "Chat",
+    "success": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content (성공, 컨텐츠 없음)</p>"
           }
         ]
       }
@@ -709,7 +768,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat_Message"
   },
   {
@@ -850,7 +909,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat_Message"
   },
   {
@@ -1023,7 +1082,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat_Message"
   },
   {
@@ -1096,7 +1155,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat_Message"
   },
   {
@@ -1165,7 +1224,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Chat_Message"
   },
   {
@@ -1406,7 +1465,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Event"
   },
   {
@@ -1429,7 +1488,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed",
     "success": {
       "fields": {
@@ -1617,7 +1676,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed"
   },
   {
@@ -1652,7 +1711,7 @@
             "optional": true,
             "field": "type",
             "defaultValue": "0",
-            "description": "<p>파일 종류] (0:전체, 1:일반, 2:이미지/동영상)</p>"
+            "description": "<p>파일 종류 (0:전체, 1:일반, 2:이미지/동영상)</p>"
           },
           {
             "group": "Parameter",
@@ -1713,7 +1772,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed"
   },
   {
@@ -1756,7 +1815,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed"
   },
   {
@@ -1862,7 +1921,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed"
   },
   {
@@ -2101,7 +2160,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed"
   },
   {
@@ -2182,7 +2241,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed",
     "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>"
   },
@@ -2195,7 +2254,7 @@
     "version": "2.0.0",
     "permission": [
       {
-        "name": "feedgroup admin"
+        "name": "feedgroup admin (피드 그룹 관리)"
       }
     ],
     "parameter": {
@@ -2218,7 +2277,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Group",
     "success": {
       "fields": {
@@ -2357,7 +2416,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/archive.php",
     "groupTitle": "Feed_Group"
   },
   {
@@ -2414,7 +2473,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Group"
   },
   {
@@ -2527,7 +2586,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/archive.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/archive.php",
     "groupTitle": "Feed_Group"
   },
   {
@@ -2593,7 +2652,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Group",
     "error": {
       "fields": {
@@ -2644,7 +2703,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Group",
     "success": {
       "fields": {
@@ -2741,7 +2800,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Like"
   },
   {
@@ -2764,7 +2823,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Like",
     "success": {
       "fields": {
@@ -2799,7 +2858,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Reply",
     "success": {
       "fields": {
@@ -2935,7 +2994,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Reply"
   },
   {
@@ -3041,7 +3100,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Reply"
   },
   {
@@ -3093,7 +3152,7 @@
         ]
       }
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Feed_Reply",
     "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagUser\">/v1/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-Tag-GetTagFeed\">/v1/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>"
   },
@@ -3201,7 +3260,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Tag"
   },
   {
@@ -3287,7 +3346,7 @@
         }
       ]
     },
-    "filename": "C:/Users/vicious/workspace/logic/edge/v1/index.php",
+    "filename": "C:/Users/vicious/workspace/teamup-logic/edge/doc/index.php",
     "groupTitle": "Tag"
   }
 ]
