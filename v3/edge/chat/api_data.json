@@ -607,7 +607,7 @@
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"msgs\":[\n{\"msg\":1,\"user\":1,\"type\":1,\"len\":3,\"content\":\"메시지\",\"tagfeeds\":null,\"created\":1392319357},\n{\"msg\":2,\"user\":1,\"type\":3,\"len\":0,\"content\":\"\",\"tagfeeds\":null,\"created\":1392319358,\"users\":[3]},\n{\"msg\":3,\"user\":1,\"type\":2,\"len\":0,\"content\":\"\",\"tagfeeds\":null,\"created\":1392319359,\"fileinfo\":{\"name\":\"1.txt\",\"size\":1\"file\":1,\"type\":1}}\n]\n}",
+          "content": "{\n\"msgs\":[\n{\"msg\":1,\"user\":1,\"type\":1,\"len\":3,\"content\":\"메시지\",\"tagfeeds\":null,\"created\":1392319357},\n{\"msg\":2,\"user\":1,\"type\":3,\"len\":0,\"content\":\"\",\"tagfeeds\":null,\"created\":1392319358,\"users\":[3]},\n{\"msg\":3,\"user\":1,\"type\":2,\"len\":0,\"content\":\"\",\"tagfeeds\":null,\"created\":1392319359,\"fileinfo\":{\"name\":\"1.txt\",\"size\":1,\"file\":1,\"type\":1}}\n]\n}",
           "type": "json"
         }
       ]
