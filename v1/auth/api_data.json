@@ -503,83 +503,17 @@
     "groupTitle": "team_admin"
   },
   {
-    "type": "delete",
-    "url": "v1/team/:index/position/:index",
-    "title": "직급 삭제",
-    "version": "1.0.0",
-    "name": "createPosition",
-    "group": "team_admin",
-    "permission": [
-      {
-        "name": "team admin"
-      }
-    ],
-    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p>",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "return",
-            "description": "<p>성공</p>"
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
-    "groupTitle": "team_admin"
-  },
-  {
-    "type": "put",
-    "url": "v1/team/:index/position/:index",
-    "title": "직급 수정",
-    "version": "1.0.0",
-    "permission": [
-      {
-        "name": "team admin"
-      }
-    ],
-    "name": "createPosition",
-    "group": "team_admin",
-    "parameter": {
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "\t{\n\t\t\"name\": \"과장\"\n }",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Integer",
-            "optional": false,
-            "field": "return",
-            "description": "<p>직급 번호</p>"
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
-    "groupTitle": "team_admin"
-  },
-  {
     "type": "post",
     "url": "v1/team/:index/position",
     "title": "직급 생성",
     "version": "1.0.0",
+    "name": "createPosition",
+    "group": "team_admin",
     "permission": [
       {
         "name": "team admin"
       }
     ],
-    "name": "createPosition",
-    "group": "team_admin",
     "parameter": {
       "examples": [
         {
@@ -662,6 +596,35 @@
       }
     ],
     "description": "<p>직책을 사용중인 회원은 없는 직책으로 변경 됩니다</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "delete",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 삭제",
+    "version": "1.0.0",
+    "name": "deletePosition",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "description": "<p>직급을 사용중인 회원은 없는 직급으로 변경 됩니다</p>",
     "success": {
       "fields": {
         "Success 200": [
@@ -931,6 +894,43 @@
             "optional": false,
             "field": "return",
             "description": "<p>직책 번호</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin"
+  },
+  {
+    "type": "put",
+    "url": "v1/team/:index/position/:index",
+    "title": "직급 수정",
+    "version": "1.0.0",
+    "name": "updatePosition",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\t{\n\t\t\"name\": \"과장\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "return",
+            "description": "<p>직급 번호</p>"
           }
         ]
       }
