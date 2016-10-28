@@ -1,6 +1,6 @@
 {
   "name": "TeamUP edge chat",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "TeamUP RESTful API (채팅)",
   "title": "TeamUP edge chat API",
   "url": "https://edge.tmup.com",
@@ -11,7 +11,7 @@
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-07-29T05:40:08.523Z",
+    "time": "2016-10-27T07:17:51.003Z",
     "url": "http://apidocjs.com",
     "version": "0.16.1"
   }

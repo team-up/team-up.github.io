@@ -40,7 +40,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Get.php",
     "groupTitle": "Base"
   },
   {
@@ -50,7 +50,7 @@
     "version": "2.1.0",
     "name": "StatusCode",
     "group": "Base",
-    "filename": "../teamup-logic/edge/api/chat/_apidoc.js",
+    "filename": "../teamup-edge/edge/api/chat/_apidoc.js",
     "groupTitle": "Base",
     "success": {
       "fields": {
@@ -198,7 +198,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Get.php",
     "groupTitle": "message",
     "header": {
       "fields": {
@@ -261,7 +261,354 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Get.php",
+    "groupTitle": "message",
+    "header": {
+      "fields": {
+        "": [
+          {
+            "group": "Authorization",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>oauth2 token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/message/summary/:room/:msg",
+    "title": "메시지 요약 정보",
+    "version": "3.1.0",
+    "name": "GetMessageSummary",
+    "group": "message",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>메시지 번호</p>"
+          }
+        ],
+        "Query String": [
+          {
+            "group": "Query String",
+            "type": "number",
+            "size": "0-1",
+            "optional": true,
+            "field": "all",
+            "defaultValue": "0",
+            "description": "<p>전체 내용 여부(0:요약, 1:전체)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "type",
+            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number[]",
+            "optional": true,
+            "field": "users",
+            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": true,
+            "field": "file",
+            "description": "<p>파일 정보 (type:2 - 파일인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "file.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "file.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "file.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "file.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "file.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": true,
+            "field": "file.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "file.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "file.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "file.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "file.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"user\":5,\"type\":1,\"len\":3,\"content\":\"메시지\",\"created\":1392319358}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../teamup-edge/edge/api/chat/v3/Get.php",
+    "groupTitle": "message",
+    "header": {
+      "fields": {
+        "": [
+          {
+            "group": "Authorization",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>oauth2 token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/message/summary/:room/:msg",
+    "title": "메시지 요약 정보",
+    "version": "2.1.0",
+    "name": "GetMessageSummary",
+    "group": "message",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>메시지 번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "type",
+            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number[]",
+            "optional": true,
+            "field": "users",
+            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": true,
+            "field": "fileinfo",
+            "description": "<p>파일 정보 (type:2 - 파일인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "fileinfo.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "fileinfo.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "fileinfo.file",
+            "description": "<p>파일 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "fileinfo.type",
+            "description": "<p>파일 종류 (1:일반, 2:이미지, 3:동영상)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "fileinfo.w",
+            "description": "<p>가로 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": true,
+            "field": "fileinfo.h",
+            "description": "<p>세로 크기</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"user\":5,\"type\":1,\"len\":3,\"content\":\"메시지\",\"created\":1392319358}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../teamup-edge/edge/api/chat/v1/Get.php",
     "groupTitle": "message",
     "header": {
       "fields": {
@@ -440,7 +787,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Get.php",
     "groupTitle": "message",
     "header": {
       "fields": {
@@ -612,7 +959,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Get.php",
     "groupTitle": "message",
     "header": {
       "fields": {
@@ -700,7 +1047,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Post.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Post.php",
     "groupTitle": "message",
     "header": {
       "fields": {
@@ -807,7 +1154,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Post.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Post.php",
     "groupTitle": "message",
     "header": {
       "fields": {
@@ -1015,7 +1362,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Get.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -1197,7 +1544,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Get.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -1415,7 +1762,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Get.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -1626,7 +1973,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Get.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Get.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -1698,7 +2045,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Post.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Post.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -1782,7 +2129,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Post.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Post.php",
     "groupTitle": "room",
     "error": {
       "fields": {
@@ -1853,7 +2200,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Post.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Post.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -1937,7 +2284,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Post.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Post.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -2009,7 +2356,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v3/Put.php",
+    "filename": "../teamup-edge/edge/api/chat/v3/Put.php",
     "groupTitle": "room",
     "header": {
       "fields": {
@@ -2081,7 +2428,7 @@
         }
       ]
     },
-    "filename": "../teamup-logic/edge/api/chat/v1/Put.php",
+    "filename": "../teamup-edge/edge/api/chat/v1/Put.php",
     "groupTitle": "room",
     "header": {
       "fields": {
