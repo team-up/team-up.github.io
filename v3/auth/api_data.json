@@ -4,7 +4,7 @@
     "url": "/v3/*",
     "title": "HTTP Status Code",
     "version": "3.0.0",
-    "name": "StatusCode",
+    "name": "statusCode",
     "group": "base",
     "error": {
       "fields": {
@@ -581,16 +581,16 @@
     "group": "team",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "JSON": [
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": false,
             "field": "name",
             "description": "<p>팀 이름</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "allowedValues": [
               "admin",
@@ -602,7 +602,7 @@
             "description": "<p>초대 가능</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "allowedValues": [
               "domain",
@@ -614,14 +614,14 @@
             "description": "<p>초대 도메인 필터 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String[]",
             "optional": true,
             "field": "domainList",
             "description": "<p>초대 가능 도메인 리스트</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "department",
@@ -629,7 +629,7 @@
             "description": "<p>부서 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "position",
@@ -637,7 +637,7 @@
             "description": "<p>직책 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "jobTitle",
@@ -645,7 +645,7 @@
             "description": "<p>직급 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "phone",
@@ -653,7 +653,7 @@
             "description": "<p>전화번호 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "mobile",
@@ -661,7 +661,7 @@
             "description": "<p>휴대폰 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "birthday",
@@ -669,35 +669,35 @@
             "description": "<p>생일 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": true,
             "field": "direct_url",
             "description": "<p>바로가기 URL</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Number",
             "optional": true,
             "field": "direct_width",
             "description": "<p>바로가기 URL 가로</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Number",
             "optional": true,
             "field": "direct_height",
             "description": "<p>바로가기 URL 세로</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": true,
             "field": "size",
             "description": "<p>팀 규모</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": true,
             "field": "category",
@@ -720,7 +720,7 @@
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "index",
+            "field": "return",
             "description": "<p>팀 번호</p>"
           }
         ]
@@ -770,23 +770,23 @@
     ],
     "parameter": {
       "fields": {
-        "Parameter": [
+        "JSON": [
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Number",
             "optional": false,
             "field": "index",
             "description": "<p>팀 번호</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": true,
             "field": "name",
             "description": "<p>이름 (슈퍼관리자만 변경 가능)</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "allowedValues": [
               "admin",
@@ -797,7 +797,7 @@
             "description": "<p>초대 가능</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "allowedValues": [
               "domain",
@@ -808,84 +808,84 @@
             "description": "<p>초대 도메인 필터 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String[]",
             "optional": true,
             "field": "domainList",
             "description": "<p>초대 가능 도메인 리스트</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "department",
             "description": "<p>부서 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "position",
             "description": "<p>직책 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "jobTitle",
             "description": "<p>직급 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "phone",
             "description": "<p>전화번호 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "mobile",
             "description": "<p>휴대폰 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "birthday",
             "description": "<p>생일 필수 여부</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": true,
             "field": "direct_url",
             "description": "<p>바로가기 URL</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Number",
             "optional": true,
             "field": "direct_width",
             "description": "<p>바로가기 URL 가로</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "Number",
             "optional": true,
             "field": "direct_height",
             "description": "<p>바로가기 URL 세로</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": true,
             "field": "size",
             "description": "<p>팀 규모</p>"
           },
           {
-            "group": "Parameter",
+            "group": "JSON",
             "type": "String",
             "optional": true,
             "field": "category",
@@ -908,8 +908,8 @@
             "group": "Success 200",
             "type": "Boolean",
             "optional": false,
-            "field": "result",
-            "description": "<p>성공 여부</p>"
+            "field": "return",
+            "description": "<p>성공 실패 여부</p>"
           }
         ]
       },

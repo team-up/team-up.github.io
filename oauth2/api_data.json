@@ -4,7 +4,7 @@
     "url": "/oauth2/*",
     "title": "HTTP Status Code",
     "version": "1.0.0",
-    "name": "StatusCode",
+    "name": "statusCode",
     "group": "base",
     "error": {
       "fields": {
@@ -253,14 +253,7 @@
             "description": "<p>권한 scope (, 로 구분)</p>"
           }
         ]
-      },
-      "examples": [
-        {
-          "title": "Request Example",
-          "content": "{\n\"grant_type\": \"password\",\n\"client_id\": \":client_id\",\n\"client_secret\": \":client_secret\",\n\"username\": \":username\",\n\"password\": \":password\"\n}",
-          "type": "json"
-        }
-      ]
+      }
     },
     "success": {
       "fields": {
@@ -349,7 +342,7 @@
             "type": "String",
             "optional": false,
             "field": "Content-Type",
-            "description": "<p>application/json; charset=utf-8</p>"
+            "description": "<p>application/x-www-form-urlencoded; charset=utf-8</p>"
           }
         ]
       }
@@ -398,14 +391,7 @@
             "description": "<p>발급 받은 code</p>"
           }
         ]
-      },
-      "examples": [
-        {
-          "title": "Request Example",
-          "content": "{\n\"grant_type\": \"authorization_code\",\n\"client_id\": \":client_id\",\n\"client_secret\": \":client_secret\",\n\"code\": \":code\"\n}",
-          "type": "json"
-        }
-      ]
+      }
     },
     "success": {
       "fields": {
@@ -461,7 +447,7 @@
             "type": "String",
             "optional": false,
             "field": "Content-Type",
-            "description": "<p>application/json; charset=utf-8</p>"
+            "description": "<p>application/x-www-form-urlencoded; charset=utf-8</p>"
           }
         ]
       }
@@ -496,14 +482,7 @@
             "description": "<p>Refresh Token</p>"
           }
         ]
-      },
-      "examples": [
-        {
-          "title": "Request Example",
-          "content": "{\n\"grant_type\": \"refresh_token\",\n\"refresh_token\": \":refresh_token\"\n}",
-          "type": "json"
-        }
-      ]
+      }
     },
     "success": {
       "fields": {
@@ -559,7 +538,7 @@
             "type": "String",
             "optional": false,
             "field": "Content-Type",
-            "description": "<p>application/json; charset=utf-8</p>"
+            "description": "<p>application/x-www-form-urlencoded; charset=utf-8</p>"
           }
         ]
       }
