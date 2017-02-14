@@ -1,356 +1,568 @@
 define({ "api": [
   {
-    "type": "get",
-    "url": "oauth2/authorize",
-    "title": "Implicit Grant",
+    "type": "*",
+    "url": "/oauth2/*",
+    "title": "HTTP Status Code",
     "version": "1.0.0",
-    "name": "oauth_authorize_implicit",
-    "group": "Oauth2",
-    "description": "<p>code 발급</p> ",
+    "name": "StatusCode",
+    "group": "base",
+    "error": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "type": "Status",
+            "optional": false,
+            "field": "200",
+            "description": "<p>OK (성공, 컨텐츠 있음)</p>"
+          }
+        ],
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Status",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Not Found (URL, method 오류)</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "type": "Status",
+            "optional": false,
+            "field": "500",
+            "description": "<p>Internal Server Error (내부 오류)</p>"
+          },
+          {
+            "group": "Error 5xx",
+            "type": "Status",
+            "optional": false,
+            "field": "502",
+            "description": "<p>Bad Gateway (서버 내부 통신 오류)</p>"
+          }
+        ],
+        "Error 200 OAuth2Exception": [
+          {
+            "group": "Error 200 OAuth2Exception",
+            "type": "String",
+            "allowedValues": [
+              "OAuth2Exception"
+            ],
+            "optional": false,
+            "field": "exception",
+            "description": "<p>예외 정보</p>"
+          },
+          {
+            "group": "Error 200 OAuth2Exception",
+            "type": "String",
+            "allowedValues": [
+              "error",
+              "invalid_request",
+              "invalid_client",
+              "invalid_grant",
+              "invalid_token"
+            ],
+            "optional": false,
+            "field": "error",
+            "description": "<p>에러 정보</p>"
+          },
+          {
+            "group": "Error 200 OAuth2Exception",
+            "type": "Object",
+            "optional": true,
+            "field": "error_description",
+            "description": "<p>에러 내용</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/api/oauth2/Oauth2api.java",
+    "groupTitle": "base"
+  },
+  {
+    "type": "get",
+    "url": "/oauth2/authorize",
+    "title": "Authorization Code #1",
+    "version": "1.0.0",
+    "name": "getOauth2AuthorizeCode1",
+    "group": "oauth2",
+    "description": "<p>code 발급</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
+            "allowedValues": [
+              "code"
+            ],
             "optional": false,
             "field": "response_type",
-            "description": "<p>token  고정</p> "
+            "description": "<p>Grant Type</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "client_id",
-            "description": ""
+            "description": "<p>Client ID</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "redirect_uri",
-            "description": "<p>call back url</p> "
+            "description": "<p>callback uri</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "scope",
-            "description": "<p>권한 관리용 scope , 로 구분 ex) read,post</p> "
+            "description": "<p>권한 scope (, 로 구분)</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "state",
-            "description": "<p>csrf 방지용</p> "
+            "description": "<p>csrf 방지</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/main/java/com/tmup/auth/api/oauth2/Oauth2api.java",
+    "groupTitle": "oauth2"
+  },
+  {
+    "type": "get",
+    "url": "/oauth2/authorize",
+    "title": "Implicit Grant",
+    "version": "1.0.0",
+    "name": "getOauth2AuthorizeImplicit",
+    "group": "oauth2",
+    "description": "<p>code 발급</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "token"
+            ],
+            "optional": false,
+            "field": "response_type",
+            "description": "<p>Grant Type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "client_id",
+            "description": "<p>Client ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "redirect_uri",
+            "description": "<p>callback uri</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "scope",
+            "description": "<p>권한 scope (, 로 구분)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "state",
+            "description": "<p>csrf 방지</p>"
           }
         ]
       },
       "examples": [
         {
-          "title": "Request-Example:",
-          "content": "https://auth.tmup.com/oauth2/authorize? response_type=token&client_id=:id&redirect_uri=:url",
+          "title": "Request Example",
+          "content": "GET /oauth2/authorize?response_type=token&client_id=:id&redirect_uri=:uri",
           "type": "json"
         }
       ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/oauth2/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
-  },
-  {
-    "type": "get",
-    "url": "oauth2/authorize",
-    "title": "Authorization Code#1",
-    "version": "1.0.0",
-    "name": "oauth_token_code1",
-    "group": "Oauth2",
-    "description": "<p>code 발급</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "response_type",
-            "description": "<p>code  고정</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_id",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "redirect_uri",
-            "description": "<p>call back url</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "scope",
-            "description": "<p>권한 관리용 scope , 로 구분 ex) read,post</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": true,
-            "field": "state",
-            "description": "<p>csrf 방지용</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/oauth2/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
-  },
-  {
-    "type": "get, post",
-    "url": "oauth2/token",
-    "title": "Authorization Code#2",
-    "version": "1.0.0",
-    "name": "oauth_token_code2",
-    "group": "Oauth2",
-    "description": "<p>발급 받은 code를 이용해 token을 발급 받습니다.</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "grant_type",
-            "description": "<p>authorization_code  고정</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_id",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "client_secret",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "code",
-            "description": "<p>발급 받은 code</p> "
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "access_token",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>Integer</p> ",
-            "optional": false,
-            "field": "expires_in",
-            "description": "<p>access_token 만료 시간</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "token_type",
-            "description": "<p>bearer 고정</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "refresh_token",
-            "description": "<p>180일 사용 가능</p> "
-          }
-        ]
-      }
-    },
-    "filename": "src/main/java/com/tmup/auth/controller/oauth2/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
+    "filename": "src/main/java/com/tmup/auth/api/oauth2/Oauth2api.java",
+    "groupTitle": "oauth2"
   },
   {
     "type": "post",
-    "url": "oauth2/token",
+    "url": "/oauth2/token",
     "title": "Password Credentials",
     "version": "1.0.0",
-    "name": "oauth_token_password",
-    "group": "Oauth2",
+    "name": "getOauth2TokenPassword",
+    "group": "oauth2",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
+            "allowedValues": [
+              "password"
+            ],
             "optional": false,
             "field": "grant_type",
-            "description": "<p>password 고정</p> "
+            "description": "<p>Grant Type</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "client_id",
-            "description": ""
+            "description": "<p>Client ID</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "client_secret",
-            "description": ""
+            "description": "<p>Client Secret</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "username",
-            "description": ""
+            "description": "<p>username</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "password",
-            "description": ""
+            "description": "<p>password</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "scope",
-            "description": "<p>scope , 로구분 ex) read,post</p> "
+            "description": "<p>권한 scope (, 로 구분)</p>"
           }
         ]
-      }
-    },
-    "success": {
+      },
       "examples": [
         {
-          "title": "Success-Response:",
-          "content": "{\n\t\t\"access_token\": \"47af604f7c6b642e3cd1020776539bcae0c83dd95e9796715dacb0ae3b87b53d\",\n\t\t\"expires_in\": 86399,\n\t\t\"token_type\": \"bearer\",\n\t\t\"refresh_token\": \"9a5cedc1e59909d43fc314dc96b163846df174a1712d342189cf8e444631caa3\"\n}",
+          "title": "Request Example",
+          "content": "{\n\"grant_type\": \"password\",\n\"client_id\": \":client_id\",\n\"client_secret\": \":client_secret\",\n\"username\": \":username\",\n\"password\": \":password\"\n}",
           "type": "json"
         }
-      ],
+      ]
+    },
+    "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "access_token",
-            "description": ""
+            "description": "<p>Access Token</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Number",
             "optional": false,
             "field": "expires_in",
-            "description": "<p>access_token 만료 시간</p> "
+            "description": "<p>만료 시간 (초)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
+            "allowedValues": [
+              "bearer"
+            ],
             "optional": false,
             "field": "token_type",
-            "description": "<p>bearer 고정</p> "
+            "description": "<p>Token Type</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "refresh_token",
-            "description": "<p>180일 사용 가능</p> "
+            "description": "<p>Refresh Token (180일 사용 가능)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"access_token\": \":access_token\",\n\"expires_in\": 86399,\n\"token_type\": \"bearer\",\n\"refresh_token\": \":refresh_token\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 200 LoginException": [
+          {
+            "group": "Error 200 LoginException",
+            "type": "String",
+            "allowedValues": [
+              "LoginException"
+            ],
+            "optional": false,
+            "field": "exception",
+            "description": "<p>예외 정보</p>"
+          },
+          {
+            "group": "Error 200 LoginException",
+            "type": "String",
+            "allowedValues": [
+              "id_pw_not_match"
+            ],
+            "optional": false,
+            "field": "error",
+            "description": "<p>에러 정보</p>"
+          },
+          {
+            "group": "Error 200 LoginException",
+            "type": "Object",
+            "optional": true,
+            "field": "error_description",
+            "description": "<p>에러 내용</p>"
           }
         ]
       }
     },
-    "filename": "src/main/java/com/tmup/auth/controller/oauth2/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
+    "filename": "src/main/java/com/tmup/auth/api/oauth2/Oauth2api.java",
+    "groupTitle": "oauth2",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    }
   },
   {
-    "type": "get, post",
-    "url": "oauth2/token",
-    "title": "refresh token",
+    "type": "post, get",
+    "url": "/oauth2/token",
+    "title": "Authorization Code #2",
     "version": "1.0.0",
-    "name": "oauth_token_refresh",
-    "group": "Oauth2",
-    "description": "<p>token 재발급</p> ",
+    "name": "postOauth2TokenCode2",
+    "group": "oauth2",
+    "description": "<p>발급 받은 code로 token 발급</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
+            "allowedValues": [
+              "authorization_code"
+            ],
             "optional": false,
             "field": "grant_type",
-            "description": "<p>refresh_token  고정</p> "
+            "description": "<p>Grant Type</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
-            "field": "refresh_token",
-            "description": ""
+            "field": "client_id",
+            "description": "<p>Client ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "client_secret",
+            "description": "<p>Client Secret</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "code",
+            "description": "<p>발급 받은 code</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\n\"grant_type\": \"authorization_code\",\n\"client_id\": \":client_id\",\n\"client_secret\": \":client_secret\",\n\"code\": \":code\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "access_token",
-            "description": ""
+            "description": "<p>Access Token</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Integer</p> ",
+            "type": "Number",
             "optional": false,
             "field": "expires_in",
-            "description": "<p>access_token 만료 시간</p> "
+            "description": "<p>만료 시간 (초)</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
+            "allowedValues": [
+              "bearer"
+            ],
             "optional": false,
             "field": "token_type",
-            "description": "<p>bearer 고정</p> "
+            "description": "<p>Token Type</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "refresh_token",
-            "description": "<p>180일 사용 가능</p> "
+            "description": "<p>Refresh Token (180일 사용 가능)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"access_token\": \":access_token\",\n\"expires_in\": 86399,\n\"token_type\": \"bearer\",\n\"refresh_token\": \":refresh_token\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/api/oauth2/Oauth2api.java",
+    "groupTitle": "oauth2",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
           }
         ]
       }
+    }
+  },
+  {
+    "type": "post, get",
+    "url": "/oauth2/token",
+    "title": "Refresh Token",
+    "version": "1.0.0",
+    "name": "postOauth2TokenRefresh",
+    "group": "oauth2",
+    "description": "<p>token 재발급</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "refresh_token"
+            ],
+            "optional": false,
+            "field": "grant_type",
+            "description": "<p>Grant Type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "refresh_token",
+            "description": "<p>Refresh Token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\n\"grant_type\": \"refresh_token\",\n\"refresh_token\": \":refresh_token\"\n}",
+          "type": "json"
+        }
+      ]
     },
-    "filename": "src/main/java/com/tmup/auth/controller/oauth2/Oauth2Controller.java",
-    "groupTitle": "Oauth2"
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>Access Token</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "expires_in",
+            "description": "<p>만료 시간 (초)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "allowedValues": [
+              "bearer"
+            ],
+            "optional": false,
+            "field": "token_type",
+            "description": "<p>Token Type</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refresh_token",
+            "description": "<p>Refresh Token (180일 사용 가능)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"access_token\": \":access_token\",\n\"expires_in\": 86399,\n\"token_type\": \"bearer\",\n\"refresh_token\": \":refresh_token\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/api/oauth2/Oauth2api.java",
+    "groupTitle": "oauth2",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    }
   }
 ] });
