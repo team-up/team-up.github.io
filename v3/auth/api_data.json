@@ -110,9 +110,9 @@
     "group": "license",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Query": [
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "Number",
             "optional": false,
             "field": "team",
@@ -329,9 +329,9 @@
     "group": "license",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Query": [
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "Number",
             "optional": false,
             "field": "team",
