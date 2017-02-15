@@ -1,15 +1,19 @@
 define({
-  "name": "teamUP auth api",
+  "name": "TeamUP auth API",
   "version": "3.0.0",
-  "description": "teamUP auth api",
-  "title": "teamUP",
-  "url": "https://auth.tmup.com/",
+  "description": "TeamUP RESTful API (auth)",
+  "title": "TeamUP auth API",
+  "url": "https://auth.tmup.com",
+  "template": {
+    "withGenerator": false
+  },
   "sampleUrl": false,
-  "apidoc": "0.2.0",
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-08-05T19:36:58.530Z",
+    "time": "2017-02-15T09:05:09.593Z",
     "url": "http://apidocjs.com",
-    "version": "0.15.1"
+    "version": "0.17.5"
   }
 });

@@ -182,14 +182,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "start_date",
-            "description": "<p>시작일 (yyyy-MM-dd)</p>"
+            "description": "<p>시작일</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "end_date",
-            "description": "<p>종료일 (yyyy-MM-dd)</p>"
+            "description": "<p>종료일</p>"
           }
         ]
       },
@@ -211,7 +211,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 access token (bearer :access_token)</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -285,14 +285,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": ".start_date",
-            "description": "<p>시작일 (yyyy-MM-dd)</p>"
+            "description": "<p>시작일</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": ".end_date",
-            "description": "<p>종료일 (yyyy-MM-dd)</p>"
+            "description": "<p>종료일</p>"
           }
         ]
       },
@@ -314,7 +314,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 access token (bearer :access_token)</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -405,7 +405,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 access token (bearer :access_token)</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -451,9 +451,13 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "String",
+            "allowedValues": [
+              "admin",
+              "all"
+            ],
             "optional": false,
             "field": "invite_user",
-            "description": "<p>초대 가능 (admin, all)</p>"
+            "description": "<p>초대 가능</p>"
           },
           {
             "group": "Success 200",
@@ -495,21 +499,21 @@ define({ "api": [
             "type": "Boolean",
             "optional": false,
             "field": "is_phone",
-            "description": "<p>전화번호 필수 여부</p>"
+            "description": "<p>직통전화 필수 여부</p>"
           },
           {
             "group": "Success 200",
             "type": "Boolean",
             "optional": false,
             "field": "is_mobile",
-            "description": "<p>휴대폰 필수 여부</p>"
+            "description": "<p>휴대전화 필수 여부</p>"
           },
           {
             "group": "Success 200",
             "type": "Boolean",
             "optional": false,
             "field": "is_birthday",
-            "description": "<p>생일 필수 여부</p>"
+            "description": "<p>생년월일 필수 여부</p>"
           },
           {
             "group": "Success 200",
@@ -551,7 +555,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 100,\n\"name\": \"테스트\",\n\"invite_user\": \"admin\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": \"http://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"\",\n\"category\": \"\"\n}",
+          "content": "{\n\"index\": 100,\n\"name\": \"테스트\",\n\"invite_user\": \"admin\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": \"https://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"\",\n\"category\": \"\"\n}",
           "type": "json"
         }
       ]
@@ -566,7 +570,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 access token (bearer :access_token)</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -650,7 +654,7 @@ define({ "api": [
             "optional": true,
             "field": "phone",
             "defaultValue": "false",
-            "description": "<p>전화번호 필수 여부</p>"
+            "description": "<p>직통전화 필수 여부</p>"
           },
           {
             "group": "JSON",
@@ -658,7 +662,7 @@ define({ "api": [
             "optional": true,
             "field": "mobile",
             "defaultValue": "false",
-            "description": "<p>휴대폰 필수 여부</p>"
+            "description": "<p>휴대전화 필수 여부</p>"
           },
           {
             "group": "JSON",
@@ -666,7 +670,7 @@ define({ "api": [
             "optional": true,
             "field": "birthday",
             "defaultValue": "false",
-            "description": "<p>생일 필수 여부</p>"
+            "description": "<p>생년월일 필수 여부</p>"
           },
           {
             "group": "JSON",
@@ -743,7 +747,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 access token (bearer :access_token)</p>"
+            "description": "<p>:token_type :access_token</p>"
           },
           {
             "group": "Header",
@@ -840,21 +844,21 @@ define({ "api": [
             "type": "Boolean",
             "optional": true,
             "field": "phone",
-            "description": "<p>전화번호 필수 여부</p>"
+            "description": "<p>직통전화 필수 여부</p>"
           },
           {
             "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "mobile",
-            "description": "<p>휴대폰 필수 여부</p>"
+            "description": "<p>휴대전화 필수 여부</p>"
           },
           {
             "group": "JSON",
             "type": "Boolean",
             "optional": true,
             "field": "birthday",
-            "description": "<p>생일 필수 여부</p>"
+            "description": "<p>생년월일 필수 여부</p>"
           },
           {
             "group": "JSON",
@@ -931,7 +935,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 access token (bearer :access_token)</p>"
+            "description": "<p>:token_type :access_token</p>"
           },
           {
             "group": "Header",

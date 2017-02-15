@@ -90,9 +90,9 @@ define({ "api": [
     "description": "<p>code 발급</p>",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Query": [
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "allowedValues": [
               "code"
@@ -102,35 +102,42 @@ define({ "api": [
             "description": "<p>Grant Type</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "client_id",
             "description": "<p>Client ID</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "redirect_uri",
             "description": "<p>callback uri</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": true,
             "field": "scope",
             "description": "<p>권한 scope (, 로 구분)</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": true,
             "field": "state",
             "description": "<p>csrf 방지</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "GET /oauth2/authorize?response_type=code&client_id=:client_id&redirect_uri=:redirect_uri",
+          "type": "json"
+        }
+      ]
     },
     "filename": "src/main/java/com/tmup/auth/api/oauth2/Oauth2api.java",
     "groupTitle": "oauth2"
@@ -145,9 +152,9 @@ define({ "api": [
     "description": "<p>code 발급</p>",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Query": [
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "allowedValues": [
               "token"
@@ -157,28 +164,28 @@ define({ "api": [
             "description": "<p>Grant Type</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "client_id",
             "description": "<p>Client ID</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "redirect_uri",
             "description": "<p>callback uri</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": true,
             "field": "scope",
             "description": "<p>권한 scope (, 로 구분)</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": true,
             "field": "state",
@@ -189,7 +196,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "GET /oauth2/authorize?response_type=token&client_id=:id&redirect_uri=:uri",
+          "content": "GET /oauth2/authorize?response_type=token&client_id=:client_id&redirect_uri=:redirect_uri",
           "type": "json"
         }
       ]
@@ -206,9 +213,9 @@ define({ "api": [
     "group": "oauth2",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Query": [
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "allowedValues": [
               "password"
@@ -218,42 +225,49 @@ define({ "api": [
             "description": "<p>Grant Type</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "client_id",
             "description": "<p>Client ID</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "client_secret",
             "description": "<p>Client Secret</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "username",
             "description": "<p>username</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "password",
             "description": "<p>password</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": true,
             "field": "scope",
             "description": "<p>권한 scope (, 로 구분)</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "grant_type=password&client_id=:client_id&client_secret=:client_secret&username=:username&password=:password",
+          "type": "x-www-form-urlencoded"
+        }
+      ]
     },
     "success": {
       "fields": {
@@ -358,9 +372,9 @@ define({ "api": [
     "description": "<p>발급 받은 code로 token 발급</p>",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Query": [
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "allowedValues": [
               "authorization_code"
@@ -370,28 +384,35 @@ define({ "api": [
             "description": "<p>Grant Type</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "client_id",
             "description": "<p>Client ID</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "client_secret",
             "description": "<p>Client Secret</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "code",
             "description": "<p>발급 받은 code</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "grant_type=authorization_code&client_id=:client_id&client_secret=:client_secret&code=:code",
+          "type": "x-www-form-urlencoded"
+        }
+      ]
     },
     "success": {
       "fields": {
@@ -463,9 +484,9 @@ define({ "api": [
     "description": "<p>token 재발급</p>",
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Query": [
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "allowedValues": [
               "refresh_token"
@@ -475,14 +496,21 @@ define({ "api": [
             "description": "<p>Grant Type</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "refresh_token",
             "description": "<p>Refresh Token</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "grant_type=refresh_token&refresh_token=:refresh_token",
+          "type": "x-www-form-urlencoded"
+        }
+      ]
     },
     "success": {
       "fields": {
