@@ -721,7 +721,7 @@ define({ "api": [
     "group": "my",
     "parameter": {
       "fields": {
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -905,7 +905,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -1108,7 +1108,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -1330,7 +1330,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -1482,7 +1482,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -1567,7 +1567,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -1651,7 +1651,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -1742,7 +1742,7 @@ define({ "api": [
             "description": "<p>부서 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -1833,7 +1833,7 @@ define({ "api": [
             "description": "<p>부서 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -1931,7 +1931,7 @@ define({ "api": [
             "description": "<p>직책 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -2015,7 +2015,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -2106,7 +2106,7 @@ define({ "api": [
             "description": "<p>직급 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -2190,7 +2190,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -2281,7 +2281,7 @@ define({ "api": [
             "description": "<p>유저 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -2405,7 +2405,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -2560,7 +2560,7 @@ define({ "api": [
             "description": "<p>유저 상태</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -2825,7 +2825,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String[]",
@@ -2940,7 +2940,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -3091,7 +3091,7 @@ define({ "api": [
     "group": "team_join",
     "parameter": {
       "fields": {
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -5012,7 +5012,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -5244,7 +5244,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -5324,7 +5324,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -5416,7 +5416,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
@@ -5473,7 +5473,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "": [
+        "JSON": [
           {
             "group": "JSON",
             "type": "String",
