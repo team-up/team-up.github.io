@@ -721,7 +721,7 @@ define({ "api": [
     "group": "my",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -905,7 +905,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -1108,7 +1108,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -1329,6 +1329,15 @@ define({ "api": [
             "field": "team",
             "description": "<p>팀 번호</p>"
           }
+        ],
+        "": [
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          }
         ]
       },
       "examples": [
@@ -1473,7 +1482,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -1558,7 +1567,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -1571,7 +1580,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"name\": \"팀장\"}",
+          "content": "{\"name\":\"팀장\"}",
           "type": "json"
         }
       ]
@@ -1642,7 +1651,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -1655,7 +1664,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"name\": \"과장\"}",
+          "content": "{\"name\":\"과장\"}",
           "type": "json"
         }
       ]
@@ -1733,7 +1742,7 @@ define({ "api": [
             "description": "<p>부서 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -1824,7 +1833,7 @@ define({ "api": [
             "description": "<p>부서 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -1922,7 +1931,7 @@ define({ "api": [
             "description": "<p>직책 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -1935,7 +1944,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"name\": \"팀장\"}",
+          "content": "{\"name\":\"팀장\"}",
           "type": "json"
         }
       ]
@@ -2006,7 +2015,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -2097,7 +2106,7 @@ define({ "api": [
             "description": "<p>직급 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -2110,7 +2119,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"name\": \"과장\"}",
+          "content": "{\"name\":\"과장\"}",
           "type": "json"
         }
       ]
@@ -2181,7 +2190,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -2272,7 +2281,7 @@ define({ "api": [
             "description": "<p>유저 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -2395,6 +2404,15 @@ define({ "api": [
             "field": "team",
             "description": "<p>팀 번호</p>"
           }
+        ],
+        "": [
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          }
         ]
       },
       "examples": [
@@ -2455,7 +2473,7 @@ define({ "api": [
     "version": "1.0.0",
     "name": "putTeamUserRoleSuper",
     "group": "team_admin",
-    "description": "<p>기존 슈퍼관리자는 일반관리자로 변경.</p>",
+    "description": "<p>기존 슈퍼관리자는 일반관리자로 변경</p>",
     "parameter": {
       "fields": {
         "Query": [
@@ -2542,7 +2560,7 @@ define({ "api": [
             "description": "<p>유저 상태</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "Number[]",
@@ -2807,7 +2825,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String[]",
@@ -2922,7 +2940,7 @@ define({ "api": [
             "description": "<p>팀 번호</p>"
           }
         ],
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -3073,7 +3091,7 @@ define({ "api": [
     "group": "team_join",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -4800,7 +4818,20 @@ define({ "api": [
       ]
     },
     "filename": "src/main/java/com/tmup/auth/api/v1/api/user/UserPcStatusController.java",
-    "groupTitle": "user_pc"
+    "groupTitle": "user_pc",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "get",
@@ -4882,7 +4913,20 @@ define({ "api": [
       ]
     },
     "filename": "src/main/java/com/tmup/auth/api/v1/api/user/UserPcStatusController.java",
-    "groupTitle": "user_pc"
+    "groupTitle": "user_pc",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "put",
@@ -4944,7 +4988,20 @@ define({ "api": [
       ]
     },
     "filename": "src/main/java/com/tmup/auth/api/v1/api/user/UserPcStatusController.java",
-    "groupTitle": "user_pc"
+    "groupTitle": "user_pc",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "delete",
@@ -4955,7 +5012,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -5187,7 +5244,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -5267,7 +5324,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -5359,7 +5416,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -5416,7 +5473,7 @@ define({ "api": [
     "group": "user",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",

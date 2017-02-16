@@ -585,7 +585,7 @@ define({ "api": [
     "group": "team",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -774,7 +774,7 @@ define({ "api": [
     ],
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "Number",

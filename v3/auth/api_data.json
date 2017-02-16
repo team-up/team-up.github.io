@@ -585,7 +585,7 @@
     "group": "team",
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "String",
@@ -774,7 +774,7 @@
     ],
     "parameter": {
       "fields": {
-        "JSON": [
+        "": [
           {
             "group": "JSON",
             "type": "Number",

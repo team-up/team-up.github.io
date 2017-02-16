@@ -369,7 +369,7 @@
     "version": "1.0.0",
     "name": "postOauth2TokenCode2",
     "group": "oauth2",
-    "description": "<p>발급 받은 code로 token 발급</p>",
+    "description": "<p>발급 받은 code 로 token 발급</p>",
     "parameter": {
       "fields": {
         "Query": [
