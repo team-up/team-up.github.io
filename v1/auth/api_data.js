@@ -3782,6 +3782,13 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Boolean",
+            "optional": true,
+            "field": "department.is_delete",
+            "description": "<p>부서 삭제 여부</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object[]",
             "optional": false,
             "field": "users",
@@ -3867,7 +3874,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0}\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"is_delete\": true\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0}\n}\n]\n}",
           "type": "json"
         }
       ]
