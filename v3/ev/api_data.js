@@ -4,28 +4,28 @@ define({ "api": [
     "url": "/",
     "title": "기본 설정 정보",
     "version": "3.0.0",
-    "name": "Get",
-    "group": "Base",
+    "name": "get",
+    "group": "base",
     "success": {
       "fields": {
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "version",
             "description": "<p>서버 버전</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "lp_idle_time",
             "description": "<p>long-polling 요청 대기 시간 (이전 요청에 이벤트 없었을 경우 sleep) [단위: 초]</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "lp_wait_timeout",
             "description": "<p>long-polling 응답 대기 시간 (receive timeout 5초 정도 더 길게 설정) [단위: 초]</p>"
@@ -40,18 +40,18 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../teamup-logic/ev/api/v3/Get.php",
-    "groupTitle": "Base"
+    "filename": "ev/api/v3/Get.php",
+    "groupTitle": "base"
   },
   {
     "type": "*",
     "url": "/*",
     "title": "HTTP Status Code",
     "version": "2.1.0",
-    "name": "StatusCode",
-    "group": "Base",
-    "filename": "../teamup-logic/ev/api/_apidoc.js",
-    "groupTitle": "Base",
+    "name": "statusCode",
+    "group": "base",
+    "filename": "ev/api/_apidoc.js",
+    "groupTitle": "base",
     "success": {
       "fields": {
         "Success 2xx": [
@@ -150,7 +150,7 @@ define({ "api": [
     "url": "/v3/events",
     "title": "이벤트 대기",
     "version": "3.0.0",
-    "name": "GetEvents",
+    "name": "getEvents",
     "group": "event",
     "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제, readfeed:피드 읽음 상태 변경)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:팀 가입, exit:팀 탈퇴, block:팀 중지, drop: 계정 삭제)</p> </li> </ul>",
     "success": {
@@ -158,220 +158,220 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "object[]",
+            "type": "Object[]",
             "optional": false,
             "field": "events",
             "description": "<p>이벤트 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "events.type",
             "description": "<p>이벤트 종류</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.chat",
             "description": "<p>채팅 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.team",
             "description": "<p>팀 번호 (type: chat.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.room",
             "description": "<p>방 번호 (type: chat.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.user",
-            "description": "<p>유저 번호 (type: chat.message|detach)</p>"
+            "description": "<p>유저 번호 (type: chat.message/detach)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.msg",
             "description": "<p>메시지 번호 (type: chat.message)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.alert",
             "description": "<p>알림 (0:사용안함, 1:사용, type: chat.room)</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": true,
             "field": "events.chat.name",
             "description": "<p>방 이름 (type: chat.room)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.feed",
             "description": "<p>피드 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.team",
             "description": "<p>팀 번호 (type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.feedgroup",
             "description": "<p>피드 그룹 번호 (type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.feed",
             "description": "<p>피드 번호 (0:그룹 전체, type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.user",
-            "description": "<p>유저 번호 (type: feed.feed|reply|like|tagfeed|tagreply|removelike)</p>"
+            "description": "<p>유저 번호 (type: feed.feed/reply/like/tagfeed/tagreply/removelike)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.watch",
-            "description": "<p>지켜보기 (0:안함, 1:사용, type: feed.feed|tagfeed|reply|tagreply|watch)</p>"
+            "description": "<p>지켜보기 (0:안함, 1:사용, type: feed.feed/tagfeed/reply/tagreply/watch)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.push",
-            "description": "<p>강제 알림 (0:안함, 1:사용, type: feed.feed|tagfeed)</p>"
+            "description": "<p>강제 알림 (0:안함, 1:사용, type: feed.feed/tagfeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.reply",
-            "description": "<p>댓글 번호 (type: feed.reply|tagreply|removereply|changereply)</p>"
+            "description": "<p>댓글 번호 (type: feed.reply/tagreply/removereply/changereply)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.inform",
-            "description": "<p>알림탭 갱신 여부 (0:미참여, 1:최근 참여, 2:이전 참여, type: feed.reply|tagreply|like)</p>"
+            "description": "<p>알림탭 갱신 여부 (0:미참여, 1:최근 참여, 2:이전 참여, type: feed.reply/tagreply/like)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.feedgroup",
             "description": "<p>피드 그룹 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feedgroup.team",
             "description": "<p>팀 번호 (type: feedgroup.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feedgroup.feedgroup",
             "description": "<p>피드 그룹 번호 (type: feedgroup.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.inform",
             "description": "<p>알림 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.feedgroup",
             "description": "<p>피드 그룹 번호 (0:알림 전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.feed",
             "description": "<p>피드 번호 (0:그룹 전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.noti",
             "description": "<p>알림 번호 (0:전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.read",
             "description": "<p>읽음 상태 (0:전체, 1:읽은 알림만, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.watch",
             "description": "<p>지켜보기 (0:일반, 1:지켜보기, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.user",
             "description": "<p>유저 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.user.user",
-            "description": "<p>유저 번호 (type: user.password|drop)</p>"
+            "description": "<p>유저 번호 (type: user.password/drop)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.user.team",
-            "description": "<p>팀 번호 (type: user.approval|exit|block)</p>"
+            "description": "<p>팀 번호 (type: user.approval/exit/block)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number[]",
+            "type": "Number[]",
             "optional": true,
             "field": "events.user.users",
-            "description": "<p>유저 번호 리스트 (type: user.approval|exit|block)</p>"
+            "description": "<p>유저 번호 리스트 (type: user.approval/exit/block)</p>"
           }
         ]
       },
@@ -383,17 +383,17 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../teamup-logic/ev/api/v3/Get.php",
+    "filename": "ev/api/v3/Get.php",
     "groupTitle": "event",
     "header": {
       "fields": {
-        "": [
+        "Header": [
           {
-            "group": "Authorization",
-            "type": "string",
+            "group": "Header",
+            "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 token</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -404,7 +404,7 @@ define({ "api": [
     "url": "/v1/events",
     "title": "이벤트 대기",
     "version": "2.1.0",
-    "name": "GetEvents",
+    "name": "getEvents",
     "group": "event",
     "description": "<ul> <li> <p>이벤트 종류 prefix (chat.<em>: 채팅, feed.</em>: 피드, feedgroup.<em>: 피드 그룹, inform.</em>: 알림, etc.*: 기타)</p> </li> <li> <p>이벤트 종류 prefix 로 정보 데이터 반환 (ex: {&quot;type&quot;:&quot;chat.message&quot;,&quot;chat&quot;:{object}})</p> </li> <li> <p>채팅 type: chat.(message:메시지, read:읽음, detach:퇴장, join:초대, room:대화방 설정 변경)</p> </li> <li> <p>피드 type: feed.(feed:새글, reply:댓글, like:좋아요, tagfeed:태그 글, tagreply:태그 댓글, removefeed:글 삭제, removereply:댓글 삭제, removelike:좋아요 삭제, changefeed:글 수정, changereply:댓글 수정, watch:지켜보기)</p> </li> <li> <p>피드 그룹 type: feedgroup. (join:생성/초대/새 멤버, detach:탈퇴, admin:관리자 변경, config:설정)</p> </li> <li> <p>알림 type: inform. (removefeed:피드 알림 삭제, readfeed:피드 읽음 상태 변경)</p> </li> <li> <p>유저 type: user. (password:패스워드, approval:팀 가입, exit:팀 탈퇴, block:팀 중지, drop: 계정 삭제)</p> </li> </ul>",
     "success": {
@@ -412,217 +412,217 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "object[]",
+            "type": "Object[]",
             "optional": false,
             "field": "events",
             "description": "<p>이벤트 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "events.type",
             "description": "<p>이벤트 종류</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.chat",
             "description": "<p>채팅 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.team",
             "description": "<p>팀 번호 (type: chat.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.room",
             "description": "<p>방 번호 (type: chat.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.user",
             "description": "<p>유저 번호 (type: chat.message|detach)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.msg",
             "description": "<p>메시지 번호 (type: chat.message)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.chat.alert",
             "description": "<p>알림 (0:사용안함, 1:사용, type: chat.room)</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": true,
             "field": "events.chat.name",
             "description": "<p>방 이름 (type: chat.room)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.feed",
             "description": "<p>피드 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.team",
             "description": "<p>팀 번호 (type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.feedgroup",
             "description": "<p>피드 그룹 번호 (type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.feed",
             "description": "<p>피드 번호 (0:그룹 전체, type: feed.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.user",
             "description": "<p>유저 번호 (type: feed.feed|reply|like|tagfeed|tagreply|removelike)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.watch",
             "description": "<p>지켜보기 (0:안함, 1:사용, type: feed.feed|tagfeed|reply|tagreply|watch)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.push",
             "description": "<p>강제 알림 (0:안함, 1:사용, type: feed.feed|tagfeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.reply",
             "description": "<p>댓글 번호 (type: feed.reply|tagreply|removereply|changereply)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feed.inform",
             "description": "<p>알림탭 갱신 여부 (0:미참여, 1:최근 참여, 2:이전 참여, type: feed.reply|tagreply|like)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.feedgroup",
             "description": "<p>피드 그룹 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feedgroup.team",
             "description": "<p>팀 번호 (type: feedgroup.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.feedgroup.feedgroup",
             "description": "<p>피드 그룹 번호 (type: feedgroup.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.inform",
             "description": "<p>알림 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.feedgroup",
             "description": "<p>피드 그룹 번호 (0:알림 전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.feed",
             "description": "<p>피드 번호 (0:그룹 전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.noti",
             "description": "<p>알림 번호 (0:전체, type: inform.*)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.read",
             "description": "<p>읽음 상태 (0:전체, 1:읽은 알림만, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.inform.watch",
             "description": "<p>지켜보기 (0:일반, 1:지켜보기, type: inform.removefeed)</p>"
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "Object",
             "optional": true,
             "field": "events.user",
             "description": "<p>유저 이벤트 정보</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.user.user",
             "description": "<p>유저 번호 (type: user.password|drop)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": true,
             "field": "events.user.team",
             "description": "<p>팀 번호 (type: user.approval|exit|block)</p>"
           },
           {
             "group": "Success 200",
-            "type": "number[]",
+            "type": "Number[]",
             "optional": true,
             "field": "events.user.users",
             "description": "<p>유저 번호 리스트 (type: user.approval|exit|block)</p>"
@@ -637,17 +637,17 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../teamup-logic/ev/api/v1/Get.php",
+    "filename": "ev/api/v1/Get.php",
     "groupTitle": "event",
     "header": {
       "fields": {
-        "": [
+        "Header": [
           {
-            "group": "Authorization",
-            "type": "string",
+            "group": "Header",
+            "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 token</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }

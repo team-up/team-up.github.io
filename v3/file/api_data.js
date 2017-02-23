@@ -4,10 +4,10 @@ define({ "api": [
     "url": "/*",
     "title": "HTTP Status Code",
     "version": "2.1.0",
-    "name": "StatusCode",
-    "group": "Base",
-    "filename": "../teamup-logic/file/api/_apidoc.js",
-    "groupTitle": "Base",
+    "name": "statusCode",
+    "group": "base",
+    "filename": "file/api/_apidoc.js",
+    "groupTitle": "base",
     "success": {
       "fields": {
         "Success 2xx": [
@@ -120,37 +120,37 @@ define({ "api": [
     "url": "/v3/file/:team/:id",
     "title": "파일 다운로드",
     "version": "3.0.0",
-    "name": "GetFile",
+    "name": "getFile",
     "group": "download",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "team",
             "description": "<p>팀 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "id",
             "description": "<p>파일 아이디</p>"
           }
         ],
-        "Query String": [
+        "Query": [
           {
-            "group": "Query String",
-            "type": "number",
+            "group": "Query",
+            "type": "Number",
             "optional": true,
             "field": "msg",
             "description": "<p>메시지 번호 (대화방 파일인 경우)</p>"
           },
           {
-            "group": "Query String",
-            "type": "number",
+            "group": "Query",
+            "type": "Number",
             "optional": true,
             "field": "feed",
             "description": "<p>피드 번호 (그룹 파일인 경우)</p>"
@@ -171,17 +171,17 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../teamup-logic/file/api/v3/Get.php",
+    "filename": "file/api/v3/Get.php",
     "groupTitle": "download",
     "header": {
       "fields": {
-        "": [
+        "Header": [
           {
-            "group": "Authorization",
-            "type": "string",
+            "group": "Header",
+            "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 token</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -189,29 +189,27 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/v3/files/:team",
+    "url": "/v3/files/:team(/:id)",
     "title": "파일 업로드",
     "version": "3.0.0",
-    "name": "PostFiles",
+    "name": "postFiles",
     "group": "upload",
     "header": {
       "fields": {
         "Header": [
           {
             "group": "Header",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "Content-Type",
             "description": "<p>multipart/form-data</p>"
-          }
-        ],
-        "": [
+          },
           {
-            "group": "Authorization",
-            "type": "string",
+            "group": "Header",
+            "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 token</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -221,16 +219,34 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "team",
             "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>대상 폴더 아이디</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "Number",
+            "size": "0-1",
+            "optional": true,
+            "field": "stash",
+            "defaultValue": "0",
+            "description": "<p>피드/채팅 첨부 여부 (지정 시 id 무시됨)</p>"
           }
         ],
         "Content-Disposition": [
           {
             "group": "Content-Disposition",
-            "type": "string",
+            "type": "String",
             "allowedValues": [
               "files[]"
             ],
@@ -240,7 +256,7 @@ define({ "api": [
           },
           {
             "group": "Content-Disposition",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "filename",
             "description": "<p>파일 이름 (URL encode)</p>"
@@ -260,45 +276,80 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "object[]",
+            "type": "Object[]",
             "optional": false,
             "field": "files",
             "description": "<p>파일 정보 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "files.name",
             "description": "<p>파일 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "files.id",
             "description": "<p>파일 아이디</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "files.type",
             "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "files.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"files\":[\n{\"name\":\"b+1.png\",\"size\":1932741,\"id\":\"LTBlYTQxM2YxYjhkN2E2Zg\",\"type\":\"image\"}\n]\n}",
+          "content": "{\n\"files\":[\n{\"name\":\"b+1.png\",\"size\":1932741,\"id\":\"LTBlYTQxM2YxYjhkN2E2Zg\",\"type\":\"image\",\"thumbnail\":{\"host\":\"images.tmup.com\",\"path\":\"\\/aDeG\\/GdED.jpg\",\"width\":200,\"height\":100}}\n]\n}",
           "type": "json"
         }
       ]
@@ -328,7 +379,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../teamup-logic/file/api/v3/Post.php",
+    "filename": "file/api/v3/Post.php",
     "groupTitle": "upload"
   },
   {
@@ -336,26 +387,24 @@ define({ "api": [
     "url": "/v1/files/:team",
     "title": "파일 업로드",
     "version": "2.1.0",
-    "name": "PostFiles",
+    "name": "postFiles",
     "group": "upload",
     "header": {
       "fields": {
         "Header": [
           {
             "group": "Header",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "Content-Type",
             "description": "<p>multipart/form-data</p>"
-          }
-        ],
-        "": [
+          },
           {
-            "group": "Authorization",
-            "type": "string",
+            "group": "Header",
+            "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>oauth2 token</p>"
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -365,7 +414,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "team",
             "description": "<p>팀 번호</p>"
@@ -374,7 +423,7 @@ define({ "api": [
         "Content-Disposition": [
           {
             "group": "Content-Disposition",
-            "type": "string",
+            "type": "String",
             "allowedValues": [
               "files[]"
             ],
@@ -397,43 +446,57 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "object[]",
+            "type": "Object[]",
             "optional": false,
             "field": "files",
             "description": "<p>파일 정보 리스트</p>"
           },
           {
             "group": "Success 200",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "files.name",
             "description": "<p>파일 이름</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "number",
+            "type": "Number",
             "optional": false,
             "field": "files.file",
             "description": "<p>파일 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "files.w",
+            "description": "<p>가로 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "files.h",
+            "description": "<p>세로 크기</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"files\":[\n{\"name\":\"b+1.png\",\"size\":1932741,\"file\":3}\n]\n}",
+          "content": "{\n\"files\":[\n{\"name\":\"b+1.png\",\"size\":1932741,\"file\":3,\"type\":2,\"w\":200,\"h\":100}\n]\n}",
           "type": "json"
         }
       ]
     },
-    "filename": "../teamup-logic/file/api/v1/Post.php",
+    "filename": "file/api/v1/Post.php",
     "groupTitle": "upload",
     "error": {
       "fields": {

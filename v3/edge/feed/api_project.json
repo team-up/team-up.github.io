@@ -1,18 +1,19 @@
 {
   "name": "TeamUP edge feed",
-  "version": "3.0.0",
-  "description": "TeamUP RESTful API (피드)",
+  "version": "3.5.0",
+  "description": "TeamUP RESTful API (feed)",
   "title": "TeamUP edge feed API",
   "url": "https://edge.tmup.com",
   "template": {
     "withGenerator": false
   },
   "sampleUrl": false,
-  "apidoc": "0.2.0",
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-07-29T04:58:05.006Z",
+    "time": "2017-02-23T03:38:27.700Z",
     "url": "http://apidocjs.com",
-    "version": "0.16.1"
+    "version": "0.17.5"
   }
 }
