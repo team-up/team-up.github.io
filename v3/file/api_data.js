@@ -143,14 +143,14 @@ define({ "api": [
         "Query": [
           {
             "group": "Query",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "msg",
             "description": "<p>메시지 번호 (대화방 파일인 경우)</p>"
           },
           {
             "group": "Query",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "feed",
             "description": "<p>피드 번호 (그룹 파일인 경우)</p>"
@@ -290,7 +290,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
@@ -460,14 +460,14 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "files.file",
             "description": "<p>파일 번호</p>"

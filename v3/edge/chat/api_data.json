@@ -20,20 +20,6 @@
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "lp_idle_time",
-            "description": "<p>long-polling 요청 대기 시간 (이전 요청에 이벤트 없었을 경우 sleep) [단위: 초]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "lp_wait_timeout",
-            "description": "<p>long-polling 응답 대기 시간 (receive timeout 5초 정도 더 길게 설정) [단위: 초]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
             "field": "room_max_usercount",
             "description": "<p>대화방 최대 인원 수</p>"
           },
@@ -49,7 +35,7 @@
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"version\":\"3.0.0\",\n\"lp_idle_time\":1,\n\"lp_wait_timeout\":30,\n\"room_max_usercount\":100,\n\"room_name_usercount\":10\n}",
+          "content": "{\n\"version\":\"3.0.0\",\n\"room_max_usercount\":100,\n\"room_name_usercount\":10\n}",
           "type": "json"
         }
       ]
@@ -177,14 +163,14 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -240,14 +226,14 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -303,14 +289,14 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -397,7 +383,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "file.size",
             "description": "<p>파일 크기</p>"
@@ -496,14 +482,14 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -579,14 +565,14 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "fileinfo.size",
             "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "fileinfo.file",
             "description": "<p>파일 번호</p>"
@@ -650,7 +636,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -674,7 +660,7 @@
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
@@ -695,7 +681,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msgs.msg",
             "description": "<p>메시지 번호</p>"
@@ -765,7 +751,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "msgs.file.size",
             "description": "<p>파일 크기</p>"
@@ -864,7 +850,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -888,7 +874,7 @@
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
@@ -909,7 +895,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msgs.msg",
             "description": "<p>메시지 번호</p>"
@@ -979,14 +965,14 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "msgs.fileinfo.size",
             "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "msgs.fileinfo.file",
             "description": "<p>파일 번호</p>"
@@ -1050,7 +1036,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -1075,7 +1061,7 @@
           },
           {
             "group": "JSON",
-            "type": "Number[]",
+            "type": "LongNumber[]",
             "optional": true,
             "field": "tagfeeds",
             "description": "<p>태그 피드 번호 리스트</p>"
@@ -1095,7 +1081,7 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -1164,7 +1150,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -1189,7 +1175,7 @@
           },
           {
             "group": "JSON",
-            "type": "Number[]",
+            "type": "LongNumber[]",
             "optional": true,
             "field": "tagfeeds",
             "description": "<p>태그 피드 번호 리스트</p>"
@@ -1209,7 +1195,7 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -1278,7 +1264,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -1340,7 +1326,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -1402,7 +1388,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -1450,7 +1436,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -1492,7 +1478,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "newmsg",
             "description": "<p>안 읽은 메시지 번호 시작</p>"
@@ -1527,7 +1513,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "file.size",
             "description": "<p>파일 크기</p>"
@@ -1626,7 +1612,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -1674,7 +1660,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
@@ -1716,7 +1702,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "newmsg",
             "description": "<p>안 읽은 메시지 번호 시작</p>"
@@ -1751,14 +1737,14 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "fileinfo.size",
             "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "fileinfo.file",
             "description": "<p>파일 번호</p>"
@@ -1864,7 +1850,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "rooms.room",
             "description": "<p>방 번호</p>"
@@ -1899,7 +1885,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "rooms.msg",
             "description": "<p>메시지 번호</p>"
@@ -1948,7 +1934,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "rooms.newmsg",
             "description": "<p>안 읽은 메시지 번호 시작</p>"
@@ -1976,7 +1962,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "rooms.file.size",
             "description": "<p>파일 크기</p>"
@@ -2117,7 +2103,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "rooms.room",
             "description": "<p>방 번호</p>"
@@ -2152,7 +2138,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "rooms.msg",
             "description": "<p>메시지 번호</p>"
@@ -2201,7 +2187,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "rooms.newmsg",
             "description": "<p>안 읽은 메시지 번호 시작</p>"
@@ -2229,14 +2215,14 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "rooms.fileinfo.size",
             "description": "<p>파일 크기</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "rooms.fileinfo.file",
             "description": "<p>파일 번호</p>"
@@ -2329,7 +2315,7 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -2420,7 +2406,7 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -2482,7 +2468,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -2511,7 +2497,7 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호 (단체방으로 전환된 경우 새 방 번호)</p>"
@@ -2573,7 +2559,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -2602,7 +2588,7 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호 (단체방으로 전환된 경우 새 방 번호)</p>"
@@ -2664,7 +2650,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"
@@ -2743,7 +2729,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "room",
             "description": "<p>방 번호</p>"

@@ -119,7 +119,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -167,7 +167,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -216,7 +216,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -273,7 +273,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -406,7 +406,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "replies.reply",
             "description": "<p>댓글 번호</p>"
@@ -497,7 +497,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
@@ -604,7 +604,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -650,7 +650,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -783,7 +783,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "replies.reply",
             "description": "<p>댓글 번호</p>"
@@ -874,7 +874,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
@@ -888,7 +888,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "files.file",
             "description": "<p>파일 번호</p>"
@@ -945,7 +945,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -1001,7 +1001,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
@@ -1107,7 +1107,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -1159,7 +1159,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "files.size",
             "description": "<p>파일 크기</p>"
@@ -1173,7 +1173,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "files.file",
             "description": "<p>파일 번호</p>"
@@ -1230,7 +1230,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -1286,7 +1286,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -1360,7 +1360,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
@@ -1377,7 +1377,7 @@ define({ "api": [
           },
           {
             "group": "Query",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "group",
             "description": "<p>피드 그룹 번호</p>"
@@ -1438,7 +1438,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -1452,7 +1452,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feed",
             "description": "<p>피드 번호</p>"
@@ -1571,7 +1571,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "feeds.replies.reply",
             "description": "<p>댓글 번호</p>"
@@ -1641,7 +1641,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "feeds.files.size",
             "description": "<p>파일 크기</p>"
@@ -1765,7 +1765,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
@@ -1782,7 +1782,7 @@ define({ "api": [
           },
           {
             "group": "Query",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "group",
             "description": "<p>피드 그룹 번호</p>"
@@ -1832,7 +1832,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -1846,7 +1846,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feed",
             "description": "<p>피드 번호</p>"
@@ -1965,7 +1965,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "feeds.replies.reply",
             "description": "<p>댓글 번호</p>"
@@ -2035,7 +2035,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "feeds.files.size",
             "description": "<p>파일 크기</p>"
@@ -2049,7 +2049,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "feeds.files.file",
             "description": "<p>파일 번호</p>"
@@ -2106,7 +2106,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -2146,7 +2146,7 @@ define({ "api": [
           },
           {
             "group": "JSON",
-            "type": "Number[]",
+            "type": "LongNumber[]",
             "optional": true,
             "field": "tagfeeds",
             "description": "<p>태그 피드 번호 리스트</p>"
@@ -2173,7 +2173,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -2242,7 +2242,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -2282,14 +2282,14 @@ define({ "api": [
           },
           {
             "group": "JSON",
-            "type": "Number[]",
+            "type": "LongNumber[]",
             "optional": true,
             "field": "tagfeeds",
             "description": "<p>태그 피드 번호 리스트</p>"
           },
           {
             "group": "JSON",
-            "type": "Number[]",
+            "type": "LongNumber[]",
             "optional": true,
             "field": "files",
             "description": "<p>파일 번호 리스트</p>"
@@ -2309,7 +2309,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -2379,7 +2379,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -2555,7 +2555,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -2695,7 +2695,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -2774,7 +2774,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -2880,7 +2880,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroups.feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -3034,7 +3034,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroups.feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -3169,7 +3169,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -3255,7 +3255,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -3317,7 +3317,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -3400,7 +3400,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -3483,7 +3483,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -3583,7 +3583,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -3669,7 +3669,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -3717,7 +3717,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -3765,7 +3765,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "reply",
             "description": "<p>댓글 번호</p>"
@@ -3813,7 +3813,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "reply",
             "description": "<p>댓글 번호</p>"
@@ -3861,7 +3861,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -3885,7 +3885,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
@@ -3906,7 +3906,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "replies.reply",
             "description": "<p>댓글 번호</p>"
@@ -3998,7 +3998,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -4022,7 +4022,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": true,
             "field": "start",
             "defaultValue": "0",
@@ -4043,7 +4043,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "replies.reply",
             "description": "<p>댓글 번호</p>"
@@ -4135,7 +4135,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -4158,7 +4158,7 @@ define({ "api": [
           },
           {
             "group": "JSON",
-            "type": "Number[]",
+            "type": "LongNumber[]",
             "optional": true,
             "field": "tagfeeds",
             "description": "<p>태그 피드 번호 리스트</p>"
@@ -4178,7 +4178,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "reply",
             "description": "<p>댓글 번호</p>"
@@ -4229,7 +4229,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>피드 번호</p>"
@@ -4252,7 +4252,7 @@ define({ "api": [
           },
           {
             "group": "JSON",
-            "type": "Number[]",
+            "type": "LongNumber[]",
             "optional": true,
             "field": "tagfeeds",
             "description": "<p>태그 피드 번호 리스트</p>"
@@ -4272,7 +4272,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "reply",
             "description": "<p>댓글 번호</p>"
@@ -4345,7 +4345,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>검색 피드 번호</p>"
@@ -4365,7 +4365,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -4379,7 +4379,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feed",
             "description": "<p>피드 번호</p>"
@@ -4465,7 +4465,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feed",
             "description": "<p>검색 피드 번호</p>"
@@ -4485,7 +4485,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -4499,7 +4499,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feeds.feed",
             "description": "<p>피드 번호</p>"
@@ -4563,7 +4563,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
@@ -4662,7 +4662,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "LongNumber",
             "optional": false,
             "field": "feedgroup",
             "description": "<p>피드 그룹 번호</p>"
