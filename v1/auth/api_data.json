@@ -1393,6 +1393,160 @@
   },
   {
     "type": "get",
+    "url": "/v1/team/:team/jobtitle",
+    "title": "직책 목록",
+    "version": "1.0.0",
+    "name": "getTeamJobtitle",
+    "group": "team_admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": ".",
+            "description": "<p>직책 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": ".index",
+            "description": "<p>직책 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": ".name",
+            "description": "<p>직책 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": ".seq",
+            "description": "<p>직책 순서</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "[\n{\n\"index\": 4,\n\"name\": \"팀장\",\n\"seq\": 1\n},\n{\n\"index\": 5,\n\"name\": \"실장\",\n\"seq\": 2\n}\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/team/:team/position",
+    "title": "직급 목록",
+    "version": "1.0.0",
+    "name": "getTeamPosition",
+    "group": "team_admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": ".",
+            "description": "<p>직급 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": ".index",
+            "description": "<p>직급 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": ".name",
+            "description": "<p>직급 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": ".seq",
+            "description": "<p>직급 순서</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "[\n{\n\"index\": 4,\n\"name\": \"대리\",\n\"seq\": 1\n},\n{\n\"index\": 5,\n\"name\": \"과장\",\n\"seq\": 2\n}\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
+    "groupTitle": "team_admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
     "url": "/v1/team/:team/user/:user/role/super/url",
     "title": "슈퍼관리자 변경 메일",
     "version": "1.0.0",
@@ -1714,97 +1868,6 @@
   },
   {
     "type": "put",
-    "url": "/v1/team/:team/department/:department",
-    "title": "부서 수정",
-    "version": "1.0.0",
-    "name": "putTeamDepartment",
-    "group": "team_admin",
-    "permission": [
-      {
-        "name": "team admin"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "team",
-            "description": "<p>팀 번호</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "department",
-            "description": "<p>부서 번호</p>"
-          }
-        ],
-        "JSON": [
-          {
-            "group": "JSON",
-            "type": "String",
-            "optional": true,
-            "field": "name",
-            "description": "<p>부서 이름</p>"
-          },
-          {
-            "group": "JSON",
-            "type": "Number",
-            "optional": true,
-            "field": "parent",
-            "description": "<p>상위 부서 번호</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "return",
-            "description": "<p>부서 번호</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success Example",
-          "content": "100",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/DepartmentController.java",
-    "groupTitle": "team_admin",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>:token_type :access_token</p>"
-          },
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>application/json; charset=utf-8</p>"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "put",
     "url": "/v1/team/:team/department/:department/child",
     "title": "부서, 유저 추가",
     "version": "1.0.0",
@@ -1874,6 +1937,97 @@
         {
           "title": "Success Example",
           "content": "true",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/DepartmentController.java",
+    "groupTitle": "team_admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v1/team/:team/department/:department",
+    "title": "부서 수정",
+    "version": "1.0.0",
+    "name": "putTeamDepartment",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "department",
+            "description": "<p>부서 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>부서 이름</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "Number",
+            "optional": true,
+            "field": "parent",
+            "description": "<p>상위 부서 번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "return",
+            "description": "<p>부서 번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "100",
           "type": "json"
         }
       ]
@@ -4226,160 +4380,6 @@
       ]
     },
     "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamController.java",
-    "groupTitle": "team",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>:token_type :access_token</p>"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "get",
-    "url": "/v1/team/:team/jobtitle",
-    "title": "직책 목록",
-    "version": "1.0.0",
-    "name": "getTeamJobtitle",
-    "group": "team",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "team",
-            "description": "<p>팀 번호</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": ".",
-            "description": "<p>직책 리스트</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": ".index",
-            "description": "<p>직책 번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": ".name",
-            "description": "<p>직책 이름</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": ".seq",
-            "description": "<p>직책 순서</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success Example",
-          "content": "[\n{\n\"index\": 4,\n\"name\": \"팀장\",\n\"seq\": 1\n},\n{\n\"index\": 5,\n\"name\": \"실장\",\n\"seq\": 2\n}\n]",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
-    "groupTitle": "team",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>:token_type :access_token</p>"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "get",
-    "url": "/v1/team/:team/position",
-    "title": "직급 목록",
-    "version": "1.0.0",
-    "name": "getTeamPosition",
-    "group": "team",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "team",
-            "description": "<p>팀 번호</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": ".",
-            "description": "<p>직급 리스트</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": ".index",
-            "description": "<p>직급 번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": ".name",
-            "description": "<p>직급 이름</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": ".seq",
-            "description": "<p>직급 순서</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success Example",
-          "content": "[\n{\n\"index\": 4,\n\"name\": \"대리\",\n\"seq\": 1\n},\n{\n\"index\": 5,\n\"name\": \"과장\",\n\"seq\": 2\n}\n]",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/TeamAdminDataController.java",
     "groupTitle": "team",
     "header": {
       "fields": {
