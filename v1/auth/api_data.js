@@ -4012,17 +4012,6 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "String",
-            "allowedValues": [
-              "off_line",
-              "on_line"
-            ],
-            "optional": true,
-            "field": "users.pc_status",
-            "description": "<p>유저 PC 상태</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
             "optional": true,
             "field": "users.phone",
             "description": "<p>직통전화</p>"
@@ -4074,7 +4063,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"is_delete\": true\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null,\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0, \"is_delete\": false}\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"is_delete\": true\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"phone\": null,\n\"mobile\": null,\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0, \"is_delete\": false}\n}\n]\n}",
           "type": "json"
         }
       ]
