@@ -1,6 +1,6 @@
 define({
   "name": "TeamUP edge chat",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "TeamUP RESTful API (chat)",
   "title": "TeamUP edge chat API",
   "url": "https://edge.tmup.com",
@@ -12,7 +12,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-03-07T11:33:47.917Z",
+    "time": "2017-05-31T10:19:57.503Z",
     "url": "http://apidocjs.com",
     "version": "0.17.5"
   }

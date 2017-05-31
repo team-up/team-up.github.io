@@ -368,6 +368,34 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "teams.profile_image",
+            "description": "<p>이미지 URL</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.message",
+            "description": "<p>상태 메시지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.mobile",
+            "description": "<p>휴대전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.phone",
+            "description": "<p>직통전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "teams.position",
             "description": "<p>직급 이름</p>"
           },
@@ -411,7 +439,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 99,\n\"email\": \"hong@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-09-09\",\n\"is_lunar\": false,\n\"is_sms\": false,\n\"is_Email\": false,\n\"profile_image\": null,\n\"message\": \"메시지\",\n\"mobile\": \"010-9999-9999\",\n\"phone\": \"02-9999-9999\",\n\"teams\": [\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": \"\",\n\"phone\": \"\",\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"team_index\": 1,\n\"team_name\": \"팀이름\",\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]\n}",
+          "content": "{\n\"index\": 99,\n\"email\": \"hong@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-09-09\",\n\"is_lunar\": false,\n\"is_sms\": false,\n\"is_Email\": false,\n\"profile_image\": null,\n\"message\": \"메시지\",\n\"mobile\": \"010-9999-9999\",\n\"phone\": \"02-9999-9999\",\n\"teams\": [\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -460,45 +488,21 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "index",
-            "description": "<p>팀 번호</p>"
+            "description": "<p>유저 번호</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>팀 이름</p>"
+            "description": "<p>유저 이름</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
-            "allowedValues": [
-              "approval",
-              "exit",
-              "block"
-            ],
             "optional": false,
-            "field": "status",
-            "description": "<p>팀 유저 상태</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String[]",
-            "allowedValues": [
-              "user",
-              "admin",
-              "super_admin"
-            ],
-            "optional": false,
-            "field": "role",
-            "description": "<p>팀 권한</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_profile",
-            "description": "<p>팀 프로필 여부 (false: 기본 프로필)</p>"
+            "field": "email",
+            "description": "<p>이메일</p>"
           },
           {
             "group": "Success 200",
@@ -511,42 +515,171 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "position",
+            "field": "message",
+            "description": "<p>상태 메시지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>휴대전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>직통전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "birthday",
+            "description": "<p>생년월일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_lunar",
+            "description": "<p>생년월일 음력 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_sms",
+            "description": "<p>SMS 수신 동의</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_email",
+            "description": "<p>이메일 수신 동의</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "teams",
+            "description": "<p>팀 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "teams.index",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.name",
+            "description": "<p>팀 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "allowedValues": [
+              "approval",
+              "exit",
+              "block"
+            ],
+            "optional": false,
+            "field": "teams.status",
+            "description": "<p>팀 유저 상태</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "allowedValues": [
+              "user",
+              "admin",
+              "super_admin"
+            ],
+            "optional": false,
+            "field": "teams.role",
+            "description": "<p>팀 권한</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "teams.is_profile",
+            "description": "<p>팀 프로필 여부 (false: 기본 프로필)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.profile_image",
+            "description": "<p>이미지 URL</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.message",
+            "description": "<p>상태 메시지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.mobile",
+            "description": "<p>휴대전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.phone",
+            "description": "<p>직통전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teams.position",
             "description": "<p>직급 이름</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "job_title",
+            "field": "teams.job_title",
             "description": "<p>직책 이름</p>"
           },
           {
             "group": "Success 200",
             "type": "Object",
             "optional": false,
-            "field": "department",
+            "field": "teams.department",
             "description": "<p>소속 부서 정보</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": true,
-            "field": "department.index",
+            "field": "teams.department.index",
             "description": "<p>부서 번호</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "department.name",
+            "field": "teams.department.name",
             "description": "<p>부서 이름</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": true,
-            "field": "department.parent",
+            "field": "teams.department.parent",
             "description": "<p>상위 부서 번호</p>"
           }
         ]
@@ -554,7 +687,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": \"\",\n\"phone\": \"\",\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"team_index\": 1,\n\"team_name\": \"팀이름\",\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}",
+          "content": "{\n\"index\": 99,\n\"email\": \"hong@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-09-09\",\n\"is_lunar\": false,\n\"is_sms\": false,\n\"is_Email\": false,\n\"profile_image\": null,\n\"message\": \"메시지\",\n\"mobile\": \"010-9999-9999\",\n\"phone\": \"02-9999-9999\",\n\"teams\": [\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -648,6 +781,27 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": ".message",
+            "description": "<p>상태 메시지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": ".mobile",
+            "description": "<p>휴대전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": ".phone",
+            "description": "<p>직통전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": ".position",
             "description": "<p>직급 이름</p>"
           },
@@ -691,7 +845,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "[\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": \"\",\n\"phone\": \"\",\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"team_index\": 1,\n\"team_name\": \"팀이름\",\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]",
+          "content": "[\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]",
           "type": "json"
         }
       ]
@@ -3465,201 +3619,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/v1/team/:team",
-    "title": "조직도 최상위 정보",
-    "version": "1.0.0",
-    "name": "getTeam",
-    "group": "team",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "team",
-            "description": "<p>팀 번호</p>"
-          }
-        ],
-        "Query": [
-          {
-            "group": "Query",
-            "type": "Boolean",
-            "optional": true,
-            "field": "user",
-            "defaultValue": "true",
-            "description": "<p>유저 포함 여부</p>"
-          },
-          {
-            "group": "Query",
-            "type": "Boolean",
-            "optional": true,
-            "field": "department",
-            "defaultValue": "true",
-            "description": "<p>부서 포함 여부</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "index",
-            "description": "<p>팀 번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "name",
-            "description": "<p>팀 이름</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "time",
-            "description": "<p>서버 시간(unix)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": true,
-            "field": "users",
-            "description": "<p>유저 리스트</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "users.index",
-            "description": "<p>유저 번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "users.name",
-            "description": "<p>유저 이름</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "users.email",
-            "description": "<p>이메일</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "users.profile_image",
-            "description": "<p>이미지 URL</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "users.message",
-            "description": "<p>상태 메시지</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "allowedValues": [
-              "approval",
-              "exit",
-              "block"
-            ],
-            "optional": true,
-            "field": "users.status",
-            "description": "<p>유저 상태</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "allowedValues": [
-              "off_line",
-              "on_line"
-            ],
-            "optional": true,
-            "field": "users.pc_status",
-            "description": "<p>유저 PC 상태</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "users.phone",
-            "description": "<p>직통전화</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "users.mobile",
-            "description": "<p>휴대전화</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": true,
-            "field": "department",
-            "description": "<p>부서 리스트</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "department.index",
-            "description": "<p>부서 번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "department.name",
-            "description": "<p>부서 이름</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "department.parent",
-            "description": "<p>상위 부서 번호</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0\n}\n]\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/OrganogramController.java",
-    "groupTitle": "team",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>:token_type :access_token</p>"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "get",
     "url": "/v1/team/:team/all",
     "title": "조직도 전체 정보",
     "version": "1.0.0",
@@ -4086,8 +4045,8 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/v1/team/:team/:parent",
-    "title": "조직도 하위 정보",
+    "url": "/v1/team/:team(/:parent)",
+    "title": "조직도 정보",
     "version": "1.0.0",
     "name": "getTeamChild",
     "group": "team",
@@ -4100,6 +4059,13 @@ define({ "api": [
             "optional": false,
             "field": "team",
             "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "parent",
+            "description": "<p>상위 부서 번호</p>"
           }
         ],
         "Query": [
@@ -4472,6 +4438,18 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "allowedValues": [
+              "name",
+              "job_title",
+              "position"
+            ],
+            "optional": false,
+            "field": ".sort_type",
+            "description": "<p>유저 정렬 타입</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "allowedValues": [
               "admin",
               "all"
             ],
@@ -4573,7 +4551,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "[\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"invite_user\": \"admin\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": null,\n\"direct_width\": null,\n\"direct_height\": null,\n\"user_role\": [\"super_admin\",\"user\"]\n}\n]",
+          "content": "[\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"sort_type\": \"name\",\n\"status\": \"approval\",\n\"invite_user\": \"admin\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": null,\n\"direct_width\": null,\n\"direct_height\": null,\n\"user_role\": [\"super_admin\",\"user\"]\n}\n]",
           "type": "json"
         }
       ]

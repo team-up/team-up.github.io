@@ -279,7 +279,7 @@
   },
   {
     "type": "get",
-    "url": "/v3/message/summary/:room/:msg",
+    "url": "/v3/message/summary/:room/:msg(/:confirm)",
     "title": "메시지 요약 정보",
     "version": "3.1.0",
     "name": "getMessageSummary",
@@ -300,6 +300,15 @@
             "optional": false,
             "field": "msg",
             "description": "<p>메시지 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "0-1",
+            "optional": true,
+            "field": "confirm",
+            "defaultValue": "0",
+            "description": "<p>읽음 처리(0:안함, 1:읽음)</p>"
           }
         ],
         "Query": [

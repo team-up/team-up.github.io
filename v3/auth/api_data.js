@@ -452,6 +452,18 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "allowedValues": [
+              "name",
+              "job_title",
+              "position"
+            ],
+            "optional": false,
+            "field": "sort_type",
+            "description": "<p>유저 정렬 타입</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "allowedValues": [
               "admin",
               "all"
             ],
@@ -555,7 +567,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 100,\n\"name\": \"테스트\",\n\"invite_user\": \"admin\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": \"https://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"\",\n\"category\": \"\"\n}",
+          "content": "{\n\"index\": 100,\n\"name\": \"테스트\",\n\"invite_user\": \"admin\",\n\"sort_type\": \"name\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": \"https://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"\",\n\"category\": \"\"\n}",
           "type": "json"
         }
       ]
@@ -592,6 +604,19 @@ define({ "api": [
             "optional": false,
             "field": "name",
             "description": "<p>팀 이름</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "String",
+            "allowedValues": [
+              "name",
+              "job_title",
+              "position"
+            ],
+            "optional": true,
+            "field": "sort_type",
+            "defaultValue": "name",
+            "description": "<p>유저 정렬 타입</p>"
           },
           {
             "group": "JSON",
@@ -712,7 +737,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\n\"name\": \"테스트\",\n\"invite\": \"all\",\n\"domain\": \"domain\",\n\"domainList\": [\"tmup.com\",\"team-up.co.kr\"],\n\"department\": true,\n\"position\": true,\n\"jobTitle\": true,\n\"phone\": true,\n\"mobile\": true,\n\"birthday\": true,\n\"direct_url\": \"https://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"100~200명\",\n\"category\" : \"IT\"\n}",
+          "content": "{\n\"name\": \"테스트\",\n\"sort_type\": \"name\",\n\"invite\": \"all\",\n\"domain\": \"domain\",\n\"domainList\": [\"tmup.com\",\"team-up.co.kr\"],\n\"department\": true,\n\"position\": true,\n\"jobTitle\": true,\n\"phone\": true,\n\"mobile\": true,\n\"birthday\": true,\n\"direct_url\": \"https://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"100~200명\",\n\"category\" : \"IT\"\n}",
           "type": "json"
         }
       ]
@@ -738,6 +763,90 @@ define({ "api": [
       ]
     },
     "filename": "src/main/java/com/tmup/auth/api/v3/api/TeamApi.java",
+    "groupTitle": "team",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v3/department/:team/seq",
+    "title": "부서 순서 변경",
+    "version": "3.0.0",
+    "name": "putDepartmentSeq",
+    "group": "team",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": false,
+            "field": "index_list",
+            "description": "<p>조직도 번호 리스트 (순서대로)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"index_list\":[1,3,2,4]}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "return",
+            "description": "<p>성공 실패 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "true",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/api/v3/api/DepartmentApi.java",
     "groupTitle": "team",
     "header": {
       "fields": {
@@ -788,6 +897,18 @@ define({ "api": [
             "optional": true,
             "field": "name",
             "description": "<p>이름 (슈퍼관리자만 변경 가능)</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "String",
+            "allowedValues": [
+              "name",
+              "job_title",
+              "position"
+            ],
+            "optional": true,
+            "field": "sort_type",
+            "description": "<p>유저 정렬 타입</p>"
           },
           {
             "group": "JSON",
@@ -900,7 +1021,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\n\"index\": 100,\n\"name\": \"테스트\",\n\"invite\": \"all\",\n\"domain\": \"domain\",\n\"domainList\": [\"tmup.com\",\"team-up.co.kr\"],\n\"department\": true,\n\"position\": true,\n\"jobTitle\": true,\n\"phone\": true,\n\"mobile\": true,\n\"birthday\": true,\n\"direct_url\": \"https://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"100~200명\",\n\"category\": \"IT\"\n}",
+          "content": "{\n\"index\": 100,\n\"name\": \"테스트\",\n\"sort_type\": \"name\",\n\"invite\": \"all\",\n\"domain\": \"domain\",\n\"domainList\": [\"tmup.com\",\"team-up.co.kr\"],\n\"department\": true,\n\"position\": true,\n\"jobTitle\": true,\n\"phone\": true,\n\"mobile\": true,\n\"birthday\": true,\n\"direct_url\": \"https://direct.tmup.com/index.html\",\n\"direct_width\": 500,\n\"direct_height\": 500,\n\"size\": \"100~200명\",\n\"category\": \"IT\"\n}",
           "type": "json"
         }
       ]
