@@ -301,7 +301,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "refresh_token",
-            "description": "<p>Refresh Token (180일 사용 가능)</p>"
+            "description": "<p>Refresh Token</p>"
           }
         ]
       },
@@ -446,7 +446,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "refresh_token",
-            "description": "<p>Refresh Token (180일 사용 가능)</p>"
+            "description": "<p>Refresh Token</p>"
           }
         ]
       },
@@ -475,7 +475,7 @@ define({ "api": [
     }
   },
   {
-    "type": "post, get",
+    "type": "post",
     "url": "/oauth2/token",
     "title": "Refresh Token",
     "version": "1.0.0",
@@ -544,7 +544,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "refresh_token",
-            "description": "<p>Refresh Token (180일 사용 가능)</p>"
+            "description": "<p>Refresh Token</p>"
           }
         ]
       },

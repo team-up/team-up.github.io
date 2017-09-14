@@ -789,7 +789,7 @@
     "type": "put",
     "url": "/v3/department/:team/seq",
     "title": "부서 순서 변경",
-    "version": "3.0.0",
+    "version": "3.6.0",
     "name": "putDepartmentSeq",
     "group": "team",
     "permission": [
@@ -1068,5 +1068,5 @@
         ]
       }
     }
-  }
+        }
 ]

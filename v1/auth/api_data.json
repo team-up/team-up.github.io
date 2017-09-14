@@ -439,7 +439,7 @@
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 99,\n\"email\": \"hong@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-09-09\",\n\"is_lunar\": false,\n\"is_sms\": false,\n\"is_Email\": false,\n\"profile_image\": null,\n\"message\": \"메시지\",\n\"mobile\": \"010-9999-9999\",\n\"phone\": \"02-9999-9999\",\n\"teams\": [\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]\n}",
+          "content": "{\n\"index\": 99,\n\"email\": \"hong@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-09-09\",\n\"is_lunar\": false,\n\"is_sms\": false,\n\"is_email\": false,\n\"profile_image\": null,\n\"message\": \"메시지\",\n\"mobile\": \"010-9999-9999\",\n\"phone\": \"02-9999-9999\",\n\"teams\": [\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -687,7 +687,7 @@
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 99,\n\"email\": \"hong@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-09-09\",\n\"is_lunar\": false,\n\"is_sms\": false,\n\"is_Email\": false,\n\"profile_image\": null,\n\"message\": \"메시지\",\n\"mobile\": \"010-9999-9999\",\n\"phone\": \"02-9999-9999\",\n\"teams\": [\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]\n}",
+          "content": "{\n\"index\": 99,\n\"email\": \"hong@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-09-09\",\n\"is_lunar\": false,\n\"is_sms\": false,\n\"is_email\": false,\n\"profile_image\": null,\n\"message\": \"메시지\",\n\"mobile\": \"010-9999-9999\",\n\"phone\": \"02-9999-9999\",\n\"teams\": [\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"status\": \"approval\",\n\"role\": [\n\"user\",\n\"admin\"\n],\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 1\n}\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -2022,10 +2022,101 @@
   },
   {
     "type": "put",
+    "url": "/v1/team/:team/department/:department",
+    "title": "부서 수정",
+    "version": "1.0.0",
+    "name": "putTeamDepartment",
+    "group": "team_admin",
+    "permission": [
+      {
+        "name": "team admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "department",
+            "description": "<p>부서 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>부서 이름</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "Number",
+            "optional": true,
+            "field": "parent",
+            "description": "<p>상위 부서 번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "return",
+            "description": "<p>부서 번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "100",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/DepartmentController.java",
+    "groupTitle": "team_admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "put",
     "url": "/v1/team/:team/department/:department/child",
     "title": "부서, 유저 추가",
     "version": "1.0.0",
-    "name": "putTeamDepartment",
+    "name": "putTeamDepartmentChild",
     "group": "team_admin",
     "permission": [
       {
@@ -2091,97 +2182,6 @@
         {
           "title": "Success Example",
           "content": "true",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v1/api/team/DepartmentController.java",
-    "groupTitle": "team_admin",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>:token_type :access_token</p>"
-          },
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>application/json; charset=utf-8</p>"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "put",
-    "url": "/v1/team/:team/department/:department",
-    "title": "부서 수정",
-    "version": "1.0.0",
-    "name": "putTeamDepartment",
-    "group": "team_admin",
-    "permission": [
-      {
-        "name": "team admin"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "team",
-            "description": "<p>팀 번호</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "department",
-            "description": "<p>부서 번호</p>"
-          }
-        ],
-        "JSON": [
-          {
-            "group": "JSON",
-            "type": "String",
-            "optional": true,
-            "field": "name",
-            "description": "<p>부서 이름</p>"
-          },
-          {
-            "group": "JSON",
-            "type": "Number",
-            "optional": true,
-            "field": "parent",
-            "description": "<p>상위 부서 번호</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "return",
-            "description": "<p>부서 번호</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success Example",
-          "content": "100",
           "type": "json"
         }
       ]
@@ -3752,6 +3752,20 @@
           },
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "users.position",
+            "description": "<p>직급 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "users.job_title",
+            "description": "<p>직책 이름</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object[]",
             "optional": true,
             "field": "department",
@@ -3797,7 +3811,7 @@
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"users\": null,\n\"department\": null\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"users\": null,\n\"department\": null\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -3984,6 +3998,20 @@
           },
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "users.position",
+            "description": "<p>직급 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "users.job_title",
+            "description": "<p>직책 이름</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object",
             "optional": true,
             "field": "users.department",
@@ -4022,7 +4050,7 @@
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"is_delete\": true\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"phone\": null,\n\"mobile\": null,\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0, \"is_delete\": false}\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"is_delete\": true\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0, \"is_delete\": false}\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -4218,13 +4246,27 @@
             "optional": true,
             "field": "users.mobile",
             "description": "<p>휴대전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "users.position",
+            "description": "<p>직급 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "users.job_title",
+            "description": "<p>직책 이름</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -4604,13 +4646,6 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_profile",
-            "description": "<p>팀 프로필 여부 (false: 기본 프로필)</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "index",
@@ -4731,7 +4766,7 @@
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"email\": \"test@tmup.com\",\n\"name\": \"홍길동\",\n\"birthday\": \"1999-10-12\",\n\"is_lunar\": false,\n\"status\":\"approval\",\n\"is_profile\": false,\n\"profile_image\": null,\n\"message\": \"^^\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": \"사원\",\n\"department\": {\n\"index\": 3,\n\"name\": \"테스트팀\",\n\"parent\": 2\n}\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"홍길동\",\n\"email\": \"test@tmup.com\",\n\"birthday\": \"1999-10-12\",\n\"is_lunar\": false,\n\"status\":\"approval\",\n\"profile_image\": null,\n\"message\": \"^^\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": \"사원\",\n\"department\": {\n\"index\": 3,\n\"name\": \"테스트팀\",\n\"parent\": 2\n}\n}",
           "type": "json"
         }
       ]

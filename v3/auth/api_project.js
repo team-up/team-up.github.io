@@ -1,6 +1,6 @@
 define({
   "name": "TeamUP auth API",
-  "version": "3.6.0",
+  "version": "3.6.5",
   "description": "TeamUP RESTful API (auth)",
   "title": "TeamUP auth API",
   "url": "https://auth.tmup.com",
@@ -12,8 +12,8 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-05-22T07:26:01.226Z",
+    "time": "2017-09-14T11:37:30.111Z",
     "url": "http://apidocjs.com",
-    "version": "0.17.5"
+    "version": "0.17.6"
   }
 });
