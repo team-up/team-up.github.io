@@ -264,7 +264,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "grant_type=password&client_id=:client_id&client_secret=:client_secret&username=:username&password=:password",
+          "content": "POST /oauth2/token\nContent-Type: application/x-www-form-urlencoded; charset=utf-8\n\ngrant_type=password&client_id=:client_id&client_secret=:client_secret&username=:username&password=:password",
           "type": "x-www-form-urlencoded"
         }
       ]
@@ -409,7 +409,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "grant_type=authorization_code&client_id=:client_id&client_secret=:client_secret&code=:code",
+          "content": "POST /oauth2/token\nContent-Type: application/x-www-form-urlencoded; charset=utf-8\n\ngrant_type=authorization_code&client_id=:client_id&client_secret=:client_secret&code=:code",
           "type": "x-www-form-urlencoded"
         }
       ]
@@ -507,7 +507,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "grant_type=refresh_token&refresh_token=:refresh_token",
+          "content": "POST /oauth2/token\nContent-Type: application/x-www-form-urlencoded; charset=utf-8\n\ngrant_type=refresh_token&refresh_token=:refresh_token",
           "type": "x-www-form-urlencoded"
         }
       ]
