@@ -1080,11 +1080,6 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"content\":\"test\"}",
-          "type": "json"
-        },
-        {
-          "title": "Tag Example",
           "content": "{\"content\":\"test #{1123}\",\"tagfeeds\":[1123]}",
           "type": "json"
         }
@@ -1199,11 +1194,6 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"content\":\"test\"}",
-          "type": "json"
-        },
-        {
-          "title": "Tag Example",
           "content": "{\"content\":\"test #{1123}\",\"tagfeeds\":[1123]}",
           "type": "json"
         }

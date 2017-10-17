@@ -2163,11 +2163,6 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"feed\":1,\"content\":\"test\"}",
-          "type": "json"
-        },
-        {
-          "title": "Tag Example",
           "content": "{\"feed\":1,\"content\":\"test @{4,유저4} #{1123}\",\"tagusers\":[4],\"tagfeeds\":[1123]}",
           "type": "json"
         }
@@ -2304,11 +2299,6 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"feed\":1,\"content\":\"test\"}",
-          "type": "json"
-        },
-        {
-          "title": "Tag Example",
           "content": "{\"feed\":1,\"content\":\"test @{4,유저4} #{1123}\",\"tagusers\":[4],\"tagfeeds\":[1123]}",
           "type": "json"
         }
@@ -4178,11 +4168,6 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"feed\":1,\"content\":\"test\"}",
-          "type": "json"
-        },
-        {
-          "title": "Tag Example",
           "content": "{\"feed\":1,\"content\":\"test @{4,유저4} #{1123}\",\"tagusers\":[4],\"tagfeeds\":[1123]}",
           "type": "json"
         }
@@ -4277,11 +4262,6 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"feed\":1,\"content\":\"test\"}",
-          "type": "json"
-        },
-        {
-          "title": "Tag Example",
           "content": "{\"feed\":1,\"content\":\"test @{4,유저4} #{1123}\",\"tagusers\":[4],\"tagfeeds\":[1123]}",
           "type": "json"
         }
