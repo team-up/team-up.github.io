@@ -1,6 +1,6 @@
 {
   "name": "TeamUP file",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "TeamUP RESTful API (file)",
   "title": "TeamUP file API",
   "url": "https://file.tmup.com",
@@ -12,8 +12,8 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-03-07T11:33:54.128Z",
+    "time": "2017-10-24T02:39:25.527Z",
     "url": "http://apidocjs.com",
-    "version": "0.17.5"
+    "version": "0.17.6"
   }
 }

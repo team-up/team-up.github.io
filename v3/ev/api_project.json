@@ -1,6 +1,6 @@
 {
   "name": "TeamUP ev",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "TeamUP RESTful API (ev)",
   "title": "TeamUP ev API",
   "url": "https://ev.tmup.com",
@@ -12,8 +12,8 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-03-07T11:33:52.749Z",
+    "time": "2017-11-01T07:16:40.637Z",
     "url": "http://apidocjs.com",
-    "version": "0.17.5"
+    "version": "0.17.6"
   }
 }

@@ -281,7 +281,216 @@ define({ "api": [
     "type": "get",
     "url": "/v3/message/summary/:room/:msg(/:confirm)",
     "title": "메시지 요약 정보",
-    "version": "3.1.0",
+    "version": "3.6.0",
+    "name": "getMessageSummary",
+    "group": "message",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>메시지 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "0-1",
+            "optional": true,
+            "field": "confirm",
+            "defaultValue": "0",
+            "description": "<p>읽음 처리(0:안함, 1:읽음)</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "Number",
+            "size": "0-1",
+            "optional": true,
+            "field": "all",
+            "defaultValue": "0",
+            "description": "<p>전체 내용 여부(0:요약, 1:전체)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "type",
+            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number[]",
+            "optional": true,
+            "field": "users",
+            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "file",
+            "description": "<p>파일 정보 (type:2 - 파일인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "file.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "file.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "file.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "file.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "file.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "file.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "file.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "file.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "file.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "file.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "extras",
+            "description": "<p>추가 정보 리스트</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"user\":5,\"type\":1,\"len\":3,\"content\":\"메시지\",\"created\":1392319358}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/chat/v3/Get.php",
+    "groupTitle": "message",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/message/summary/:room/:msg(/:confirm)",
+    "title": "메시지 요약 정보",
+    "version": "3.0.0",
     "name": "getMessageSummary",
     "group": "message",
     "parameter": {
@@ -637,6 +846,226 @@ define({ "api": [
     "type": "get",
     "url": "/v3/messages/:room/:count(/:way(/:start))",
     "title": "메시지 목록",
+    "version": "3.6.0",
+    "name": "getMessages",
+    "group": "message",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1-100",
+            "optional": false,
+            "field": "count",
+            "description": "<p>가져올 메시지 수</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "0-2",
+            "optional": true,
+            "field": "way",
+            "defaultValue": "0",
+            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "start",
+            "description": "<p>메시지 번호 시작</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "msgs",
+            "description": "<p>메시지 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "msgs.msg",
+            "description": "<p>메시지 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "msgs.user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "msgs.type",
+            "description": "<p>종류 (1:일반, 2:파일, 3:초대, 4:퇴장)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "msgs.len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msgs.content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "msgs.created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "msgs.tagfeeds",
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number[]",
+            "optional": true,
+            "field": "msgs.users",
+            "description": "<p>유저 번호 리스트 (type:3 - 초대인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "msgs.file",
+            "description": "<p>파일 정보 (type:2 - 파일인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "msgs.file.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "msgs.file.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "msgs.file.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "msgs.file.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "msgs.file.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "msgs.file.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "msgs.file.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "msgs.file.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "msgs.file.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "msgs.file.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "msgs.extras",
+            "description": "<p>추가 정보 리스트</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"msgs\":[\n{\"msg\":1,\"user\":1,\"type\":1,\"len\":3,\"content\":\"메시지\",\"tagfeeds\":null,\"created\":1392319357},\n{\"msg\":2,\"user\":1,\"type\":3,\"len\":0,\"content\":\"\",\"tagfeeds\":null,\"created\":1392319358,\"users\":[3]},\n{\"msg\":3,\"user\":1,\"type\":2,\"len\":0,\"content\":\"\",\"tagfeeds\":null,\"created\":1392319359,\"file\":{\"name\":\"1.txt\",\"size\":1,\"id\":\"TASlYTQxM2YxYjhkN2E2Zg\",\"owner\":null,\"type\":\"normal\"}}\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/chat/v3/Get.php",
+    "groupTitle": "message",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/messages/:room/:count(/:way(/:start))",
+    "title": "메시지 목록",
     "version": "3.0.0",
     "name": "getMessages",
     "group": "message",
@@ -886,7 +1315,6 @@ define({ "api": [
             "type": "LongNumber",
             "optional": true,
             "field": "start",
-            "defaultValue": "0",
             "description": "<p>메시지 번호 시작</p>"
           }
         ]
@@ -1037,6 +1465,132 @@ define({ "api": [
     "type": "post",
     "url": "/v3/message/:room(/:type)",
     "title": "메시지 생성",
+    "version": "3.6.0",
+    "name": "postMessage",
+    "group": "message",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1-2",
+            "optional": true,
+            "field": "type",
+            "defaultValue": "1",
+            "description": "<p>종류 (1:일반, 2:파일)</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용 (type:2 파일 아이디)</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "LongNumber[]",
+            "optional": true,
+            "field": "tagfeeds",
+            "description": "<p>태그 피드 번호 리스트</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "Object[]",
+            "optional": true,
+            "field": "extras",
+            "description": "<p>추가 정보 리스트 (type:1, tagfeeds:null)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"content\":\"test\"}",
+          "type": "json"
+        },
+        {
+          "title": "Tag Example",
+          "content": "{\"content\":\"test #{1123}\",\"tagfeeds\":[1123]}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>메시지 번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"msg\":1}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/chat/v3/Post.php",
+    "groupTitle": "message",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    },
+    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"../feed/index.html#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "403",
+            "description": "<p>Forbidden (금지된 요청, 권한 오류)</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "413",
+            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v3/message/:room(/:type)",
+    "title": "메시지 생성",
     "version": "3.0.0",
     "name": "postMessage",
     "group": "message",
@@ -1080,11 +1634,6 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "{\"content\":\"test\"}",
-          "type": "json"
-        },
-        {
-          "title": "Tag Example",
           "content": "{\"content\":\"test #{1123}\",\"tagfeeds\":[1123]}",
           "type": "json"
         }
@@ -1794,7 +2343,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\"team\":1,\"roomtype\":2,\"state\":1,\"alert\":1,\"name\":\"\",\"msg\":1,\"user\":4,\"msgtype\":1,\"content\":\"메시지\",\"newcount\":0,\"newmsg\":null,\"users\":[2,3,4],\"created\":1392289132}",
+          "content": "{\"team\":1,\"roomtype\":2,\"state\":1,\"alert\":1,\"name\":null,\"msg\":1,\"user\":4,\"msgtype\":1,\"content\":\"메시지\",\"newcount\":0,\"newmsg\":null,\"users\":[2,3,4],\"created\":1392289132}",
           "type": "json"
         }
       ]
@@ -2272,7 +2821,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"rooms\":[\n{\"team\":1,\"room\":1,\"roomtype\":2,\"state\":1,\"alert\":1,\"name\":\"\",\"msg\":1,\"user\":4,\"msgtype\":1,\"len\":4,\"content\":\"대화내용\",\"newcount\":0,\"newmsg\":null,\"users\":[2,3,4],\"created\":1392289132}\n]\n}",
+          "content": "{\n\"rooms\":[\n{\"team\":1,\"room\":1,\"roomtype\":2,\"state\":1,\"alert\":1,\"name\":null,\"msg\":1,\"user\":4,\"msgtype\":1,\"len\":4,\"content\":\"대화내용\",\"newcount\":0,\"newmsg\":null,\"users\":[2,3,4],\"created\":1392289132}\n]\n}",
           "type": "json"
         }
       ]
@@ -2288,6 +2837,110 @@ define({ "api": [
             "optional": false,
             "field": "Authorization",
             "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v3/room/:team",
+    "title": "대화방 생성",
+    "version": "3.6.0",
+    "name": "postRoom",
+    "group": "room",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"users\":[1,2,3,4]}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"room\":1}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "초대 불가 유저 포함",
+          "content": "HTTP/1.1 403 Forbidden\n{\"error\":\"invalid_users\",\"invalid_users\":[1]}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "403",
+            "description": "<p>Forbidden (금지된 요청, 권한 오류)</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "413",
+            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
+          }
+        ]
+      }
+    },
+    "filename": "edge/api/chat/v3/Post.php",
+    "groupTitle": "room",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
           }
         ]
       }
@@ -2388,9 +3041,9 @@ define({ "api": [
     "type": "post",
     "url": "/v1/room/:team",
     "title": "대화방 생성",
+    "version": "2.1.0",
     "name": "postRoom",
     "group": "room",
-    "version": "2.1.0",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2470,6 +3123,110 @@ define({ "api": [
             "optional": false,
             "field": "413",
             "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v3/room/join/:room",
+    "title": "대화방 초대",
+    "version": "3.6.0",
+    "name": "postRoomJoin",
+    "group": "room",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"users\":[1,2,3,4]}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "room",
+            "description": "<p>방 번호 (단체방으로 전환된 경우 새 방 번호)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"room\":1}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "초대 불가 유저 포함",
+          "content": "HTTP/1.1 403 Forbidden\n{\"error\":\"invalid_users\",\"invalid_users\":[1]}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "403",
+            "description": "<p>Forbidden (금지된 요청, 권한 오류)</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "413",
+            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
+          }
+        ]
+      }
+    },
+    "filename": "edge/api/chat/v3/Post.php",
+    "groupTitle": "room",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
           }
         ]
       }

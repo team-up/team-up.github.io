@@ -1363,7 +1363,6 @@ define({ "api": [
             "type": "LongNumber",
             "optional": true,
             "field": "start",
-            "defaultValue": "0",
             "description": "<p>피드 번호 시작</p>"
           }
         ],
@@ -1768,7 +1767,6 @@ define({ "api": [
             "type": "LongNumber",
             "optional": true,
             "field": "start",
-            "defaultValue": "0",
             "description": "<p>피드 번호 시작</p>"
           }
         ],
@@ -3128,6 +3126,118 @@ define({ "api": [
     "type": "post",
     "url": "/v3/feedgroup/:team",
     "title": "그룹 생성",
+    "version": "3.6.0",
+    "name": "postFeedGroup",
+    "group": "group",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": true,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "String",
+            "optional": true,
+            "field": "coverimage",
+            "description": "<p>커버 이미지 base64</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"name\":\"그룹이름\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feedgroup",
+            "description": "<p>피드 그룹 번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"feedgroup\":1}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "초대 불가 유저 포함",
+          "content": "HTTP/1.1 403 Forbidden\n{\"error\":\"invalid_users\",\"invalid_users\":[1]}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "403",
+            "description": "<p>Forbidden (금지된 요청, 권한 오류)</p>"
+          }
+        ]
+      }
+    },
+    "filename": "edge/api/feed/v3/Post.php",
+    "groupTitle": "group",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v3/feedgroup/:team",
+    "title": "그룹 생성",
     "version": "3.0.0",
     "name": "postFeedGroup",
     "group": "group",
@@ -3319,6 +3429,96 @@ define({ "api": [
     "type": "post",
     "url": "/v3/feedgroup/join/:feedgroup",
     "title": "그룹 초대",
+    "version": "3.6.0",
+    "name": "postFeedGroupJoin",
+    "group": "group",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feedgroup",
+            "description": "<p>피드 그룹 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>유저 번호 리스트</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"users\":[1,2,3,4]}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "초대 불가 유저 포함",
+          "content": "HTTP/1.1 403 Forbidden\n{\"error\":\"invalid_users\",\"invalid_users\":[1]}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "403",
+            "description": "<p>Forbidden (금지된 요청, 권한 오류)</p>"
+          }
+        ]
+      }
+    },
+    "filename": "edge/api/feed/v3/Post.php",
+    "groupTitle": "group",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "optional": false,
+            "field": "201",
+            "description": "<p>Created (성공, 컨텐츠 없음)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v3/feedgroup/join/:feedgroup",
+    "title": "그룹 초대",
     "version": "3.0.0",
     "name": "postFeedGroupJoin",
     "group": "group",
@@ -3381,18 +3581,6 @@ define({ "api": [
             "optional": false,
             "field": "201",
             "description": "<p>Created (성공, 컨텐츠 없음)</p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "413",
-            "description": "<p>Payload Too Large (과다 요청, 초대 사용자 수 제한 등)</p>"
           }
         ]
       }
@@ -3898,7 +4086,6 @@ define({ "api": [
             "type": "LongNumber",
             "optional": true,
             "field": "start",
-            "defaultValue": "0",
             "description": "<p>댓글 번호 시작</p>"
           }
         ]
@@ -4035,7 +4222,6 @@ define({ "api": [
             "type": "LongNumber",
             "optional": true,
             "field": "start",
-            "defaultValue": "0",
             "description": "<p>댓글 번호 시작</p>"
           }
         ]

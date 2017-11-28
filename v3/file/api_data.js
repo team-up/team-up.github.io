@@ -194,6 +194,7 @@ define({ "api": [
     "version": "3.0.0",
     "name": "postFiles",
     "group": "upload",
+    "description": "<p>반환 데이터 thumbnail 설명</p> <ul> <li>width, height : 최대 1280</li> </ul> <p>resize : https://[host]/r[width]x[height][path]</p> <p>crop : https://[host]/c[width]x[height][path]</p> <ul> <li>width 또는 height 에 - 로 요청 시 다른 크기에 맞춰서 변환.</li> </ul> <p>example : https://images.tmup.com/r-x-/MAc/BH8/Adc/HR0/Ifg/EBu36Cco0IsSI_UdB1--tQ.jpg (최대 크기)</p>",
     "header": {
       "fields": {
         "Header": [

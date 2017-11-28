@@ -322,97 +322,6 @@
   },
   {
     "type": "get",
-    "url": "/v3/status/usercount",
-    "title": "팀 사용자 수",
-    "version": "3.0.0",
-    "name": "getStatusUserCount",
-    "group": "license",
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "type": "Number",
-            "optional": false,
-            "field": "team",
-            "description": "<p>팀 번호</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request Example",
-          "content": "GET /v3/status/usercount?team=:team",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "team_index",
-            "description": "<p>팀 번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "approval",
-            "description": "<p>승인 유저 수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "block",
-            "description": "<p>중지 유저 수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "wait",
-            "description": "<p>대기 유저 수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "exit",
-            "description": "<p>탈퇴 유저 수</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success Example",
-          "content": "{\n\"team_index\": 1,\n\"approval\": 2,\n\"block\": 3,\n\"wait\": 4,\n\"exit\": 5\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/main/java/com/tmup/auth/api/v3/api/StatusApi.java",
-    "groupTitle": "license",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>:token_type :access_token</p>"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "get",
     "url": "/v3/team/:team",
     "title": "팀 정보",
     "version": "3.0.0",
@@ -1068,5 +977,5 @@
         ]
       }
     }
-        }
+  }
 ]
