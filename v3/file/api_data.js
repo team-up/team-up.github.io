@@ -119,6 +119,85 @@ define({ "api": [
     "type": "get",
     "url": "/v3/file/:team/:id",
     "title": "파일 다운로드",
+    "version": "3.7.0",
+    "name": "getFile",
+    "group": "download",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>파일 아이디</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "msg",
+            "description": "<p>메시지 번호 (대화방 파일인 경우)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "feed",
+            "description": "<p>피드 번호 (그룹 피드 파일인 경우)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "reply",
+            "description": "<p>댓글 번호 (그룹 댓글 파일인 경우)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "binary",
+            "optional": false,
+            "field": "Content",
+            "description": "<p>파일 스트림 (application/octet-stream 등)</p>"
+          }
+        ]
+      }
+    },
+    "filename": "file/api/v3/Get.php",
+    "groupTitle": "download",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/file/:team/:id",
+    "title": "파일 다운로드",
     "version": "3.0.0",
     "name": "getFile",
     "group": "download",

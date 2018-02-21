@@ -1101,7 +1101,6 @@
             "type": "LongNumber",
             "optional": true,
             "field": "start",
-            "defaultValue": "0",
             "description": "<p>메시지 번호 시작</p>"
           }
         ]
@@ -1508,7 +1507,7 @@
             "type": "Object[]",
             "optional": true,
             "field": "extras",
-            "description": "<p>추가 정보 리스트 (type:1, tagfeeds:null)</p>"
+            "description": "<p>추가 정보 리스트<br><br>-- Bot --<br> version : 1, type : answer,<br>msg_buttons : Object[](메세지 버튼), input_buttons : Object[](입력 버튼)</p>"
           }
         ]
       },
@@ -1521,6 +1520,11 @@
         {
           "title": "Tag Example",
           "content": "{\"content\":\"test #{1123}\",\"tagfeeds\":[1123]}",
+          "type": "json"
+        },
+        {
+          "title": "Bot Example",
+          "content": "{\"content\":\"test\",\"extras\":[{\"version\":1,\"type\":\"answer\",\"msg_buttons\":[{\"text\":\"메세지 버튼\",\"type\":\"text\"},{\"text\": \"URL 메세지 버튼\",\"type\": \"url\",\"url\":\"https://tmup.com\"}],\"input_buttons\":[{\"text\":\"입력 버튼\",\"type\":\"text\"}]}]}",
           "type": "json"
         }
       ]
@@ -1567,7 +1571,7 @@
         ]
       }
     },
-    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"../feed/index.html#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>",
+    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"../feed/index.html#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>Bot 메세지</li> </ul> <p>Bot 관리자에서 등록된 Bot 계정만 extras의 Bot 메세지 사용 가능</p>",
     "error": {
       "fields": {
         "Error 4xx": [
@@ -1681,7 +1685,7 @@
         ]
       }
     },
-    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"../feed/index.html#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>",
+    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"../feed/index.html#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>Bot 메세지</li> </ul> <p>Bot 관리자에서 등록된 Bot 계정만 extras의 Bot 메세지 사용 가능</p>",
     "error": {
       "fields": {
         "Error 4xx": [
@@ -1800,7 +1804,7 @@
         ]
       }
     },
-    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"../feed/index.html#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>",
+    "description": "<ul> <li>피드 태그</li> </ul> <p>GET <a href=\"../feed/index.html#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>Bot 메세지</li> </ul> <p>Bot 관리자에서 등록된 Bot 계정만 extras의 Bot 메세지 사용 가능</p>",
     "error": {
       "fields": {
         "Error 4xx": [
@@ -2349,6 +2353,267 @@
       ]
     },
     "filename": "edge/api/chat/v1/Get.php",
+    "groupTitle": "room",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/rooms(/:team(/:room+))",
+    "title": "대화방 목록",
+    "version": "3.7.0",
+    "name": "getRooms",
+    "group": "room",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "size": "..1000",
+            "optional": true,
+            "field": "room",
+            "description": "<p>방 번호</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "allowedValues": [
+              "active",
+              "inactive",
+              "all"
+            ],
+            "optional": true,
+            "field": "type",
+            "defaultValue": "active",
+            "description": "<p>종류 (active:활성, inactive:퇴장, all:전체)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "rooms",
+            "description": "<p>대화방 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "rooms.room",
+            "description": "<p>방 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.roomtype",
+            "description": "<p>방 종류 (1:개인, 2:단체)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.state",
+            "description": "<p>상태 (0:퇴장, 1:참여)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.alert",
+            "description": "<p>방 알림 (0:사용안함, 1:사용)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "rooms.name",
+            "description": "<p>방 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "rooms.msg",
+            "description": "<p>메시지 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "rooms.content",
+            "description": "<p>메시지 내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.created",
+            "description": "<p>메시지 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.msgtype",
+            "description": "<p>메시지 종류 (1:일반, 2:파일)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "rooms.newcount",
+            "description": "<p>안 읽은 메시지 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "rooms.newmsg",
+            "description": "<p>안 읽은 메시지 번호 시작</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number[]",
+            "optional": true,
+            "field": "rooms.users",
+            "description": "<p>다른 유저 번호 리스트 (state:1 - 참여 대화방인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "rooms.file",
+            "description": "<p>파일 정보 (msgtype:2 - 파일인 경우)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "rooms.file.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "rooms.file.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "rooms.file.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "rooms.file.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "rooms.file.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "rooms.file.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "rooms.file.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "rooms.file.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "rooms.file.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "rooms.file.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"rooms\":[\n{\"team\":1,\"room\":1,\"roomtype\":2,\"state\":1,\"alert\":1,\"name\":null,\"msg\":1,\"user\":4,\"msgtype\":1,\"len\":4,\"content\":\"대화내용\",\"newcount\":0,\"newmsg\":null,\"users\":[2,3,4],\"created\":1392289132}\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/chat/v3/Get.php",
     "groupTitle": "room",
     "header": {
       "fields": {

@@ -207,6 +207,469 @@ define({ "api": [
     "type": "get",
     "url": "/v3/feed/:feed",
     "title": "피드 정보",
+    "version": "3.7.0",
+    "name": "getFeed",
+    "group": "feed",
+    "description": "<p>호출 시 해당 피드(+댓글/좋아요)만 읽음(status 2)으로 변경됨</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feed",
+            "description": "<p>피드 번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feedgroup",
+            "description": "<p>피드 그룹 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "groupname",
+            "description": "<p>피드 그룹 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "type",
+            "description": "<p>종류 (1:일반, 2:마크업)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "push",
+            "description": "<p>강제 알림 (0:안함, 1:사용)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "watch",
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용 (null:마크업)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "removable",
+            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "liked",
+            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tagfeeds",
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tagusers",
+            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "readcount",
+            "description": "<p>읽음 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replycount",
+            "description": "<p>댓글 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "likecount",
+            "description": "<p>좋아요 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "filecount",
+            "description": "<p>전체 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "mediacount",
+            "description": "<p>미디어 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "replies",
+            "description": "<p>댓글 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "replies.reply",
+            "description": "<p>댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "replies.parent",
+            "description": "<p>상위 댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.user",
+            "description": "<p>댓글 유저 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.len",
+            "description": "<p>댓글 내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.content",
+            "description": "<p>댓글 내용 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.removable",
+            "description": "<p>댓글 삭제 가능 여부 (0:불가, 1:가능)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.liked",
+            "description": "<p>댓글 자신의 좋아요 여부 (0:안함, 1:함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.likecount",
+            "description": "<p>댓글 좋아요 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.filecount",
+            "description": "<p>댓글 전체 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.tagfeeds",
+            "description": "<p>댓글 태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.tagusers",
+            "description": "<p>댓글 태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.created",
+            "description": "<p>댓글 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "replies.files",
+            "description": "<p>댓글 파일 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.name",
+            "description": "<p>댓글 파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "replies.files.size",
+            "description": "<p>댓글 파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.created",
+            "description": "<p>댓글 파일 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.id",
+            "description": "<p>댓글 파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.owner",
+            "description": "<p>댓글 파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.type",
+            "description": "<p>댓글 파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "replies.files.thumbnail",
+            "description": "<p>댓글 썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.thumbnail.host",
+            "description": "<p>댓글 썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.thumbnail.path",
+            "description": "<p>댓글 썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.thumbnail.width",
+            "description": "<p>댓글 썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.thumbnail.height",
+            "description": "<p>댓글 썸네일 세로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "likes",
+            "description": "<p>좋아요 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "likes.user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "likes.created",
+            "description": "<p>좋아요 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "files",
+            "description": "<p>파일 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "files.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.created",
+            "description": "<p>파일 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "files.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"team\":1,\"feedgroup\":1,\"groupname\":\"그룹1\",\"user\":4,\"type\":1,\"push\":0,\"len\":1,\"content\":\"글\",\"removable\":0,\"watch\":0,\"liked\":0,\"tagfeeds\":null,\"tagusers\":null,\"readcount\":1,\"replycount\":0,\"likecount\":0,\"filecount\":0,\"mediacount\":0,\"created\":1398221119}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/feed/v3/Get.php",
+    "groupTitle": "feed",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/feed/:feed",
+    "title": "피드 정보",
     "version": "3.0.0",
     "name": "getFeed",
     "group": "feed",
@@ -325,7 +788,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "content",
-            "description": "<p>내용 (마크업:null)</p>"
+            "description": "<p>내용 (null:마크업)</p>"
           },
           {
             "group": "Success 200",
@@ -402,7 +865,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "replies",
-            "description": "<p>댓글 목록 (replycount 지정 시 반환)</p>"
+            "description": "<p>댓글 리스트</p>"
           },
           {
             "group": "Success 200",
@@ -416,42 +879,42 @@ define({ "api": [
             "type": "Number",
             "optional": true,
             "field": "replies.user",
-            "description": "<p>유저 번호</p>"
+            "description": "<p>댓글 유저 번호</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": true,
             "field": "replies.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+            "description": "<p>댓글 내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "replies.content",
-            "description": "<p>내용</p>"
+            "description": "<p>댓글 내용</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": true,
             "field": "replies.removable",
-            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
+            "description": "<p>댓글 삭제 가능 여부 (0:불가, 1:가능)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "replies.tagfeeds",
-            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+            "description": "<p>댓글 태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "replies.tagusers",
-            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+            "description": "<p>댓글 태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
           },
           {
             "group": "Success 200",
@@ -465,7 +928,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "likes",
-            "description": "<p>좋아요 리스트 (likecount 지정 시 반환)</p>"
+            "description": "<p>좋아요 리스트</p>"
           },
           {
             "group": "Success 200",
@@ -486,7 +949,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "files",
-            "description": "<p>파일 목록 (filecount 지정 시 반환)</p>"
+            "description": "<p>파일 리스트</p>"
           },
           {
             "group": "Success 200",
@@ -570,7 +1033,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\"team\":1,\"feedgroup\":1,\"groupname\":\"그룹1\",\"user\":4,\"type\":1,\"push\":0,\"len\":1,\"content\":\"글\",\"removable\":0,\"watch\":0,\"liked\":0,\"tagfeeds\":null,\"tagusers\":null,\"readcount\":1,\"replycount\":0,\"likecount\":0,\"filecount\":1,\"mediacount\":0,\"created\":1398221119}",
+          "content": "{\"team\":1,\"feedgroup\":1,\"groupname\":\"그룹1\",\"user\":4,\"type\":1,\"push\":0,\"len\":1,\"content\":\"글\",\"removable\":0,\"watch\":0,\"liked\":0,\"tagfeeds\":null,\"tagusers\":null,\"readcount\":1,\"replycount\":0,\"likecount\":0,\"filecount\":0,\"mediacount\":0,\"created\":1398221119}",
           "type": "json"
         }
       ]
@@ -702,7 +1165,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "content",
-            "description": "<p>내용 (마크업:null)</p>"
+            "description": "<p>내용 (null:마크업)</p>"
           },
           {
             "group": "Success 200",
@@ -779,7 +1242,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "replies",
-            "description": "<p>댓글 목록 (replycount 지정 시 반환)</p>"
+            "description": "<p>댓글 리스트 (replycount 지정 시 반환)</p>"
           },
           {
             "group": "Success 200",
@@ -863,7 +1326,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "files",
-            "description": "<p>파일 목록 (filecount 지정 시 반환)</p>"
+            "description": "<p>파일 리스트 (filecount 지정 시 반환)</p>"
           },
           {
             "group": "Success 200",
@@ -1334,6 +1797,522 @@ define({ "api": [
     "type": "get",
     "url": "/v3/feeds/:count(/:way(/:start))",
     "title": "피드 목록",
+    "version": "3.7.0",
+    "name": "getFeeds",
+    "group": "feed",
+    "description": "<p>way=0 &amp; group 지정 시 해당 그룹의 모든 알림이 읽음(status 2)으로 변경됨 (댓글/좋아요 제외)</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1-100",
+            "optional": false,
+            "field": "count",
+            "description": "<p>가져올 피드 수</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "0-2",
+            "optional": true,
+            "field": "way",
+            "defaultValue": "0",
+            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "start",
+            "description": "<p>피드 번호 시작</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "Number",
+            "optional": true,
+            "field": "team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Query",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "group",
+            "description": "<p>피드 그룹 번호</p>"
+          },
+          {
+            "group": "Query",
+            "type": "Number",
+            "optional": true,
+            "field": "user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Query",
+            "type": "Number",
+            "size": "1-100",
+            "optional": true,
+            "field": "replycount",
+            "description": "<p>댓글 정보 포함 개수</p>"
+          },
+          {
+            "group": "Query",
+            "type": "Number",
+            "size": "1-100",
+            "optional": true,
+            "field": "filecount",
+            "description": "<p>파일 정보 포함 개수</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "allowedValues": [
+              "normal",
+              "media"
+            ],
+            "optional": true,
+            "field": "filetype",
+            "description": "<p>파일 정보 포함 종류 (filecount와 함께 사용)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "feeds",
+            "description": "<p>피드 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.team",
+            "description": "<p>팀 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feeds.feedgroup",
+            "description": "<p>피드 그룹 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feeds.groupname",
+            "description": "<p>피드 그룹 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feeds.feed",
+            "description": "<p>피드 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.type",
+            "description": "<p>종류 (1:일반, 2:마크업)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.push",
+            "description": "<p>강제 알림 (0:안함, 1:사용)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feeds.content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.removable",
+            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.watch",
+            "description": "<p>지켜보기 (0:안함, 1:사용)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.liked",
+            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feeds.tagfeeds",
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feeds.tagusers",
+            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.replycount",
+            "description": "<p>댓글 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.likecount",
+            "description": "<p>좋아요 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.filecount",
+            "description": "<p>전체 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feeds.mediacount",
+            "description": "<p>미디어 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "feeds.replies",
+            "description": "<p>댓글 리스트 (replycount 지정 시 반환)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "feeds.replies.reply",
+            "description": "<p>댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "feeds.replies.parent",
+            "description": "<p>상위 댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.user",
+            "description": "<p>댓글 유저 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.len",
+            "description": "<p>댓글 내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.content",
+            "description": "<p>댓글 내용 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.removable",
+            "description": "<p>댓글 삭제 가능 여부 (0:불가, 1:가능)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.liked",
+            "description": "<p>댓글 자신의 좋아요 여부 (0:안함, 1:함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.likecount",
+            "description": "<p>댓글 좋아요 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.filecount",
+            "description": "<p>댓글 전체 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.tagfeeds",
+            "description": "<p>댓글 태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.tagusers",
+            "description": "<p>댓글 태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.created",
+            "description": "<p>댓글 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "feeds.replies.files",
+            "description": "<p>댓글 파일 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.files.name",
+            "description": "<p>댓글 파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "feeds.replies.files.size",
+            "description": "<p>댓글 파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.files.created",
+            "description": "<p>댓글 파일 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.files.id",
+            "description": "<p>댓글 파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.files.owner",
+            "description": "<p>댓글 파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.files.type",
+            "description": "<p>댓글 파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "feeds.replies.files.thumbnail",
+            "description": "<p>댓글 썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.files.thumbnail.host",
+            "description": "<p>댓글 썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.replies.files.thumbnail.path",
+            "description": "<p>댓글 썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.files.thumbnail.width",
+            "description": "<p>댓글 썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.replies.files.thumbnail.height",
+            "description": "<p>댓글 썸네일 세로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "feeds.files",
+            "description": "<p>파일 리스트 (filecount 지정 시 반환)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.files.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "feeds.files.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.files.created",
+            "description": "<p>파일 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.files.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.files.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.files.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "feeds.files.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.files.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "feeds.files.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.files.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "feeds.files.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"feeds\":[\n{\"team\":1,\"feedgroup\":1,\"groupname\":\"그룹1\",\"feed\":1,\"type\":1,\"user\":4,\"push\":0,\"len\":1,\"content\":\"글\",\"removable\":0,\"watch\":0,\"liked\":0,\"tagfeeds\":null,\"tagusers\":null,\"replycount\":0,\"likecount\":0,\"filecount\":0,\"mediacount\":0,\"created\":1398221119}\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/feed/v3/Get.php",
+    "groupTitle": "feed",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/feeds/:count(/:way(/:start))",
+    "title": "피드 목록",
     "version": "3.0.0",
     "name": "getFeeds",
     "group": "feed",
@@ -1566,7 +2545,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "feeds.replies",
-            "description": "<p>댓글 목록 (replycount 지정 시 반환)</p>"
+            "description": "<p>댓글 리스트 (replycount 지정 시 반환)</p>"
           },
           {
             "group": "Success 200",
@@ -1580,42 +2559,42 @@ define({ "api": [
             "type": "Number",
             "optional": true,
             "field": "feeds.replies.user",
-            "description": "<p>유저 번호</p>"
+            "description": "<p>댓글 유저 번호</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": true,
             "field": "feeds.replies.len",
-            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+            "description": "<p>댓글 내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "feeds.replies.content",
-            "description": "<p>내용</p>"
+            "description": "<p>댓글 내용</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": true,
             "field": "feeds.replies.removable",
-            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
+            "description": "<p>댓글 삭제 가능 여부 (0:불가, 1:가능)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "feeds.replies.tagfeeds",
-            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+            "description": "<p>댓글 태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "feeds.replies.tagusers",
-            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+            "description": "<p>댓글 태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
           },
           {
             "group": "Success 200",
@@ -1629,7 +2608,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "feeds.files",
-            "description": "<p>파일 목록 (filecount 지정 시 반환)</p>"
+            "description": "<p>파일 리스트 (filecount 지정 시 반환)</p>"
           },
           {
             "group": "Success 200",
@@ -1713,7 +2692,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"feeds\":[\n{\"team\":1,\"feedgroup\":1,\"groupname\":\"그룹1\",\"feed\":1,\"type\":1,\"user\":4,\"push\":0,\"len\":1,\"content\":\"글\",\"removable\":0,\"watch\":0,\"liked\":0,\"tagfeeds\":null,\"tagusers\":null,\"replycount\":0,\"likecount\":0,\"filecount\":1,\"mediacount\":0,\"created\":1398221119}\n]\n}",
+          "content": "{\n\"feeds\":[\n{\"team\":1,\"feedgroup\":1,\"groupname\":\"그룹1\",\"feed\":1,\"type\":1,\"user\":4,\"push\":0,\"len\":1,\"content\":\"글\",\"removable\":0,\"watch\":0,\"liked\":0,\"tagfeeds\":null,\"tagusers\":null,\"replycount\":0,\"likecount\":0,\"filecount\":0,\"mediacount\":0,\"created\":1398221119}\n]\n}",
           "type": "json"
         }
       ]
@@ -1959,7 +2938,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "feeds.replies",
-            "description": "<p>댓글 목록 (replycount 지정 시 반환)</p>"
+            "description": "<p>댓글 리스트 (replycount 지정 시 반환)</p>"
           },
           {
             "group": "Success 200",
@@ -2022,7 +3001,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": true,
             "field": "feeds.files",
-            "description": "<p>파일 목록 (filecount 지정 시 반환)</p>"
+            "description": "<p>파일 리스트 (filecount 지정 시 반환)</p>"
           },
           {
             "group": "Success 200",
@@ -3672,7 +4651,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/v3/feed/likes/:feed/:count(/:start)",
-    "title": "좋아요 목록",
+    "title": "피드 좋아요 목록",
     "version": "3.0.0",
     "name": "getFeedLikes",
     "group": "like",
@@ -3772,7 +4751,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/v1/feed/likes/:feed/:count(/:start)",
-    "title": "좋아요 목록",
+    "title": "피드 좋아요 목록",
     "version": "2.1.0",
     "name": "getFeedLikes",
     "group": "like",
@@ -3856,9 +4835,109 @@ define({ "api": [
     }
   },
   {
+    "type": "get",
+    "url": "/v3/feed/reply/likes/:reply/:count(/:start)",
+    "title": "댓글 좋아요 목록",
+    "version": "3.7.0",
+    "name": "getFeedReplyLikes",
+    "group": "like",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "reply",
+            "description": "<p>댓글 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1-100",
+            "optional": false,
+            "field": "count",
+            "description": "<p>가져올 수</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "start",
+            "defaultValue": "0",
+            "description": "<p>시작 수</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "cnt",
+            "description": "<p>전체 좋아요 갯수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "liked",
+            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>유저 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "users.user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "users.created",
+            "description": "<p>생성시간(unix)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"cnt\":2,\n\"liked\":0,\n\"users\":[\n{\"user\":1,\"created\":1398238682},\n{\"user\":2,\"created\":1398238681}\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/feed/v3/Get.php",
+    "groupTitle": "like",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "post",
     "url": "/v3/feed/like/:feed",
-    "title": "좋아요 생성",
+    "title": "피드 좋아요 생성",
     "version": "3.0.0",
     "name": "postFeedLike",
     "group": "like",
@@ -3906,7 +4985,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/v1/feed/like/:feed",
-    "title": "좋아요 생성",
+    "title": "피드 좋아요 생성",
     "version": "2.1.0",
     "name": "postFeedLike",
     "group": "like",
@@ -3924,6 +5003,54 @@ define({ "api": [
       }
     },
     "filename": "edge/api/feed/v1/Post.php",
+    "groupTitle": "like",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 2xx": [
+          {
+            "group": "Success 2xx",
+            "optional": false,
+            "field": "201",
+            "description": "<p>Created (성공, 컨텐츠 없음)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v3/feed/reply/like/:reply",
+    "title": "댓글 좋아요 생성",
+    "version": "3.7.0",
+    "name": "postFeedReplyLike",
+    "group": "like",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "reply",
+            "description": "<p>댓글 번호</p>"
+          }
+        ]
+      }
+    },
+    "filename": "edge/api/feed/v3/Post.php",
     "groupTitle": "like",
     "header": {
       "fields": {
@@ -4042,6 +5169,263 @@ define({ "api": [
             "optional": false,
             "field": "204",
             "description": "<p>No Content (성공, 컨텐츠 없음)</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/feed/replies/:feed/:count(/:way(/:start))",
+    "title": "댓글 목록",
+    "version": "3.7.0",
+    "name": "getFeedReplies",
+    "group": "reply",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feed",
+            "description": "<p>피드 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1-100",
+            "optional": false,
+            "field": "count",
+            "description": "<p>가져올 댓글 수</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "0-2",
+            "optional": true,
+            "field": "way",
+            "defaultValue": "0",
+            "description": "<p>방향 (0:최신, 1:이전, 2:이후)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "start",
+            "description": "<p>댓글 번호 시작</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "parent",
+            "description": "<p>상위 댓글 번호 시작 (지정 시 계층 정렬)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "replies",
+            "description": "<p>댓글 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "replies.reply",
+            "description": "<p>댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "replies.parent",
+            "description": "<p>상위 댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replies.user",
+            "description": "<p>유저 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replies.len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "replies.content",
+            "description": "<p>내용 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replies.removable",
+            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replies.liked",
+            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replies.likecount",
+            "description": "<p>좋아요 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replies.filecount",
+            "description": "<p>전체 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "replies.tagfeeds",
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "replies.tagusers",
+            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "replies.created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "replies.files",
+            "description": "<p>파일 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "replies.files.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.created",
+            "description": "<p>파일 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "replies.files.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "replies.files.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "replies.files.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\n\"replies\":[\n{\"reply\":1,\"parent\":1,\"user\":1,\"len\":2,\"content\":\"댓글\",\"removable\":0,\"liked\":0,\"likecount\":0,\"filecount\":0,\"tagfeeds\":null,\"tagusers\":null,\"created\":1398238682}\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/feed/v3/Get.php",
+    "groupTitle": "reply",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
           }
         ]
       }
@@ -4314,6 +5698,361 @@ define({ "api": [
             "optional": false,
             "field": "Authorization",
             "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v3/feed/reply/:reply",
+    "title": "댓글 정보",
+    "version": "3.7.0",
+    "name": "getFeedReply",
+    "group": "reply",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "reply",
+            "description": "<p>댓글 번호</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "Number",
+            "size": "0-1",
+            "optional": true,
+            "field": "all",
+            "defaultValue": "0",
+            "description": "<p>전체 내용 여부(0:요약, 1:전체)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "user",
+            "description": "<p>유저 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "parent",
+            "description": "<p>상위 댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "len",
+            "description": "<p>내용 길이 (장문 여부 판단 - content 글자 수와 다르면 장문, utf8mb4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "removable",
+            "description": "<p>삭제 가능 여부 (0:불가, 1:가능)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "liked",
+            "description": "<p>자신의 좋아요 여부 (0:안함, 1:함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "likecount",
+            "description": "<p>좋아요 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "filecount",
+            "description": "<p>전체 파일 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tagfeeds",
+            "description": "<p>태그 피드번호 (|로 구분, 비어있으면 태그 없음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tagusers",
+            "description": "<p>태그 유저번호 (|로 구분, 그룹 멤버만)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "created",
+            "description": "<p>생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "files",
+            "description": "<p>파일 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.name",
+            "description": "<p>파일 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "files.size",
+            "description": "<p>파일 크기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.created",
+            "description": "<p>파일 생성시간(unix)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.id",
+            "description": "<p>파일 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.owner",
+            "description": "<p>파일 소유자 번호 (null:삭제)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.type",
+            "description": "<p>파일 종류 (normal,image,video)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "files.thumbnail",
+            "description": "<p>썸네일 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.thumbnail.host",
+            "description": "<p>썸네일 서버</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "files.thumbnail.path",
+            "description": "<p>썸네일 경로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.thumbnail.width",
+            "description": "<p>썸네일 가로</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "files.thumbnail.height",
+            "description": "<p>썸네일 세로</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"reply\":1,\"parent\":1,\"user\":1,\"len\":2,\"content\":\"댓글\",\"removable\":0,\"liked\":0,\"likecount\":0,\"filecount\":0,\"tagfeeds\":null,\"tagusers\":null,\"created\":1398238682}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/feed/v3/Get.php",
+    "groupTitle": "reply",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v3/feed/reply/:feed",
+    "title": "댓글 생성",
+    "version": "3.7.0",
+    "name": "postFeedReply",
+    "group": "reply",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "feed",
+            "description": "<p>피드 번호</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "type": "LongNumber",
+            "optional": true,
+            "field": "parent",
+            "description": "<p>상위 댓글 번호</p>"
+          }
+        ],
+        "JSON": [
+          {
+            "group": "JSON",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "Number[]",
+            "optional": true,
+            "field": "tagusers",
+            "description": "<p>태그 유저 번호 리스트</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "LongNumber[]",
+            "optional": true,
+            "field": "tagfeeds",
+            "description": "<p>태그 피드 번호 리스트</p>"
+          },
+          {
+            "group": "JSON",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>파일 아이디</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"content\":\"test\"}",
+          "type": "json"
+        },
+        {
+          "title": "Tag Example",
+          "content": "{\"content\":\"test @{4,유저4} #{1123}\",\"tagusers\":[4],\"tagfeeds\":[1123]}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "reply",
+            "description": "<p>댓글 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "LongNumber",
+            "optional": false,
+            "field": "parent",
+            "description": "<p>상위 댓글 번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success Example",
+          "content": "{\"reply\":1,\"parent\":1}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "edge/api/feed/v3/Post.php",
+    "groupTitle": "reply",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>:token_type :access_token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          }
+        ]
+      }
+    },
+    "description": "<ul> <li>사용자 태그</li> </ul> <p>GET <a href=\"#api-tag-GetTagUser\">/v3/tag/users</a> 로 태그 가능 사용자 검색 후</p> <p>content 내용 중 태그 영역에 @{사용자번호,사용자이름}</p> <p>tagusers 에 사용자 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p> <ul> <li>피드 태그</li> </ul> <p>GET <a href=\"#api-tag-GetTagFeed\">/v3/tag/feeds</a> 로 태그 가능 피드 번호 검색 후</p> <p>content 내용 중 태그 영역에 #{피드번호}</p> <p>tagfeeds 에 피드 번호 리스트 추가 (비어있을 경우 태그 처리 안됨)</p>",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "410",
+            "description": "<p>Gone (데이터 삭제됨, 권한 오류)</p>"
           }
         ]
       }

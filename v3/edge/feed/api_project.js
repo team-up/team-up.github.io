@@ -1,6 +1,6 @@
 define({
   "name": "TeamUP edge feed",
-  "version": "3.6.0",
+  "version": "3.7.0",
   "description": "TeamUP RESTful API (feed)",
   "title": "TeamUP edge feed API",
   "url": "https://edge.tmup.com",
@@ -12,7 +12,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-10-24T02:39:24.383Z",
+    "time": "2018-02-21T11:39:11.754Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
