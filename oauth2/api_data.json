@@ -208,9 +208,10 @@
     "type": "post",
     "url": "/oauth2/token",
     "title": "Password Credentials",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "getOauth2TokenPassword",
     "group": "oauth2",
+    "description": "<p>휴면 계정인 경우 200 error 출력</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -330,7 +331,8 @@
             "group": "Error 200 LoginException",
             "type": "String",
             "allowedValues": [
-              "id_pw_not_match"
+              "id_pw_not_match",
+              "inactive_account"
             ],
             "optional": false,
             "field": "error",

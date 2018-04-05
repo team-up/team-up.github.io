@@ -197,7 +197,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "return",
-            "description": "<p>유저 번호</p>"
+            "description": "<p>팀 번호</p>"
           }
         ]
       },
@@ -2414,7 +2414,7 @@ define({ "api": [
     "type": "put",
     "url": "/v1/team/:team/user/:user",
     "title": "유저 정보 수정",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "putTeamUser",
     "group": "team_admin",
     "permission": [
@@ -2422,6 +2422,7 @@ define({ "api": [
         "name": "team admin"
       }
     ],
+    "description": "<p>휴면계정은 부서이동만 가능함</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2545,7 +2546,7 @@ define({ "api": [
     "type": "put",
     "url": "/v1/team/:team/user/status/:status",
     "title": "유저 상태 변경",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "putTeamUserStatus",
     "group": "team_admin",
     "permission": [
@@ -2553,6 +2554,7 @@ define({ "api": [
         "name": "team admin"
       }
     ],
+    "description": "<p>이미 해당 상태인 유저는 변경하지 않음</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2924,10 +2926,10 @@ define({ "api": [
     "type": "get",
     "url": "/v1/search/:team",
     "title": "조직도 검색",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "getSearch",
     "group": "team",
-    "description": "<p>이름(초성가능), 부서, 이메일 검색</p>",
+    "description": "<p>이름(초성가능), 부서, 이메일 검색 ( 탈퇴계정은 검색되지 않음, 휴면계정과 중지계정은 검색 가능 )</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3096,7 +3098,7 @@ define({ "api": [
     "type": "get",
     "url": "/v1/team/:team/all",
     "title": "조직도 전체 정보",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "getTeamAll",
     "group": "team",
     "parameter": {
@@ -3241,6 +3243,13 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Boolean",
+            "optional": true,
+            "field": "users.is_active",
+            "description": "<p>휴면계정 여부</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object[]",
             "optional": true,
             "field": "department",
@@ -3286,7 +3295,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"users\": null,\n\"department\": null\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null,\n\"is_active\":true\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"users\": null,\n\"department\": null\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -3311,7 +3320,7 @@ define({ "api": [
     "type": "get",
     "url": "/v1/team/:team/change",
     "title": "조직도 변경 정보",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "getTeamChange",
     "group": "team",
     "description": "<p>time 이후 변경 정보</p>",
@@ -3487,6 +3496,13 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Boolean",
+            "optional": true,
+            "field": "users.is_active",
+            "description": "<p>휴면계정 여부</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object",
             "optional": true,
             "field": "users.department",
@@ -3525,7 +3541,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"is_delete\": true\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null,\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0, \"is_delete\": false}\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"parents\": [7,8,9],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0,\n\"is_delete\": true\n}\n],\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null,\n\"is_active\":true,\n\"department\": {\"index\": 2, \"name\":\"부서\", \"parent\": 0, \"is_delete\": false}\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -3550,7 +3566,7 @@ define({ "api": [
     "type": "get",
     "url": "/v1/team/:team(/:parent)",
     "title": "조직도 정보",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "getTeamChild",
     "group": "team",
     "parameter": {
@@ -3735,13 +3751,20 @@ define({ "api": [
             "optional": true,
             "field": "users.job_title",
             "description": "<p>직책 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": true,
+            "field": "users.is_active",
+            "description": "<p>휴면계정 여부</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0\n}\n]\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"time\": 1487068962635,\n\"users\": [\n{\n\"index\": 100,\n\"name\": \"사용자\",\n\"email\": \"test@tmup.com\",\n\"profile_image\": null,\n\"message\": null,\n\"status\": \"approval\",\n\"pc_status\": \"off_line\",\n\"phone\": null,\n\"mobile\": null,\n\"position\": null,\n\"job_title\": null,\n\"is_active\":true\n}\n],\n\"department\": [\n{\n\"index\": 2,\n\"name\": \"부서\",\n\"parent\": 0\n}\n]\n}",
           "type": "json"
         }
       ]
@@ -3843,7 +3866,7 @@ define({ "api": [
     "type": "get",
     "url": "/v1/teams",
     "title": "팀 목록",
-    "version": "2.1.0",
+    "version": "3.7.1",
     "name": "getTeams",
     "group": "team",
     "success": {
@@ -3881,6 +3904,48 @@ define({ "api": [
             "optional": false,
             "field": ".sort_type",
             "description": "<p>유저 정렬 타입</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": ".status",
+            "description": "<p>상태,</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": ".super_admin",
+            "description": "<p>슈퍼관리자 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": ".super_admin.index",
+            "description": "<p>슈퍼관리자 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": ".super_admin.name",
+            "description": "<p>슈퍼관리자 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": ".super_admin.email",
+            "description": "<p>슈퍼관리자 이메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": ".super_admin.is_active",
+            "description": "<p>슈퍼관리자 활성화여부</p>"
           },
           {
             "group": "Success 200",
@@ -3988,7 +4053,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "[\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"sort_type\": \"name\",\n\"status\": \"approval\",\n\"invite_user\": \"admin\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": null,\n\"direct_width\": null,\n\"direct_height\": null,\n\"user_role\": [\"super_admin\",\"user\"]\n}\n]",
+          "content": "[\n{\n\"index\": 1,\n\"name\": \"팀이름\",\n\"sort_type\": \"name\",\n\"status\": \"approval\",\n\"super_admin\": {\n     \"index\": 44,\n     \"name\": \"슈퍼관리자이름\",\n     \"email\": \"superAdmin@estsoft.com\",\n     \"is_active\": false\n },\n\"invite_user\": \"admin\",\n\"is_invite_domain\": true,\n\"invite_domain\": [\"tmup.com\"],\n\"is_department\": true,\n\"is_position\": true,\n\"is_job_title\": true,\n\"is_phone\": true,\n\"is_mobile\": true,\n\"is_birthday\": true,\n\"direct_url\": null,\n\"direct_width\": null,\n\"direct_height\": null,\n\"user_role\": [\"super_admin\",\"user\"]\n}\n]",
           "type": "json"
         }
       ]
@@ -4013,7 +4078,7 @@ define({ "api": [
     "type": "get",
     "url": "/v1/user/:user/team/:team",
     "title": "팀 유저 정보",
-    "version": "1.0.0",
+    "version": "3.7.1",
     "name": "getUserTeam",
     "group": "team",
     "parameter": {
@@ -4085,6 +4150,13 @@ define({ "api": [
             "optional": false,
             "field": "status",
             "description": "<p>유저 상태</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_active",
+            "description": "<p>휴면계정 여부</p>"
           },
           {
             "group": "Success 200",
@@ -4168,7 +4240,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success Example",
-          "content": "{\n\"index\": 1,\n\"name\": \"홍길동\",\n\"email\": \"test@tmup.com\",\n\"birthday\": \"1999-10-12\",\n\"is_lunar\": false,\n\"status\":\"approval\",\n\"is_bot\": false,\n\"profile_image\": null,\n\"message\": \"^^\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": \"사원\",\n\"department\": {\n\"index\": 3,\n\"name\": \"테스트팀\",\n\"parent\": 2\n}\n}",
+          "content": "{\n\"index\": 1,\n\"name\": \"홍길동\",\n\"email\": \"test@tmup.com\",\n\"birthday\": \"1999-10-12\",\n\"is_lunar\": false,\n\"status\":\"approval\",\n\"is_active\":false,\n\"is_bot\": false,\n\"profile_image\": null,\n\"message\": \"^^\",\n\"mobile\": null,\n\"phone\": null,\n\"position\": null,\n\"job_title\": \"사원\",\n\"department\": {\n\"index\": 3,\n\"name\": \"테스트팀\",\n\"parent\": 2\n}\n}",
           "type": "json"
         }
       ]
