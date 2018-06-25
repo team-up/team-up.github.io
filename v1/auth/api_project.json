@@ -1,6 +1,6 @@
 {
   "name": "TeamUP auth API",
-  "version": "3.7.1",
+  "version": "3.8.0",
   "description": "TeamUP RESTful API (auth)",
   "title": "TeamUP auth API",
   "url": "https://auth.tmup.com",
@@ -12,7 +12,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-04-05T08:07:55.334Z",
+    "time": "2018-06-25T09:45:03.654Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
